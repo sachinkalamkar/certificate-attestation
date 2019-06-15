@@ -35,6 +35,7 @@ export class UserService {
   }
 
   registration(user: User,contact_status) {
+
     return this.http.post('http://127.0.0.1:3000/registration', {'user':user,'contact_status':contact_status});
   }
   setToken(token: string) {
