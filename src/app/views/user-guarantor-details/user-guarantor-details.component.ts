@@ -51,29 +51,12 @@ get f() { return this. gurantorForm.controls; }
   currentDesignation(){
     console.log("getCallApi====>");
     console.log("policy======>",this.gurantorForm.value);
-    this.userservice.gurantor(this.gurantorForm.value).subscribe(data=>{
-      console.log("====================>",this.gurantorForm.value)
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.gurantorForm.value))
+    
       
 		this.router.navigate(['user-current-designation'])	  
-    })
+ 
   }
 
-isCollapsed: boolean = false;
-iconCollapse: string = 'icon-arrow-up';
-
-collapsed(event: any): void {
-  // console.log(event);
-}
-
-expanded(event: any): void {
-  // console.log(event);
-}
-
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
 
 
 }

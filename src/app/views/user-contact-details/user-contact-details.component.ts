@@ -19,7 +19,7 @@ export class UserContactDetailsComponent implements OnInit {
      
       present_country : ['', Validators.required],
       present_state : ['', Validators.required],
-      present_city :['', Validators.required],
+     present_city :['', Validators.required],
     present_house_no : ['', Validators.required],
     present_street_no :['', Validators.required],
     present_pincode : ['', Validators.required],
@@ -48,13 +48,11 @@ export class UserContactDetailsComponent implements OnInit {
 callApi(){
   console.log("getCallApi====>");
   console.log("policy======>",this.contactForm.value);
-  this.userservice.contact(this.contactForm.value).subscribe(data=>{
-    console.log("====================>",this.contactForm.value)
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value))
+  
    
     this.router.navigate(['user-guarantor-details'])
 
-  })
+ 
 }
 
 

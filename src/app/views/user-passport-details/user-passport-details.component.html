@@ -133,7 +133,7 @@
   <br><br>
        <br>
        <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
-       <form [formGroup]="passportForm" (ngSubmit)="onSubmit()" >
+       <form [formGroup]="passportForm"  >
        <div class="row">
           <div class="col-sm-7">
               <div class="form-group">
@@ -176,7 +176,7 @@
             </div>
        </div>
        <div class="wrapper">
-        <button type="button" class="btn btn-primary" style="width:20%;">Submit</button>
+        <button type="button" class="btn btn-primary" style="width:20%;" (click)=" onSubmit()">Submit</button>
      </div>
       </form>
        <br/>

@@ -4,7 +4,7 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 
 @Component({
@@ -19,61 +19,34 @@ submitted = false;
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group ({
-      applicant_type : [''],
-        full_name : [''],
-        sex : [''],
+      applicant_type : ['',Validators.required],
+        full_name : ['',Validators.required],
+        sex : ['',Validators.required],
      
-        nationality : [''],
+        nationality : ['',Validators.required],
       
-        date_of_birth :[''],
+        date_of_birth :['',Validators.required],
        
-        father_name : [''],
+        father_name : ['',Validators.required],
       
-        mother_name : ['']
+        mother_name : ['',Validators.required]
      
     
   });
       
   
-}get f() { return this. contactForm.controls; }
-passportDetail(){
+}
+get f() { return this.contactForm.controls; }
+passportDetails(){
    this.submitted=true
-   this.callApi();
-  if(this. contactForm.invalid){
+   
+  if(this.contactForm.invalid){
     return
   }
-  
-}
-callApi(){
   console.log("getCallApi====>");
   console.log("policy======>",this.contactForm.value);
   
    
-		this.router.navigate(['user-passport-details'])	  
-  }
-
-
-
-
-isCollapsed: boolean = false;
-iconCollapse: string = 'icon-arrow-up';
-
-collapsed(event: any): void {
-  // console.log(event);
+		this.router.navigate(['user-passport-details'])	
 }
-
-expanded(event: any): void {
-  // console.log(event);
-}
-
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
-
-
-
-
-
-
 }
