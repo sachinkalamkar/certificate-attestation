@@ -134,7 +134,7 @@
        <br>
        <h3 class="text-center"><b></b></h3>
        <div class="wrapper">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+            <form [formGroup]="contactForm" (ngSubmit)=" contactForm.valid && contactDetail()" >
        <div class="row">
          <div class="col-sm-6">Permanent Adress</div>
          
@@ -326,7 +326,7 @@
           
        </div>
        <div class="wrapper">
-        <button type="button" class="btn btn-primary" style="width:20%;" >Submit</button>
+        <button type="button" class="btn btn-primary" style="width:20%;" (click)="contactDetail(contactForm)">Submit</button>
      </div>
     </form>
        <br/>

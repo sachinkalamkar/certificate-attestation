@@ -17,8 +17,16 @@ export class UserContactDetailsComponent implements OnInit {
   ngOnInit() {
     this. contactForm = this.formBuilder.group({
      
-      
-      permanent_country : ['', Validators.required],
+      present_country : ['', Validators.required],
+      present_state : ['', Validators.required],
+      present_city :['', Validators.required],
+    present_house_no : ['', Validators.required],
+    present_street_no :['', Validators.required],
+    present_pincode : ['', Validators.required],
+    present_mobile : ['', Validators.required],
+
+    permanent_country : ['', Validators.required],
+
       permanent_state : ['', Validators.required],
       permanent_city :['', Validators.required],
       permanent_house_no : ['', Validators.required],
@@ -29,7 +37,7 @@ export class UserContactDetailsComponent implements OnInit {
   });
   }
   get f() { return this. contactForm.controls; }
-  passportDetail(){
+  contactDetail(){
      this.submitted=true
      this.callApi();
     if(this. contactForm.invalid){

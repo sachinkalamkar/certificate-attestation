@@ -18,7 +18,7 @@ submitted = false;
   constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this. contactForm = this.formBuilder.group ({
+    this.contactForm = this.formBuilder.group ({
       applicant_type : [''],
         full_name : [''],
         sex : [''],
@@ -43,18 +43,16 @@ passportDetail(){
     return
   }
   
-}callApi(){
+}
+callApi(){
   console.log("getCallApi====>");
   console.log("policy======>",this.contactForm.value);
-  this.userservice.personal(this.contactForm.value).subscribe(data=>{
-    console.log("====================>",this.contactForm.value)
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value))
-   
+  
    
 		this.router.navigate(['user-passport-details'])	  
   }
 
-  )}
+
 
 
 isCollapsed: boolean = false;
