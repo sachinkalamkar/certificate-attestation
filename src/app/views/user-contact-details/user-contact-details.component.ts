@@ -29,7 +29,7 @@ export class UserContactDetailsComponent implements OnInit {
   });
   }
   get f() { return this. contactForm.controls; }
-  onSubmit(){
+  passportDetail(){
      this.submitted=true
      this.callApi();
     if(this. contactForm.invalid){
@@ -44,9 +44,10 @@ callApi(){
     console.log("====================>",this.contactForm.value)
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value))
    
+    this.router.navigate(['user-guarantor-details'])
+
   })
 }
-passportDetail(){
-  this.router.navigate(['user-guarantor-details'])
-}
+
+
 }

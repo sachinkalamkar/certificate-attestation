@@ -138,7 +138,7 @@
           <div class="col-sm-7">
               <div class="form-group">
              <label for="exampleFormControlInput1"><b>Passport Number :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="passport_number"formControlName=" passport_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. passport_number.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName=" passport_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. passport_number.errors }" >
              <div *ngIf="submitted && f. passport_number.errors" class="invalid-feedback">
                 <div *ngIf="f. passport_number.errors.required">Passport Number  required</div>
             </div>
@@ -175,6 +175,9 @@
               margin-left: 2%; font-size: 110.02%">Upload Scaned Copy of Passport</h3>
             </div>
        </div>
+       <div class="wrapper">
+        <button type="button" class="btn btn-primary" style="width:20%;">Submit</button>
+     </div>
       </form>
        <br/>
        <br/>
@@ -219,9 +222,7 @@
       </tbody>
     </table>
     <br>
-       <div class="wrapper">
-          <button type="button" class="btn btn-primary" style="width:20%;" (click)="contactDetails()">Submit</button>
-       </div>
+      
        <br/>
     </div>
   </div>

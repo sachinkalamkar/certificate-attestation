@@ -4,7 +4,8 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-appl-form',
@@ -12,10 +13,49 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./user-appl-form.component.scss']
 })
 export class UserApplFormComponent implements OnInit {
+contactForm:FormGroup
+submitted = false;
+  constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
 
-  constructor(private router : Router) { }
+  ngOnInit() {
+    this. contactForm = this.formBuilder.group ({
+      applicant_type : [''],
+        full_name : [''],
+        sex : [''],
+     
+        nationality : [''],
+      
+        date_of_birth :[''],
+       
+        father_name : [''],
+      
+        mother_name : ['']
+     
+    
+  });
+      
+  
+}get f() { return this. contactForm.controls; }
+passportDetail(){
+   this.submitted=true
+   this.callApi();
+  if(this. contactForm.invalid){
+    return
+  }
+  
+}callApi(){
+  console.log("getCallApi====>");
+  console.log("policy======>",this.contactForm.value);
+  this.userservice.personal(this.contactForm.value).subscribe(data=>{
+    console.log("====================>",this.contactForm.value)
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value))
+   
+   
+		this.router.navigate(['user-passport-details'])	  
+  }
 
-  ngOnInit() {}
+  )}
+
 
 isCollapsed: boolean = false;
 iconCollapse: string = 'icon-arrow-up';
@@ -32,10 +72,7 @@ toggleCollapse(): void {
   this.isCollapsed = !this.isCollapsed;
   this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
 }
-passportDetail(){
 
-		this.router.navigate(['user-passport-details'])	  
-}
 
 
 

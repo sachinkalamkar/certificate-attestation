@@ -7,7 +7,7 @@ export class User {
  contact:String;
  email_id:String;
   gender:String;
-  otp:string;
+
   dob:String ;
   contact_status:String
 }
