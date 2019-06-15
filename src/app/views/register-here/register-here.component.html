@@ -115,18 +115,11 @@
        <div class="row">
           <div class="col-sm-6">
              <label for="exampleFormControlSelect2"><b>Nationality :</b></label>
-             <input type="gender" class="form-control" id="exampleFormControlInput1"#nationality="ngModel" [(ngModel)]="userService.selectedUser.nationality" name="nationality"required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !nationality.valid }" >
+             <input type="email" class="form-control" id="exampleFormControlInput1"#nationality="ngModel" [(ngModel)]="userService.selectedUser.nationality" name="nationality"required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !nationality.valid }" >
              <div *ngIf="signUpForm.submitted && !nationality.valid">
                <label class="validation-message">This field is required.</label>
              </div>
             </div>
-            <div class="col-sm-6">
-               <label for="exampleFormControlSelect2"><b>DOB :</b></label>
-               <input type="dob" class="form-control" id="exampleFormControlInput1"#dob="ngModel" [(ngModel)]="userService.selectedUser.dob" name="dob"required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !dob.valid }" placeholder="d/mm/yr">
-               <div *ngIf="signUpForm.submitted && !dob.valid">
-                 <label class="validation-message">This field is required.</label>
-               </div>
-              </div>
        </div>
        <div class="row">
          <div class="col-sm-6">
