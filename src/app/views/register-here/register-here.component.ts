@@ -10,19 +10,58 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register-here',
   templateUrl: './register-here.component.html',
-  styleUrls: ['./register-here.component.scss']
+  styleUrls: ['./register-here.component.scss'],
 })
+
+  
 export class RegisterHereComponent implements OnInit {
   showSucessMessage: boolean;
   serverErrorMessages: string;
   req_id:string;
   otpResponse:string;
   verifyStatus:string;
+  private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
+  private onCaptchaComplete(response: any) {
+  console.log('reCAPTCHA response recieved:');
+  console.log(response.success);
+  console.log(response.token);
+  }
   constructor(public userService: UserService,public router : Router ) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   ngOnInit() {
+     document.getElementById('signUpForm').addEventListener('startpage',signupsForm);
     
-  
+     function signupsForm(e){
+        e.preventDefault();
+        const first_name = document.querySelector('#first_name');
+        const email = document.querySelector('#email');
+        const middle_name = document.querySelector('#middle_name');
+        const last_name = document.querySelector('#last_name');
+        const dob = document.querySelector('#dob');
+        const gender = document.querySelector('#gender');
+        const  nationality = document.querySelector('#nationality');
+        const contact = document.querySelector('#contact');
+
+
+        const captcha = document.querySelector('#g-recaptcha');
+        return this.http.post('/http//127.0.0.1:3000/subscribe',{
+            headers:{
+                'Accept':'application/json',
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify({"first_name":first_name,email,middle_name,last_name,dob,gender,nationality,contact,captcha:captcha})
+        })
+        .then((res)=>res.json())
+        .then((data)=>{
+            console.log(data,"neeli==========>")
+
+        });
+        
+    }
+    var onloadCallback = function() {
+      alert("grecaptcha is ready!");
+    }; 
+    
 
 
 
@@ -167,6 +206,7 @@ startpage(form) {
      return false
    
 }
+
 sendotp(form){
   console.log("contct number",form.value.contact);
   var response;

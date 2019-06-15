@@ -33,8 +33,30 @@ toggleCollapse(): void {
   this.isCollapsed = !this.isCollapsed;
   this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
 }
+currentdesignation(){
+
+  this.router.navigate(['user-current-designation'])	  
+}
 contactDetails(){
 
 		this.router.navigate(['user-dashboard'])	  
+}
+ua1(){
+  this.router.navigate(['user-appl-form'])	  
+}
+ua2(){
+  this.router.navigate(['user-passport-details'])	  
+}
+ua3(){
+  this.router.navigate(['user-contact-details'])	  
+}
+ua4(){
+  this.router.navigate(['user-guarantor-details'])	  
+}
+ua5(){
+  this.router.navigate(['user-current-designation'])	  
+}
+ua6(){
+  this.router.navigate(['user-upload-documents'])	  
 }
 }

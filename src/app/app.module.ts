@@ -8,6 +8,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { ViewUserS1Component } from './views/view-user-s1/view-user-s1.component';
 import { ViewUserS2Component } from './views/view-user-s2/view-user-s2.component';
 import { ViewUserS3Component } from './views/view-user-s3/view-user-s3.component';
