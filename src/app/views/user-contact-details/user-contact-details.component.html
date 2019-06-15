@@ -133,7 +133,7 @@
   <br><br><br><hr>
        <h3 class="text-center"><b></b></h3>
        <div class="wrapper">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+            <form [formGroup]="contactForm" >
        <div class="row">
          <div class="col-sm-6">Permanent Adress</div>
          
@@ -147,7 +147,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlInput1" style="float:left"><b>Country :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="permanent_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="permanent_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
              <div *ngIf="submitted && f.permanent_country.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_country.errors.required">Country required</div>
                 </div>
@@ -157,7 +157,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlSelect1"  style="float:left"><b>Country :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1"  formControlName="present_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
+             <input type="text" class="form-control" id="exampleFormControlInput1"  formControlName="present_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
              <div *ngIf="submitted && f.present_country.errors" class="invalid-feedback">
                     <div *ngIf="f.present_country.errors.required">Country required</div>
                 </div>
@@ -168,7 +168,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlSelect2"  style="float:left"><b>State :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="permanent_state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="permanent_state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }" >
              <div *ngIf="submitted && f.permanent_state.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_state.errors.required">Staterequired</div>
                 </div>
@@ -188,7 +188,7 @@
                           <option value="cromwell">Cromwell</option>
                       </select>
                   
-                  <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="present_state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }" >  
+                  <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="present_state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }" >  
                   <div *ngIf="submitted && f.present_state.errors" class="invalid-feedback">
                         <div *ngIf="f.present_state.errors.required">State required</div>
                     </div>
@@ -198,7 +198,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlSelect2" style="float:left"><b>City :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="permanent_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="permanent_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }" >
              <div *ngIf="submitted && f.permanent_city.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_city.errors.required">Cityrequired</div>
                 </div>
@@ -208,7 +208,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlTextarea1" style="float:left"><b>City:</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="present_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_city.errors }" >  
+             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="present_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_city.errors }" >  
              <div *ngIf="submitted && f.present_city.errors" class="invalid-feedback">
                     <div *ngIf="f.present_city.errors.required">Cityrequired</div>
                 </div>
@@ -218,7 +218,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
              <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="permanent_house_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_house_number.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="permanent_house_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_house_number.errors }" >
              <div *ngIf="submitted && f.permanent_house_number.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_house_number.errors.required">House Number</div>
                 </div>
@@ -228,7 +228,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="present_house_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_number.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="present_house_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_number.errors }" >
               <div *ngIf="submitted && f.present_house_number.errors" class="invalid-feedback">
                     <div *ngIf="f.present_house_number.errors.required">House Number</div>
                 </div>
@@ -238,7 +238,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlTextarea1" style="float:left"><b>Street Number:</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="permanent_street_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_street_number.errors }" >  
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="permanent_street_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_street_number.errors }" >  
               <div *ngIf="submitted && f.permanent_street_number.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_street_number.errors.required">House Number</div>
                 </div>
@@ -249,7 +249,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>Street Number :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="present_street_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_street_number.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="present_street_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_street_number.errors }" >
               <div *ngIf="submitted && f.present_street_number.errors" class="invalid-feedback">
                     <div *ngIf="f.present_street_number.errors.required">House Number</div>
                 </div>
@@ -260,7 +260,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>Pincode :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName=" permanent_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName=" permanent_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }" >
               <div *ngIf="submitted && f. permanent_pincode.errors" class="invalid-feedback">
                     <div *ngIf="f. permanent_pincode.errors.required">House Number</div>
                 </div>
@@ -270,7 +270,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlTextarea1" style="float:left"><b>Pincode:</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="present_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_pincode.errors }" >  
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="present_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_pincode.errors }" >  
               <div *ngIf="submitted && f.present_pincode.errors" class="invalid-feedback">
                     <div *ngIf="f.present_pincode.errors.required">House Number</div>
                 </div>
@@ -281,7 +281,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="permanent_mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_mobile.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="permanent_mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_mobile.errors }" >
               <div *ngIf="submitted && f.permanent_mobile.errors" class="invalid-feedback">
                     <div *ngIf="f.permanent_mobile.errors.required">House Number</div>
                 </div>
@@ -291,7 +291,7 @@
           <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName=" present_mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_mobile.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName=" present_mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_mobile.errors }" >
               <div *ngIf="submitted && f. present_mobile.errors" class="invalid-feedback">
                     <div *ngIf="f .present_mobile.errors.required">House Number</div>
                 </div>
@@ -301,7 +301,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlTextarea1" style="float:left"><b>Email ID:</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">  
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">  
               <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
                     <div *ngIf="f.email_id.errors.required">House Number</div>
                 </div>
@@ -312,7 +312,7 @@
            <div class="col-sm-6">
                 <div class="form-group">
               <label for="exampleFormControlSelect2" style="float:left"><b>Email ID :</b></label>
-              <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" >
+              <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" >
               <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
                     <div *ngIf="f.email_id.errors.required">House Number</div>
                 </div>
@@ -324,6 +324,9 @@
    
           
        </div>
+       <div class="wrapper">
+        <button type="button" class="btn btn-primary" style="width:20%;" (click)="contactDetail()">Submit</button>
+     </div>
     </form>
        <br/>
 

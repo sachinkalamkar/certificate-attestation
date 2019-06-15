@@ -130,14 +130,21 @@
                 </span>
             </div>
       </div>
+<<<<<<< HEAD
   <br><br> <br> <hr>
     
        <form [formGroup]="passportForm" (ngSubmit)="onSubmit()" >
+=======
+  <br><br>
+       <br>
+       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
+       <form [formGroup]="passportForm"  >
+>>>>>>> 4adc87b90a5eac03fa9c2b4fbdaeb186f1c98991
        <div class="row">
           <div class="col-sm-7">
               <div class="form-group">
              <label for="exampleFormControlInput1"><b>Passport Number :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="passport_number"formControlName=" passport_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. passport_number.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName=" passport_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. passport_number.errors }" >
              <div *ngIf="submitted && f. passport_number.errors" class="invalid-feedback">
                 <div *ngIf="f. passport_number.errors.required">Passport Number  required</div>
             </div>
@@ -174,6 +181,9 @@
               margin-left: 2%; font-size: 110.02%">Upload Scaned Copy of Passport</h3>
             </div>
        </div>
+       <div class="wrapper">
+        <button type="button" class="btn btn-primary" style="width:20%;" (click)=" onSubmit()">Submit</button>
+     </div>
       </form>
        <br/>
        <br/>
@@ -218,6 +228,7 @@
       </tbody>
     </table>
     <br>
+<<<<<<< HEAD
        <div class="wrapper">
         
               <button type="button" class="btn btn-primary" style="width:10%;" (click)="userappli()">Back</button> &nbsp;  &nbsp;
@@ -225,6 +236,9 @@
           
    
        </div>
+=======
+      
+>>>>>>> 4adc87b90a5eac03fa9c2b4fbdaeb186f1c98991
        <br/>
     </div>
   </div>

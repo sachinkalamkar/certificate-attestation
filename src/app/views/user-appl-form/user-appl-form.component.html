@@ -2,11 +2,7 @@
 
 
 <style>
-    /* * {box-sizing: border-box;}
-    body { 
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    } */
+  
     .header {
     overflow: hidden;
     /* background-color: green; */
@@ -132,62 +128,87 @@
                 </span>
             </div>
       </div>
-  <br> <br>
-       <br><hr>
-       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3><br><br>
+  <br><br>
+       <br>
+       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
+       <form [formGroup]="contactForm"  >
+
+     
        <div class="row">
+
           <div class="col-sm-7">
+            <div class="form-group">
              <label for="exampleFormControlInput1"><b>User Type :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >
+             <input type=" text" class="form-control" id="exampleFormControlInput1" formControlName="applicant_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  applicant_type.errors }" >
+             <div *ngIf="submitted && f.applicant_type.errors" class="invalid-feedback">
+                <div *ngIf="f.applicant_type.errors.required">Field required</div>
+            </div>
           </div>
-         
+          </div>
           <div class="col-sm-7">
+              <div class="form-group">
              <label for="exampleFormControlSelect1"><b>Name :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="full_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. full_name.errors }" >
+             <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+                <div *ngIf="f.full_name.errors.required">Field required</div>
+            </div>
           </div>
-          
+          </div>
       
        
           <div class="col-sm-7">
+              <div class="form-group">
              <label for="exampleFormControlSelect2"><b>Sex :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >
+             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="sex" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sex.errors }" >
+             <div *ngIf="submitted && f.sex.errors" class="invalid-feedback">
+                <div *ngIf="f.sex.errors.required">Field required</div>
+            </div>
           </div>
-  
-       
-  
-       
-            
-       
-  
-         
+          </div>
               <div class="col-sm-7">
-                  <!-- <label for="exampleFormControlTextarea1"><b>Nationality :</b></label> -->
-                  
-                      <label for="city"><b>Nationality :</b></label>
+                  <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><b>Nationality :</b></label>
+                      <!-- <label for="city"><b>Nationality :</b></label>
                       <select name="city" id="city">
                           <option value="sydney">Sydney</option>
                           <option value="melbourne">Melbourne</option>
                           <option value="cromwell">Cromwell</option>
-                      </select>
+                      </select> -->
                   
-                  <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                  <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nationality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" >
+                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                     <div *ngIf="f.nationality.errors.required">Field required</div>
+                 </div>  
                </div>
-       
+              </div>
           <div class="col-sm-7">
+              <div class="form-group">
              <label for="exampleFormControlSelect2"><b>Date of Birth :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="date_of_birth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date_of_birth.errors }" >
+             <div *ngIf="submitted && f.date_of_birth.errors" class="invalid-feedback">
+                <div *ngIf="f.date_of_birth.errors.required">Field required</div>
+            </div>  
+          </div>
           </div>
           <div class="col-sm-7">
+              <div class="form-group">
              <label for="exampleFormControlTextarea1"><b>Fathers Name:</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >  
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="father_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.father_name.errors }" >
+             <div *ngIf="submitted && f.father_name.errors" class="invalid-feedback">
+                <div *ngIf="f.father_name.errors.required">Field required</div>
+            </div>    
           </div>
-       
+          </div>
        
           <div class="col-sm-7">
+              <div class="form-group">
              <label for="exampleFormControlSelect2"><b>Mothers Name :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" >
+             <input type="text" class="form-control" id="exampleFormControlInput1"  formControlName="mother_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mother_name.errors }" >
+             <div *ngIf="submitted && f.mother_name.errors" class="invalid-feedback">
+                <div *ngIf="f.mother_name.errors.required">Field required</div>
+            </div>    
           </div>
-  
+          </div>
           <div class="col-sm-4">
               <i ripple>
                 <img src="assets/img/upload-logo.png" style="margin-top: -162%;
@@ -199,11 +220,12 @@
               margin-left: 52%;font-size: 130.02%">Upload your document here</h3>
             </div>
        </div>
-       <br/>
        <div class="wrapper">
-          <button type="button" class="btn btn-primary" style="width:10%;" (click)="userdash()">Back</button> &nbsp;  &nbsp;
-          <button type="button" class="btn btn-primary" style="width:10%;" (click)="passportDetail()">Next</button>
-       </div>
+        <button type="button" class="btn btn-primary" style="width:20%;" (click)="passportDetails()">Submit</button>
+     </div>
+      </form>
+       <br/>
+      
        <br/>
     </div>
   </div>

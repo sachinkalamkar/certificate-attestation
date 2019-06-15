@@ -368,8 +368,10 @@ color: #ffffff;
 
             <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b></label>
 
-            <input type="email" class="form-control" id="exampleFormControlInput1" >
-
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" >
+            <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
+                  <div *ngIf="f.email_id.errors.required">House Number</div>
+              </div>
          </div>
 
   

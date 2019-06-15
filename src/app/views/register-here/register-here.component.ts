@@ -250,7 +250,7 @@ resetForm(form: NgForm) {
   contact:'',
   email_id:'',
   gender:'',
-  dob:'',contact_status:'',otp:''
+  dob:'',contact_status:''
   };
   form.resetForm();
   this.serverErrorMessages = '';

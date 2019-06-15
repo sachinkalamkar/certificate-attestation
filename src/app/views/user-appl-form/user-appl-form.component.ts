@@ -4,7 +4,8 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm, Validators } from '@angular/forms';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-appl-form',
@@ -12,29 +13,41 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./user-appl-form.component.scss']
 })
 export class UserApplFormComponent implements OnInit {
+contactForm:FormGroup
+submitted = false;
+  constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
 
-  constructor(private router : Router) { }
-
-  ngOnInit() {}
-
-isCollapsed: boolean = false;
-iconCollapse: string = 'icon-arrow-up';
-
-collapsed(event: any): void {
-  // console.log(event);
+  ngOnInit() {
+    this.contactForm = this.formBuilder.group ({
+      applicant_type : ['',Validators.required],
+        full_name : ['',Validators.required],
+        sex : ['',Validators.required],
+     
+        nationality : ['',Validators.required],
+      
+        date_of_birth :['',Validators.required],
+       
+        father_name : ['',Validators.required],
+      
+        mother_name : ['',Validators.required]
+     
+    
+  });
+      
+  
 }
-
-expanded(event: any): void {
-  // console.log(event);
-}
-
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
-passportDetail(){
-
-		this.router.navigate(['user-passport-details'])	  
+get f() { return this.contactForm.controls; }
+passportDetails(){
+   this.submitted=true
+   
+  if(this.contactForm.invalid){
+    return
+  }
+  console.log("getCallApi====>");
+  console.log("policy======>",this.contactForm.value);
+  
+   
+		this.router.navigate(['user-passport-details'])	
 }
 userdash(){
 

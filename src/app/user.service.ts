@@ -11,16 +11,16 @@ import { HttpHeaders } from '@angular/common/http';
 export class UserService {
   selectedUser: User = {
 
-    first_name:'',
+  first_name:'',
   last_name:'',
   middle_name:'',
   nationality:'',
   contact:'',
   email_id:'',
   gender:'',
-  otp:'',
-  dob:'',
-  contact_status:''
+
+  dob:'',contact_status:''
+  
 
   };
 
@@ -35,7 +35,9 @@ export class UserService {
   }
 
   registration(user: User,contact_status) {
-    return this.http.post('http://127.0.0.1:3000/registration', {'user':user,'contact_status':contact_status});
+    console.log(user);
+
+    return this.http.post('http://127.0.0.1:3000/registration', {'user':user,"contact_status":contact_status});
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -96,6 +98,9 @@ export class UserService {
       return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
     }
     userdashboard(data){
+      return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
+    }
+    personal(data){
       return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
     }
 }
