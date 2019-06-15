@@ -34,10 +34,10 @@ export class UserService {
     return this.http.post('http://document-attestation-backend.herokuapp.com/studentlogin', authCredentials, this.noAuthHeader);
   }
 
-  registration(user: User) {
+  registration(user: User,contact_status) {
     console.log(user);
 
-    return this.http.post('http://127.0.0.1:3000/registration', {'user':user,});
+    return this.http.post('http://127.0.0.1:3000/registration', {'user':user,"contact_status":contact_status});
   }
   setToken(token: string) {
     localStorage.setItem('token', token);

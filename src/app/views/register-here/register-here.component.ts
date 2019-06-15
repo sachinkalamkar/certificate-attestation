@@ -22,15 +22,12 @@ export class RegisterHereComponent implements OnInit {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   ngOnInit() { }
   startpage(form) {
-<<<<<<< HEAD
-    console.log("localStorage.getItem(this.verifyStatus)", localStorage.getItem(this.verifyStatus))
-    if (localStorage.getItem(this.verifyStatus) === 'success') {
-    this.userService.registration(form.value).subscribe(
-=======
+  
+
     console.log("localStorage.getItem(this.verifyStatus)", form.value, localStorage.getItem(this.verifyStatus))
     if (localStorage.getItem(this.verifyStatus) === 'successs') {
     this.userService.registration(form.value,true).subscribe(
->>>>>>> aef2457dd47dcf7cf9243e011cfff2c81eea5840
+
       res => {
 
         this.showSucessMessage = true;
@@ -94,11 +91,7 @@ export class RegisterHereComponent implements OnInit {
       contact: '',
       email_id: '',
       gender: '',
-<<<<<<< HEAD
       dob: '', contact_status: ''
-=======
-      dob: '', contact_status: '', otp: ''
->>>>>>> aef2457dd47dcf7cf9243e011cfff2c81eea5840
     };
     form.resetForm();
     this.serverErrorMessages = '';
