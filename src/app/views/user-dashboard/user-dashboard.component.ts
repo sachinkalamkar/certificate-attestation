@@ -39,6 +39,9 @@ appli(){
 
 		this.router.navigate(['user-appl-form'])	  
 }
+h1(){
 
+  this.router.navigate(['user-dashboard'])	  
+}
 
 }

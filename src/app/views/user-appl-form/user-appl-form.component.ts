@@ -49,10 +49,21 @@ passportDetails(){
    
 		this.router.navigate(['user-passport-details'])	
 }
-userdash(){
+
+home(){
 
   this.router.navigate(['user-dashboard'])	  
 }
+
+passDetail(){
+
+  this.router.navigate(['user-passport-details'])	  
+}
+h1(){
+
+  this.router.navigate(['user-dashboard'])	  
+}
+
 ua1(){
   this.router.navigate(['user-appl-form'])	  
 }
