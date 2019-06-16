@@ -25,8 +25,7 @@ export class ForgotPassComponent implements OnInit {
      
     });
   
-// button ripple effect from @ShawnSauce 's pen https://codepen.io/ShawnSauce/full/huLEH
-/////
+
 
 $(document).ready(function() {
   $(function(){
@@ -148,5 +147,8 @@ onSubmit(){
 }
 resetpass(){
   this.router.navigate(['reset-pass'])
+}
+db(){
+  this.router.navigate(['dashboard'])
 }
 }

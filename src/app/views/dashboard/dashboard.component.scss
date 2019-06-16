@@ -47,6 +47,11 @@ input {
 	background-color: #ffffff;
 	margin-left: -14%
 }
+.limit{
+  width:100%;
+  padding:3%;
+  word-wrap: break-word;
+}
 
 .card-footer {
 	position: unset;
@@ -58,7 +63,7 @@ input {
 	text-align: center;
 }
 
-////////////////log-in //////////////////////////////////
+// log-in page 
 *,
 *:after,
 *:before {
