@@ -271,5 +271,8 @@ toggleCollapse(): void {
   this.isCollapsed = !this.isCollapsed;
   this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
 }
+db(){
+  this.router.navigate(['dashboard'])
+}
 
 }

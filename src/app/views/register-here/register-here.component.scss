@@ -5,6 +5,39 @@
      background-size: 100%;
      height: 30%;
 }
+   
+.header {
+	overflow: hidden;
+	padding: 2%;
+	height: 50%;
+	}
+	.header a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px; 
+	line-height: 25px;
+	border-radius: 4px;
+	}
+	.header a.logo {
+	font-size: 25px;
+	font-weight: bold;
+	}
+	.wrapper {
+	text-align: center;
+	}
+	.button {
+	position: absolute;
+	top: 50%;
+	}
+h2 {
+	width: 100%;
+	font-size: 62px;
+	color: #ffffff;
+}
+
 html, body 
 {
 	position: absolute;
@@ -12,7 +45,7 @@ html, body
 	width: 100%;
 	background:white;
 	color: rgba(0,0,0,0.6);
-	font-family: RobotoDraft,Roboto;
+	font-family: sans-serif;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
