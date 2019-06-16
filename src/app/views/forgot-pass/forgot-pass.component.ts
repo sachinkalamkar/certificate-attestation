@@ -149,4 +149,7 @@ onSubmit(){
 resetpass(){
   this.router.navigate(['reset-pass'])
 }
+db(){
+  this.router.navigate(['dashboard'])
+}
 }

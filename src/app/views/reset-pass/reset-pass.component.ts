@@ -22,8 +22,7 @@ export class ResetPassComponent implements OnInit {
      
     });
 
-// button ripple effect from @ShawnSauce 's pen https://codepen.io/ShawnSauce/full/huLEH
-/////
+
 
 $(document).ready(function() {
   $(function(){
@@ -144,5 +143,8 @@ onSubmit(){
       });
   
   })
+}
+db(){
+  this.router.navigate(['dashboard'])
 }
 }
