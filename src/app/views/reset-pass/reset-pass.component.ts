@@ -10,8 +10,11 @@ import { UserService } from '../../user.service';
   styleUrls: ['./reset-pass.component.scss']
 })
 export class ResetPassComponent implements OnInit {
-
+onchange:File
+files:any[];
+result:any
   resetForm: FormGroup;
+  
   constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -134,6 +137,8 @@ $(document).ready(function() {
   });
  
 }
+
+
 onSubmit(){
   this.userservice.resetpass(this.resetForm.value).subscribe(data=>{
     console.log("forgot password",this.resetForm.value)

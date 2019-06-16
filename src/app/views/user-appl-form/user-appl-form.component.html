@@ -131,7 +131,7 @@
   <br><br>
        <br>
        <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
-       <form [formGroup]="contactForm"  >
+       <form [formGroup]="contactForm" enctype="multipart/form-data" >
 
      
        <div class="row">
@@ -210,22 +210,27 @@
           </div>
           </div>
           <div class="col-sm-4">
-              <i ripple>
+             
+                  <input name="picture" type="file"  id="file1" accept="application/x-zip-compressed,image/*"
+                  (change)="onFileSelected($event)" (change)="preview(file.files)" class="form-control-file"
+                  aria-describedby="fileHelp" capture style="display:none"/>
+
                 <img src="assets/img/upload-logo.png" style="margin-top: -162%;
-                  margin-left: 56%;
-                  height: 89px;
-                  width: 25%;" viewBox="0 0 24 24">
-              </i>
-              <h3 style="color:cornflowerblue ; margin-top: -70%;
-              margin-left: 52%;font-size: 130.02%">Upload your document here</h3>
+                margin-left: 56%;
+                height: 9px;
+                width: 25%;" viewBox="0 0 24 24" id="upfile1" style="cursor:pointer"/> 
+                
+              <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
+              margin-left: 52%;font-size: 130.02%"(click)="onupload()">Upload your document here</button>
+             
             </div>
        </div>
-       <div class="wrapper">
+       <div class="wrapper" >
         <button type="button" class="btn btn-primary" style="width:20%;" (click)="passportDetails()">Submit</button>
      </div>
       </form>
        <br/>
-      
+    
        <br/>
     </div>
   </div>

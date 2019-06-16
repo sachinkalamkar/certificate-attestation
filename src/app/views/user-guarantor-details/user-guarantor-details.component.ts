@@ -43,8 +43,8 @@ export class UserGuarantorDetailsComponent implements OnInit {
 get f() { return this. gurantorForm.controls; }
   onSubmit(){
      this.submitted=true
-     this.  currentDesignation();
-    if(this.gurantorForm .invalid){
+     this.currentDesignation();
+    if(this.gurantorForm.invalid){
       return
     }
   }

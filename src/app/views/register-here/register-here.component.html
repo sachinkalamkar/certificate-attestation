@@ -87,10 +87,9 @@
              <div>
              <input type="email" class="form-control" id="exampleFormControlInput1" #contact="ngModel" [(ngModel)]="userService.selectedUser.contact" name="contact" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !contact.valid }">  
              <div *ngIf="signUpForm.submitted && !contact.valid">
-               <label class="validation-message" >This field is required. </label>
-              
+               <label class="validation-message">This field is required.</label>
              </div>
-             <!-- <button class="btn-link" (click)="sendotp(signUpForm)" >send OTP</button> -->
+             <button class="btn-link" (click)="sendotp(signUpForm)" >send OTP</button>
             </div>
           </div>
        </div>
@@ -121,6 +120,13 @@
                <label class="validation-message">This field is required.</label>
              </div>
             </div>
+            <div class="col-sm-6">
+               <label for="exampleFormControlSelect2"><b>DOB :</b></label>
+               <input type="dob" class="form-control" id="exampleFormControlInput1"#dob="ngModel" [(ngModel)]="userService.selectedUser.dob" name="dob"required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !dob.valid }" placeholder="d/mm/yr">
+               <div *ngIf="signUpForm.submitted && !dob.valid">
+                 <label class="validation-message">This field is required.</label>
+               </div>
+              </div>
        </div>
        <div class="row">
          <div class="col-sm-6">

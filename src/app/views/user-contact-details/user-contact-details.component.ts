@@ -15,6 +15,7 @@ export class UserContactDetailsComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this
     this. contactForm = this.formBuilder.group({
      
       present_country : ['', Validators.required],
@@ -39,21 +40,19 @@ export class UserContactDetailsComponent implements OnInit {
   get f() { return this. contactForm.controls; }
   contactDetail(){
      this.submitted=true
-     this.callApi();
+    
     if(this. contactForm.invalid){
       return
     }
-    
-}
-callApi(){
-  console.log("getCallApi====>");
-  console.log("policy======>",this.contactForm.value);
-  
-   
+    console.log("getCallApi====>");
+    console.log("policy======>",this.contactForm.value);
     this.router.navigate(['user-guarantor-details'])
 
- 
 }
+
+  
+ 
+
 
 
 }

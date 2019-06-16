@@ -269,9 +269,9 @@ color: #ffffff;
   <br><br>
 
      <div class="row">
-<form [formGroup]="contactForm" (ngSubmit)="onsubmit()" >
+<form [formGroup]="gurantorForm" >
         <div class="col-sm-6">
-<div class="form-group">
+          
            <label for="exampleFormControlInput1"><b>Name :</b></label>
 
            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="  guarantor_name " class="form-control" [ngClass]="{ 'is-invalid': submitted && f.   guarantor_name .errors }">
@@ -279,10 +279,8 @@ color: #ffffff;
               <div *ngIf="f.  guarantor_name .errors.required">field required</div>
           </div> 
 
-        </div>
+        
       </div>
-       
-
         <div class="col-sm-6">
             <div class="form-group">
            <label for="exampleFormControlSelect1"><b>Country :</b></label>
@@ -363,9 +361,9 @@ color: #ffffff;
 
 
   
-
          <div class="col-sm-6">
-            <div class="form-group">
+           
+         <div class="form-group">
             <label for="exampleFormControlSelect2"><b>Pincode :</b></label>
 
             <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="  guarantor_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  guarantor_pincode.errors }">

@@ -7,16 +7,61 @@ import { HttpClient,HttpEventType } from '@angular/common/http';
 import { FormGroup, FormBuilder, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 
+
 @Component({
   selector: 'app-user-appl-form',
   templateUrl: './user-appl-form.component.html',
   styleUrls: ['./user-appl-form.component.scss']
 })
 export class UserApplFormComponent implements OnInit {
-contactForm:FormGroup
+contactForm:FormGroup;
+app_form_data:string;
 submitted = false;
-  constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute) { }
+selectedFile: File = null;
+public imagePath;
+imgURL: any;
+public message: string;
+ public serverData:any;
+ verifyStatus: string;
 
+preview(files) {
+  if (files.length === 0)
+    return;
+
+  var mimeType = files[0].type;
+  if (mimeType.match(/image\/.(png|jpeg)$/) == null) {
+    this.message = "Only images are supported.";
+    return;
+  }
+
+  var reader = new FileReader();
+  this.imagePath = files;
+  reader.readAsDataURL(files[0]);
+  reader.onload = (_event) => {
+    this.imgURL = reader.result;
+  }
+}
+  constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute, private http: HttpClient) { }
+  onFileSelected(event) {
+    this.selectedFile = <File>event.target.files[0];
+    console.log(this.selectedFile)
+  }
+  
+  onUpload() {
+
+const fd = new FormData();
+  
+  fd.append('image', this.selectedFile, this.selectedFile.name);
+    
+
+this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
+  data=>{
+
+  }
+);
+      
+
+}
   ngOnInit() {
     this.contactForm = this.formBuilder.group ({
       applicant_type : ['',Validators.required],
@@ -38,6 +83,8 @@ submitted = false;
 }
 get f() { return this.contactForm.controls; }
 passportDetails(){
+var data;
+  var verifyObject
    this.submitted=true
    
   if(this.contactForm.invalid){
@@ -46,7 +93,14 @@ passportDetails(){
   console.log("getCallApi====>");
   console.log("policy======>",this.contactForm.value);
   
-   
+  data= this.contactForm.value
+  console.log("cnjnxmk",data)
+  verifyObject = { "res": data }
+  console.log("verfiying",verifyObject)
+  console.log("contact", verifyObject.res);
+  localStorage.setItem(this.app_form_data,verifyObject.res);
+//  console.log("detailing",localStorage.setItem(this.app_form_data,verifyObject.res))
+ console.log("local storage get",localStorage.getItem(this.app_form_data));
 		this.router.navigate(['user-passport-details'])	
 }
 }
