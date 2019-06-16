@@ -1,5 +1,4 @@
 <style>
-
   /* * {box-sizing: border-box;}
 
   body { 
@@ -15,65 +14,65 @@
     /* background-color: green; */
     padding: 3% 7%;
     height: 10%;
-    }
+  }
 
   .header a {
 
-  float: left;
+    float: left;
 
-  color: black;
+    color: black;
 
-  text-align: center;
+    text-align: center;
 
-  padding: 12px;
+    padding: 12px;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  font-size: 18px; 
+    font-size: 18px;
 
-  line-height: 25px;
+    line-height: 25px;
 
-  border-radius: 4px;
+    border-radius: 4px;
 
   }
 
   .header a.logo {
 
-  font-size: 25px;
+    font-size: 25px;
 
-  font-weight: bold;
+    font-weight: bold;
 
   }
 
   .wrapper {
 
-  text-align: center;
+    text-align: center;
 
   }
 
   .button {
 
-  position: absolute;
+    position: absolute;
 
-  top: 50%;
+    top: 50%;
 
   }
 
 
 
- h2{
+  h2 {
 
-  width: 80%;
+    width: 80%;
 
-height: 176px;
+    height: 176px;
 
-font-family: ProximaNova-Light;
+    font-family: ProximaNova-Light;
 
-font-size: 60.2px;
+    font-size: 60.2px;
 
-font-weight: bold;
+    font-weight: bold;
 
-/* font-style: normal;
+    /* font-style: normal;
 
 font-stretch: normal;
 
@@ -81,27 +80,26 @@ line-height: normal;
 
 letter-spacing: normal; */
 
-color: #ffffff;
+    color: #ffffff;
 
- }
-
+  }
 </style>
 
 <div class="header background">
 
   <div class="row">
 
-     <div class="col-md-3" >
+    <div class="col-md-3">
 
-        <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
+      <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
 
-     </div>
+    </div>
 
-     <div class="col-md-9">
+    <div class="col-md-9">
 
-        <h2 class=""><b>APPLICATION PROCESS</b></h2>
+      <h2 class=""><b>APPLICATION PROCESS</b></h2>
 
-     </div>
+    </div>
 
   </div>
 
@@ -111,290 +109,293 @@ color: #ffffff;
 
 <div style="background-color: #f5f5f5">
 
-  <div class="container" >
+  <div class="container">
     <br><br><br>
 
 
-      <div class="row">
-
-          
-
-          <div class="col-sm-2 col-md-2">
-
-              <a href="./createAcc.html" style="padding-left:0px; color:#4dbab5">Personal Details </a>
-
-          </div>
+    <div class="row">
 
 
 
-          <div class="col-sm-2 col-md-2">
-
-              <span><a style="color:#4dbab5;padding-left:0px;" href="./page5.html">Passport Details</a>
-
-              </span>
-
-          </div>	
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span><a  style="color:#4dbab5;padding-left:0px;" href="./organform.html">Contact Details </a>
-
-              </span>
-
-          </div>
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span><a  style="color:black;padding-left:0px;" href="./page7.html">  Guarantor Details</a>
-
-              </span>
-
-          </div>
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span><a  style="padding-left:0px;color:black" href="./page8.html">Current Designation</a></span>
-
-          </div>
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span><a  style="padding-left:0px;color:black" href="./processComp.html">Upload Documents </a>
-
-              </span>
-
-          </div>
+      <div class="col-sm-2 col-md-2">
+<span (click)="ua1()"> <a  style="padding-left:0px; color:#4dbab5">Personal Details </a></span>
+       
 
       </div>
+
+
+
+      <div class="col-sm-2 col-md-2">
+
+        <span (click)="ua2()"><a style="color:#4dbab5;padding-left:0px;" >Passport Details</a>
+
+        </span>
+
+      </div>
+
+
+
+      <div class="col-sm-2 col-md-2">
+
+        <span (click)="ua3()"><a style="color:#4dbab5;padding-left:0px;" >Contact Details </a>
+
+        </span>
+
+      </div>
+
+
+
+      <div class="col-sm-2 col-md-2">
+
+        <span (click)="ua4()"><a style="color:black;padding-left:0px;" > Guarantor Details</a>
+
+        </span>
+
+      </div>
+
+
+
+      <div class="col-sm-2 col-md-2">
+
+        <span (click)="ua5()"><a style="padding-left:0px;color:black">Current Designation</a></span>
+
+      </div>
+
+
+
+      <div class="col-sm-2 col-md-2">
+
+        <span (click)="ua6()"><a style="padding-left:0px;color:black" >Upload Documents </a>
+
+        </span>
+
+      </div>
+
+    </div>
 
 
 
     <div class="stepwizard">
 
-  
-
-       <div class="stepwizard-row setup-panel"></div>
 
 
-
-          <div  class="stepwizard-step">
-
-              <span style="margin-left:35px;" class="round-tab">
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
+      <div class="stepwizard-row setup-panel"></div>
 
 
 
-          <div class="stepwizard-step">
+      <div class="stepwizard-step">
 
-              <span style="margin-left:35px;" class="round-tab">  
+        <span style="margin-left:35px;"(click)="ua1()" class="round-tab">
 
-                <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fa fa-check" aria-hidden="true"></i>
 
-              </span>
+        </span>
 
-          </div>
-
-
-
-          <div class="stepwizard-step">
-
-              <span style="margin-left:35px;" class="round-tab">
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
+      </div>
 
 
 
-          <div class="stepwizard-step">
+      <div class="stepwizard-step">
 
-              <span style="margin-left:35px;" class="round-tab">
+        <span style="margin-left:35px;"(click)="ua2()" class="round-tab">
 
-                <i class="fa fa-check" aria-hidden="true"></i>
+          <i class="fa fa-check" aria-hidden="true"></i>
 
-              </span>
+        </span>
 
-          </div>
+      </div>
 
-          <div class="stepwizard-step">
 
-              <span style="margin-left:35px;" class="round-tab">
 
-                <i class="fa fa-unCheck" aria-hidden="true"></i>
+      <div class="stepwizard-step">
 
-              </span>
+        <span style="margin-left:35px;" (click)="ua3()"class="round-tab">
 
-          </div>
+          <i class="fa fa-check" aria-hidden="true"></i>
 
-                 
+        </span>
 
-          <div class="stepwizard-step">
+      </div>
 
-              <span style="margin-left:35px;" class="round-tab">
 
-                <i class="fa fa-unCheck" aria-hidden="true"></i>
 
-              </span>
+      <div class="stepwizard-step">
 
-          </div>
+        <span style="margin-left:35px;"(click)="ua4()" class="round-tab">
+
+          <i class="fa fa-check" aria-hidden="true"></i>
+
+        </span>
+
+      </div>
+
+      <div class="stepwizard-step">
+
+        <span style="margin-left:35px;" (click)="ua5()"class="round-tab">
+
+          <i class="fa fa-unCheck" aria-hidden="true"></i>
+
+        </span>
+
+      </div>
+
+
+
+      <div class="stepwizard-step">
+
+        <span style="margin-left:35px;"(click)="ua6()" class="round-tab">
+
+          <i class="fa fa-unCheck" aria-hidden="true"></i>
+
+        </span>
+
+      </div>
 
     </div>
 
-<br><br>
+    <br><br>
 
-     <br> <hr> <br>
+    <br>
+    <hr> <br>
 
-     <h3 class="text-center" style="font-size: 140.02%">Should remain valid for single applicant validity -6 months. Can not apply as guarantor for other applicant.<br> keep only one guarantor.Applicant as Foreign National. </h3>
+    <h3 class="text-center" style="font-size: 140.02%">Should remain valid for single applicant validity -6 months. Can
+      not apply as guarantor for other applicant.<br> keep only one guarantor.Applicant as Foreign National. </h3>
 
-  <br><br>
+    <br><br>
 
-     <div class="row">
-<form [formGroup]="contactForm" (ngSubmit)="onsubmit()" >
+    <div class="row">
+      <form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+        
         <div class="col-sm-6">
-<div class="form-group">
-           <label for="exampleFormControlInput1"><b>Name :</b></label>
+          <div class="form-group">
+            <label for="exampleFormControlInput1"><b>Name :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="  guarantor_name " class="form-control" [ngClass]="{ 'is-invalid': submitted && f.   guarantor_name .errors }">
-           <div *ngIf="submitted && f.  guarantor_name .errors" class="invalid-feedback">
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="  guarantor_name "
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.   guarantor_name .errors }">
+            <div *ngIf="submitted && f.  guarantor_name .errors" class="invalid-feedback">
               <div *ngIf="f.  guarantor_name .errors.required">field required</div>
-          </div> 
+            </div>
 
+          </div>
         </div>
-      </div>
-       
-
+    
         <div class="col-sm-6">
-            <div class="form-group">
-           <label for="exampleFormControlSelect1"><b>Country :</b></label>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><b>Country :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" formControlName=" guarantor_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  guarantor_country.errors }">
-           <div *ngIf="submitted && f. guarantor_country.errors" class="invalid-feedback">
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName=" guarantor_country"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  guarantor_country.errors }">
+            <div *ngIf="submitted && f. guarantor_country.errors" class="invalid-feedback">
               <div *ngIf="f. guarantor_country.errors.required">field required</div>
-          </div> 
+            </div>
 
-        </div>
+          </div>
 
-        </div>
-
-        <div class="col-sm-6">
-            <div class="form-group">
-           <label for="exampleFormControlSelect2"><b>State :</b></label>
-
-           <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_state.errors }">
-           <div *ngIf="submitted && f.guarantor_state.errors" class="invalid-feedback">
-              <div *ngIf="f. guarantor_state.errors.required">field required</div>
-          </div> 
-
-        </div>
-        </div>
-
-
-
-
-        <div class="col-sm-6">
-            <div class="form-group">
-            <label for="exampleFormControlSelect1"><b>City :</b></label>
-
-            <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="guarantor_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_city.errors }">
-            <div *ngIf="submitted && f.guarantor_city.errors" class="invalid-feedback">
-               <div *ngIf="f. guarantor_city.errors.required">fieldrequired</div>
-           </div> 
-         </div>
-
-        </div>
-
-         <div class="col-sm-6">
-            <div class="form-group">
-            <label for="exampleFormControlSelect2"><b>House Number :</b></label>
-
-            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_house_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_house_no.errors }">
-            <div *ngIf="submitted && f.guarantor_house_no.errors" class="invalid-feedback">
-               <div *ngIf="f. guarantor_house_no.errors.required">fieldrequired</div>
-           </div> 
-
-         </div>
-
-         </div>
-
-
-
-        <div class="col-sm-6">
-            <div class="form-group">
-            <label for="exampleFormControlSelect1"><b>Street Number :</b></label>
-
-            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_street_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_street_no.errors }">
-            <div *ngIf="submitted && f.guarantor_street_no.errors" class="invalid-feedback">
-               <div *ngIf="f. guarantor_street_no.errors.required">field required</div>
-           </div> 
-         </div>
         </div>
       
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2"><b>State :</b></label>
 
-         <div class="col-sm-6">
-            <div class="form-group">
-            <label for="exampleFormControlSelect2"><b>Mobile Number :</b></label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_state"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_state.errors }">
+            <div *ngIf="submitted && f.guarantor_state.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_state.errors.required">field required</div>
+            </div>
 
-            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName=" guarantor_contact" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_contact.errors }">
-            <div *ngIf="submitted && f. guarantor_contact.errors" class="invalid-feedback">
-               <div *ngIf="f. guarantor_contact.errors.required">field required</div>
-           </div> 
-         </div>
-         </div>
-
-
-  
-
-         <div class="col-sm-6">
-            <div class="form-group">
-            <label for="exampleFormControlSelect2"><b>Pincode :</b></label>
-
-            <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="  guarantor_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  guarantor_pincode.errors }">
-            <div *ngIf="submitted && f. guarantor_pincode.errors" class="invalid-feedback">
-               <div *ngIf="f. guarantor_pincode.errors.required">field required</div>
-           </div> 
-
-         </div>
-
-         </div>
-         <div class="wrapper">
-
-          <button type="button" class="btn btn-primary" style="width:20%;" (click)="onSubmit()">Submit</button>
-  
-       </div>
-       
-
-        </form>
+          </div>
         </div>
 
-     <br/>
 
-     <div class="wrapper">
-  
-      <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactdetail()">Back</button> &nbsp;  &nbsp;
-        <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentDesignation()">Next</button>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><b>City :</b></label>
 
-     </div>
-   
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_city"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_city.errors }">
+            <div *ngIf="submitted && f.guarantor_city.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_city.errors.required">fieldrequired</div>
+            </div>
+          </div>
 
-     <br/>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2"><b>House Number :</b></label>
+
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_house_no"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_house_no.errors }">
+            <div *ngIf="submitted && f.guarantor_house_no.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_house_no.errors.required">fieldrequired</div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"><b>Street Number :</b></label>
+
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="guarantor_street_no"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_street_no.errors }">
+            <div *ngIf="submitted && f.guarantor_street_no.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_street_no.errors.required">field required</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2"><b>Mobile Number :</b></label>
+
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName=" guarantor_contact"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f. guarantor_contact.errors }">
+            <div *ngIf="submitted && f. guarantor_contact.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_contact.errors.required">field required</div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="exampleFormControlSelect2"><b>Pincode :</b></label>
+
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="  guarantor_pincode"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  guarantor_pincode.errors }">
+            <div *ngIf="submitted && f. guarantor_pincode.errors" class="invalid-feedback">
+              <div *ngIf="f. guarantor_pincode.errors.required">field required</div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </form>
+    </div>
+
+    <br />
+
+    <div class="wrapper">
+
+      <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactdetail()">Back</button> &nbsp;
+      &nbsp;
+      <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentDesignation()">Next</button>
+
+    </div>
+
+
+    <br />
 
   </div>
 
 </div>
-
-
