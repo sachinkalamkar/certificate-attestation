@@ -1,93 +1,73 @@
- <div class="animated fadeIn">
+<style>
+  </style>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-xs-12">
-        <div class="row-md-12">
-          <!-- <div class="img-responsive background" -->
-          <div class=" img-responsive background">
-
-            <div class="card-body">
-              <img style="margin-left:95px ;margin-top:80px ;margin-bottom: 30px " src="assets/img/mlogo1.png"
-                alt="Maharashtra Shashan " />
-
-              <h2 style="margin-left:95px; margin-top:80px;"> Higher & Technical Education Department <b>Government of
-                  Maharashtra</b></h2>
-
-            </div>
-
-            <div class="login" style="margin-right:4%;margin-top:-18% ;border-radius: 3%; ">
-
+  <div class="jumbotron backgroundImg" style="height:50%;width:100%;">
+     <div class="row">
+        <div class="col-sm-6">
+           <div style="margin:4%" >
+              <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan" />
+              <h2 style="word-wrap: break-word;">Higher & Technical Education Department <b>Government of Maharashtra</b></h2>
+           </div>
+        </div>
+        <div class="col-sm-6">
+           <div class="login">
               <h3 style="margin-left:4%">Welcome to MahaIT</h3>
               <!-- <span>Sign in with your Google Account</span> -->
               <form #signInForm="ngForm">
-                <div id="u" class="form-group">
-                  <input id="username" spellcheck=false class="form-control" name="email_id" type="text"
+                 <div id="u" class="form-group">
+                    <input id="username" spellcheck=false class="form-control" name="email_id" type="text"
                     [(ngModel)]="model.email_id" style="margin-left:0 ;margin-top:-10%" size="8" alt="login"
                     required="">
-                  <span class="form-highlight"></span>
-                  <span class="form-bar"></span>
-                  <label for="username" class="float-label">Email</label>
-                  <p class="erroru">
-                    Username is required
-                    <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24h-24z" fill="none" />
-                        <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                    </i>
-                  </p>
-                </div>
-                <div id="p" class="form-group">
-                  <input id="password" class="form-control" spellcheck=false name="password" type="password"
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="username" class="float-label">Email</label>
+                    <p class="erroru">
+                       Username is required
+                       <i>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                             <path d="M0 0h24v24h-24z" fill="none" />
+                             <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                          </svg>
+                       </i>
+                    </p>
+                 </div>
+                 <div id="p" class="form-group">
+                    <input id="password" class="form-control" spellcheck=false name="password" type="password"
                     [(ngModel)]="model.password" style="margin-left:0" size="8" alt="login" required="">
-                  <span class="form-highlight"></span>
-                  <span class="form-bar"></span>
-                  <label for="password" class="float-label">Password</label>
-                  <p class="errorp">
-                    Password is required
-                    <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24h-24z" fill="none" />
-                        <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                    </i>
-                  </p>
-                </div>
-                <div class="row"></div>
-                <div class="form-group">
-                
-                    <input type="checkbox" id="rem">
-                    <div class="col-md-6"><label for="rem">Remember me </label></div>
-                    <div class="col-md-6"><button type="button" class="btn btn-block btn-link" (click)="forgotpass()"
-                        style="margin-left:28%"> Forgot Password? </button></div>
-                  </div>
-                  <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top: 3%" ripple
-                    (click)="onSubmit()">SIGN
-                    IN</button>
-
-                  <br>
-                  <p style="margin-top:18%">New User? </p>
-                  <button type="button" style="margin-top:-6% " class="btn btn-block btn-link"
+                    <span class="form-highlight"></span>
+                    <span class="form-bar"></span>
+                    <label for="password" class="float-label">Password</label>
+                    <p class="errorp">
+                       Password is required
+                       <i>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                             <path d="M0 0h24v24h-24z" fill="none" />
+                             <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                          </svg>
+                       </i>
+                    </p>
+                 </div>
+                 <div class="row">
+                    <div class="form-group">
+                       <div class="col-md-6"></div>
+                       <div class="col-md-6">
+                          <button type="button" class="btn btn-block btn-link" (click)="forgotpass()"> Forgot Password? </button>
+                       </div>
+                    </div>
+                 </div>
+                 <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top: 3%" ripple
+                    (click)="onSubmit()">SIGN IN</button>
+                 <br>
+                 <p style="margin-top:18%">New User? </p>
+                 <button type="button" style="margin-top:-6% " class="btn btn-block btn-link"
                     (click)="registerhere()">Register Here</button>
-<br/>
-                    <!-- <button type="button" style="margin-top:-6% " class="btn btn-block btn-link"
-                    (click)="registerhere22()">Register Here2</button> -->
+                 <br/>
               </form>
-
-            </div>
-
-
-
-
-          </div>
-
+           </div>
         </div>
-
-      </div>
-    </div>
-
-
-    <div class="row" style="background-color: #f5f5f5 ">
+     </div>
+  </div>
+  <div class="row" style="background-color: #f5f5f5 ">
 
       <span style="text-align:centre">
         <!-- <h3>Try Your <b>CERTIFICATE ATTESTATION & VERIFICATION PROCESS </b></h3> -->
@@ -113,10 +93,3 @@
 
       </span>
     </div>
-
-
-
-
-</div> 
-
-

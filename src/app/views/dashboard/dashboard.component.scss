@@ -25,18 +25,14 @@
     color: white;
   }
 
-  // .card-body{
-   
-    
-  // }
-   .background{
+
+   .backgroundImg{
      background-image: url("assets/img/lawyer-today1.png");
-    // opacity: 0.7;
-  //   filter: alpha(opacity=50); /* For IE8 and earlier */
+ 
    
     background-repeat: no-repeat;
      background-size: cover;
-//  background-image: linear-gradient(100deg,#6814cc,#2772fb) ;
+
     height: -webkit-fill-available; 
    // height:70%
 }
@@ -49,15 +45,12 @@
 
 
    h2{
-    width: 60%;
-  height: 176px;
-  font-family: ProximaNova-Light;
+    width: 100%;
+  // height: 176px;
+  
   font-size: 73.2px;
-  //font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  font-weight: bold;
+ 
   color: #ffffff;
    }
 
@@ -154,7 +147,7 @@ position: relative;
     margin: 40px auto 80px auto;
     width: 390px;
     height: 393px;
-    border-radius: 3px;
+    border-radius: 4px;
     background: white;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.26);
     overflow: hidden;
