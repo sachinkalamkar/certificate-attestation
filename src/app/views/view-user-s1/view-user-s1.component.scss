@@ -10,9 +10,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background:white;
+  background-color:white;
   color: rgba(0,0,0,0.6);
-  font-family: RobotoDraft,Roboto;
+  font-family: sans-serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -40,31 +40,40 @@
   //============================ progress bar
   body {
     margin-top:40px;
+    background-color: #f5f5f5;
   }
   .stepwizard-step p {
     margin-top: 5px;
+    background-color: #f5f5f5;
   }
   .stepwizard-row {
     display: table-row;
+    background-color: #f5f5f5;
   }
   .stepwizard {
     display: table;
     width: 100%;
     position: relative;
+    background-color: #f5f5f5;
+
   }
   .stepwizard-step button[disabled] {
     opacity: 1 !important;
     filter: alpha(opacity=100) !important;
   }
-  .stepwizard-row:before {
-    top: 14px;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    /* z-order: 0; */
+  // .stepwizard-row:before {
+  //   top: 14px;
+  //   bottom: 0;
+  //   position: absolute;
+  //   content: " ";
+  //   width: 100%;
+  //   height: 1px;
+  //   background-color: #f5f5f5;
+  //   /* z-order: 0; */
+  // }
+  .bg{
+    background-color: #f5f5f5;
+
   }
   .custombutton{
   width: 180px;
@@ -79,14 +88,15 @@
     /* background-color: #52b093 */
     }
   .round-tab {
-    width: 25px;
-    height: 25px;
-    line-height: 22px;
+    width: 40px;
+    height: 40px;
+    line-height: 12px;
     display: inline-block;
-    border-radius: 25px;
-    background: #fff;
-    border: 2px solid #34bc9b;
-    color: #34bc9b;
+    border-radius: 45px;
+    // background-color: #f5f5f5; 
+    background-color:#1386F6; 
+      //  border: 2px solid #34bc9b;
+    // color: #34bc9b;
     z-index: 2;
     position: absolute;
     left: 0;
@@ -150,7 +160,7 @@
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #888;
     width:70%;
   }
   
@@ -227,10 +237,6 @@
     
   }
   
-  
-  
-  
-  
   .btn-group button {
   background-color: #52b093; /* Green background */
   border: 2px solid #aaaaaa; /* Green border */
@@ -241,7 +247,6 @@
   border-radius: 20px;
   }
   #cancel {
-  
   background-color:lightgray;
   border: 2px solid #aaaaaa;
   }
@@ -252,13 +257,5 @@
   display: table;
   }
   
-  /* #home{
-    color:white;
-    font-family: ProximaNova;
-    font-size: 18px;
-    font-weight: normal;
-    font-style: normal;
-    margin-bottom: 10px;
   
-  } */
   
