@@ -100,6 +100,10 @@ import { UserContactDetailsComponent } from './views/user-contact-details/user-c
 import { UserGuarantorDetailsComponent } from './views/user-guarantor-details/user-guarantor-details.component';
 import { UserCurrentDesignationComponent } from './views/user-current-designation/user-current-designation.component';
 import { UserUploadDocumentsComponent } from './views/user-upload-documents/user-upload-documents.component';
+import { EmailOtpComponent } from './views/email-otp/email-otp.component';
+import { UserProfileComponent } from './views/user-profile/user-profile.component';
+import { UserMandatoryDocumentsComponent } from './views/user-mandatory-documents/user-mandatory-documents.component';
+import { UserSelectDateComponent } from './views/user-select-date/user-select-date.component';
 
 // import{MatFormFieldModule,MatDatepickerModule, MatNativeDateModule, MatListModule,MatListItem,MatNavList}from'@angular/material';
 
@@ -171,7 +175,7 @@ import { UserUploadDocumentsComponent } from './views/user-upload-documents/user
     UserApplFormComponent,
    
     AdminAppComponent,AdminAddAccountComponent,DatepickerComponent, UserDashboardComponent, UserPassportDetailsComponent, UserContactDetailsComponent, UserGuarantorDetailsComponent, UserCurrentDesignationComponent, UserUploadDocumentsComponent
-    ,ViewUserS1Component, ViewUserS2Component, ViewUserS3Component, ViewUserS4Component, ViewUserS5Component, ViewUserS6Component
+    ,ViewUserS1Component, ViewUserS2Component, ViewUserS3Component, ViewUserS4Component, ViewUserS5Component, ViewUserS6Component, EmailOtpComponent, UserProfileComponent, UserMandatoryDocumentsComponent, UserSelectDateComponent
     
    
     
