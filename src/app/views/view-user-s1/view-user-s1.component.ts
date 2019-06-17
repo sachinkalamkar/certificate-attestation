@@ -41,6 +41,9 @@ s2(){
 
   this.router.navigate(['view-user-s2'])	  
 }
+appli(){
+  this.router.navigate(['user-dashboard'])
+}
 home(){
   this.router.navigate(['user-dashboard'])
 }

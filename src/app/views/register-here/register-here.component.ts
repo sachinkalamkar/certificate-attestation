@@ -21,6 +21,7 @@ export class RegisterHereComponent implements OnInit {
   otpResponse:string;
   verifyStatus:string;
   resetForm:FormGroup
+  submitted = false;
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
@@ -31,8 +32,8 @@ export class RegisterHereComponent implements OnInit {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
   ngOnInit() {
-    if(localStorage.getItem(this.verifyStatus)==='successs'){
-    this.resetForm= this.formbuilder.group ({
+    
+    this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
       middle_name:[''],
@@ -41,54 +42,59 @@ export class RegisterHereComponent implements OnInit {
       email_id:[''],
       gender:[''],
       password:[''],
-      confirm_password:[''],
+      confirm_password:[''],otp:[''],
       dob:[''],contact_status:true
    });
-  } 
-  else
-  return false
+  
     
-     document.getElementById('signUpForm').addEventListener('startpage',signupsForm);
+    //  document.getElementById('signUpForm').addEventListener('startpage',signupsForm);
     
-     function signupsForm(e){
-        e.preventDefault();
-        const first_name = document.querySelector('#first_name');
-        const email = document.querySelector('#email');
-        const middle_name = document.querySelector('#middle_name');
-        const last_name = document.querySelector('#last_name');
-        const dob = document.querySelector('#dob');
-        const gender = document.querySelector('#gender');
-        const  nationality = document.querySelector('#nationality');
-        const contact = document.querySelector('#contact');
+    //  function signupsForm(e){
+    //     e.preventDefault();
+    //     const first_name = document.querySelector('#first_name');
+    //     const email = document.querySelector('#email');
+    //     const middle_name = document.querySelector('#middle_name');
+    //     const last_name = document.querySelector('#last_name');
+    //     const dob = document.querySelector('#dob');
+    //     const gender = document.querySelector('#gender');
+    //     const  nationality = document.querySelector('#nationality');
+    //     const contact = document.querySelector('#contact');
 
 
-        const captcha = document.querySelector('#g-recaptcha');
-        return this.http.post('/http//127.0.0.1:3000/subscribe',{
-            headers:{
-                'Accept':'application/json',
-                'Content-type':'application/json'
-            },
-            body:JSON.stringify({first_name,email,middle_name,last_name,dob,gender,nationality,contact,captcha:captcha})
-        })
-        .then((res)=>res.json())
-        .then((data)=>{
-            console.log(data,"neeli==========>")
+    //     const captcha = document.querySelector('#g-recaptcha');
+    //     return this.http.post('/http//127.0.0.1:3000/subscribe',{
+    //         headers:{
+    //             'Accept':'application/json',
+    //             'Content-type':'application/json'
+    //         },
+    //         body:JSON.stringify({first_name,email,middle_name,last_name,dob,gender,nationality,contact,captcha:captcha})
+    //     })
+    //     .then((res)=>res.json())
+    //     .then((data)=>{
+    //         console.log(data,"neeli==========>")
 
-        });
+    //     });
         
-    }
-    var onloadCallback = function() {
-      alert("grecaptcha is ready!");
-    }; 
+    // }
+    // var onloadCallback = function() {
+    //   alert("grecaptcha is ready!");
+    // }; 
     
 
 
 
 
 }
+get f() { return this.resetForm.controls; }
 startpage() {
-this.userservice.registration(this.resetForm.value).subscribe(res => {
+  this.submitted=true
    
+  if(this.resetForm.invalid){
+    return
+  }
+   if(localStorage.getItem(this.verifyStatus)==='successs'){ 
+this.userservice.registration(this.resetForm.value).subscribe(res => {
+ 
   this.resetForm = this.formbuilder.group({
       first_name:[''],
       last_name:[''],
@@ -99,11 +105,15 @@ this.userservice.registration(this.resetForm.value).subscribe(res => {
       gender:[''],
       password:[''],
       confirm_password:[''],
+      otp:[''],
       dob:[''],contact_status:true
         });
     
   })
   this.router.navigate(['dashboard'])
+} 
+  else
+  return false
 }
 
 sendotp(){

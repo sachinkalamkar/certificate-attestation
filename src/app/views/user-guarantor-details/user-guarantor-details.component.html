@@ -264,7 +264,7 @@ letter-spacing: normal; */
     <br><br>
 
     <div class="row">
-      <form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+      <form [formGroup]="gurantorForm">
         
         <div class="col-sm-6">
           <div class="form-group">
@@ -383,18 +383,18 @@ letter-spacing: normal; */
 
           <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactdetail()">Back</button> &nbsp;
           &nbsp;
-          <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentDesignation()">Next</button>
+          <button type="button" class="btn btn-primary" style="width:10%;" (click)="onSubmit()">Next</button>
     
         </div>
     
 
       </form>
-    </div>
+   
 
-    <br />
+    <br>
 
 
-    <br />
+  
 
   </div>
 

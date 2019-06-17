@@ -197,22 +197,15 @@
        <div class="col-md-9">
   
   
-  
-          <h2 class=""><b>APPLICATION PROCESS</b></h2>
-  
-  
-  
-       </div>
-  
-  
-  
-    </div>
-  
-  
+<h2 class=""><b>APPLICATION PROCESS</b></h2>
   
   </div>
-
+  
 </div>
+  
+</div>
+
+
 
 <!-- <br><br><br><br> -->
 
@@ -282,17 +275,12 @@
 
       </div>
 
+<div class="stepwizard">
 
-
-    <div class="stepwizard">
+  <div class="stepwizard-row setup-panel">
 
   
-
-       <div class="stepwizard-row setup-panel"></div>
-
-
-
-          <div  class="stepwizard-step">
+ <div  class="stepwizard-step">
 
               <span style="margin-left:35px;" (click)="ua1()"class="round-tab">
 
@@ -304,7 +292,7 @@
 
 
 
-          <div class="stepwizard-step">
+ <div class="stepwizard-step">
 
               <span style="margin-left:35px;"(click)="ua2()" class="round-tab">  
 
@@ -349,11 +337,11 @@
           </div>
   
   
+        </div>
   
+      </div>
   
-  
-  
-  
+  <form [formGroup]="contactForm">
           <div class="col-sm-6">
   
   
@@ -422,28 +410,22 @@
   
   
   
-  </div>
-  <input type="hidden" formControlName="test">
-       <div class="wrapper">
   
-          <button type="button" class="btn btn-primary" style="width:10%;" (click)="guarantordetail()">Back</button> &nbsp;  &nbsp;
+  <input type="hidden" formControlName="test">
+      
+  <div class="wrapper">
+  
+    <button type="button" class="btn btn-primary" style="width:10%;" (click)="guarantordetail()">Back</button> &nbsp;  &nbsp;
     
-            <button type="button" class="btn btn-primary" style="width:10%;" (click)="uploadDocument()">Next</button>
+      <button type="button" class="btn btn-primary" style="width:10%;" (click)="uploadDocument()">Next</button>
     
     
     
          </div>
       </form>
   
-       <br/>
+     
   
-  
-  
-       
-  
-  
-  
-       <br/>
   
   
   
