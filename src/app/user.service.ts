@@ -9,20 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  selectedUser: User = {
-
-  first_name:'',
-  last_name:'',
-  middle_name:'',
-  nationality:'',
-  contact:'',
-  email_id:'',
-  gender:'',
-
-  dob:'',contact_status:''
-  
-
-  };
+ 
 
   badgeCount: number;
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
@@ -34,10 +21,10 @@ export class UserService {
     return this.http.post('http://document-attestation-backend.herokuapp.com/studentlogin', authCredentials, this.noAuthHeader);
   }
 
-  registration(user: User,contact_status) {
+  registration(user) {
     console.log(user);
 
-    return this.http.post('http://127.0.0.1:3000/registration', {'user':user,"contact_status":contact_status});
+    return this.http.post('http://127.0.0.1:3000/registration',{'user':user});
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -82,18 +69,7 @@ export class UserService {
     verifyotp(otp,request){
       return this.http.post('http://127.0.0.1:3000/verifyOtp',{'otp':otp,'request':request});
     }
-    contact(contracts){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',contracts)
-    }
-    gurantor(gurantor){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',gurantor)
-    }
-    passport(passport){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',passport)
-    }
-    designation(designation){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',designation)
-    }
+    
     uploaddoc(data){
       return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
     }

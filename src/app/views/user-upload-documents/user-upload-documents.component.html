@@ -9,18 +9,12 @@
   font-family: Arial, Helvetica, sans-serif;
 
   } */
-
   .header {
-
-  overflow: hidden;
-
-  /* background-color: green; */
-
-  padding: 8% 7%;
-
-  height: 30%;
-
-  }
+    overflow: hidden;
+    /* background-color: green; */
+    padding: 3% 7%;
+    height: 10%;
+    }
 
   .header a {
 
@@ -104,7 +98,7 @@ color: #ffffff;
 
      <div class="col-md-9">
 
-        <h2 class=""><b>Application Process</b></h2>
+        <h2 class=""><b>APPLICATION PROCESS</b></h2>
 
      </div>
 
@@ -118,7 +112,7 @@ color: #ffffff;
 
   <div class="container" >
 
-
+    <br><br><br>
 
       <div class="row">
 
@@ -252,7 +246,7 @@ color: #ffffff;
 
               <span style="margin-left:35px;" class="round-tab">
 
-                <i class="fa fa-unCheck" aria-hidden="true"></i>
+                <i class="fa fa-check" aria-hidden="true"></i>
 
               </span>
 
@@ -262,32 +256,37 @@ color: #ffffff;
 
 <br><br>
 
-     <br>
+     <br><hr> <br> <br>
 
      <h3 class="text-center"></h3>
-
+<form [formGroup]="uploadForm">
      <div class="row">
 
        <div class="row-sm-12">
 
         <div class="col-sm-12">
-
+       <div class ="form-group">
            <label for="exampleFormControlInput1"><b>Certificate Number :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
-
+           <input type="email" id="exampleFormControlInput1"  formControlName="certificate_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }" >
+           <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
+              <div *ngIf="f.certificate_no.errors.required">Expiry Date required</div>
+          </div>
         </div>
 
-       
+      </div>
 
         <div class="col-sm-12">
-
+            <div class ="form-group">
            <label for="exampleFormControlSelect1"><b>Name of Examination :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
+           <input type="email"id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }" >
+           <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
+              <div *ngIf="f.name_of_exam.errors.required">Expiry Date required</div>
+          </div>
 
         </div>
-
+        </div>
        </div>
 
 
@@ -295,21 +294,27 @@ color: #ffffff;
        <div class="row-sm-12">
 
         <div class="col-sm-12">
-
+            <div class ="form-group">
            <label for="exampleFormControlSelect2"><b>Year :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
+           <input type="email"  id="exampleFormControlInput1" formControlName="year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. year .errors }" >
+           <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+              <div *ngIf="f.year.errors.required">Expiry Date required</div>
+          </div>
 
+        </div>
         </div>
 
 
-
         <div class="col-sm-12">
-
+            <div class ="form-group">
             <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b></label>
 
-            <input type="email" class="form-control" id="exampleFormControlInput1" >
-
+            <input type="email"  id="exampleFormControlInput1" formControlName="name_of_institute" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }" >
+            <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
+               <div *ngIf="f. name_of_institute.errors.required">Expiry Date required</div>
+           </div>
+            </div>
          </div>
 
         </div>
@@ -339,7 +344,7 @@ color: #ffffff;
           </div>
 
      </div>
-
+    </form>
      <br/>
 
      <br/>
@@ -470,9 +475,9 @@ color: #ffffff;
 
           <td> 30.05.2019</td>
 
-          <td>Click here to Upload</td>
+          <td class="btn btn-link">Click here to Upload</td>
 
-          <td>view document</td>
+          <td >view document</td>
 
           
 
@@ -492,7 +497,7 @@ color: #ffffff;
 
           <td>Aadhar Card.jpg</td>
 
-          <td>view document</td>
+          <td >view document</td>
 
           
 
@@ -555,8 +560,8 @@ color: #ffffff;
 
 
      <div class="wrapper">
-
-        <button type="button" class="btn btn-primary" style="width:20%;" (click)="contactDetails()">Submit</button>
+      <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentdesignation()">Back</button> &nbsp;  &nbsp;
+        <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactDetails()">Submit</button>
 
      </div>
 

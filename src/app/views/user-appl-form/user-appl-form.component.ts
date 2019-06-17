@@ -90,17 +90,43 @@ var data;
   if(this.contactForm.invalid){
     return
   }
-  console.log("getCallApi====>");
+  
   console.log("policy======>",this.contactForm.value);
   
   data= this.contactForm.value
   console.log("cnjnxmk",data)
   verifyObject = { "res": data }
-  console.log("verfiying",verifyObject)
-  console.log("contact", verifyObject.res);
+  
   localStorage.setItem(this.app_form_data,verifyObject.res);
-//  console.log("detailing",localStorage.setItem(this.app_form_data,verifyObject.res))
- console.log("local storage get",localStorage.getItem(this.app_form_data));
-		this.router.navigate(['user-passport-details'])	
+
+ var response=localStorage.getItem(this.app_form_data)
+
+		this.router.navigate(['user-passport-details'],{ queryParams :{"obj":JSON.stringify(verifyObject.res),si:true}});
 }
+userdash(){
+
+  this.router.navigate(['user-dashboard'])	  
+}
+ua1(){
+  this.router.navigate(['user-appl-form'])	  
+}
+ua2(){
+  this.router.navigate(['user-passport-details'])	  
+}
+ua3(){
+  this.router.navigate(['user-contact-details'])	  
+}
+ua4(){
+  this.router.navigate(['user-guarantor-details'])	  
+}
+ua5(){
+  this.router.navigate(['user-current-designation'])	  
+}
+ua6(){
+  this.router.navigate(['user-upload-documents'])	  
+}
+
+
+
+
 }

@@ -6,8 +6,8 @@
     .header {
     overflow: hidden;
     /* background-color: green; */
-    padding: 8% 7%;
-    height: 30%;
+    padding: 3% 7%;
+    height: 10%;
     }
     .header a {
     float: left;
@@ -50,41 +50,41 @@
           <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
        </div>
        <div class="col-md-9">
-          <h2 class=""><b>Application Process</b></h2>
+          <h2 class="" style="text-align:center ; "><b>APPLICATION PROCESS</b></h2>
        </div>
     </div>
   </div>
-  <!-- <br><br><br><br> -->
+ 
   <div style="background-color: #f5f5f5">
     <div class="container" >
-  
+  <br><br><br>
         <div class="row">
             
             <div class="col-sm-2 col-md-2">
-                <a href="./createAcc.html" style="padding-left:0px; color:#4dbab5">Personal Details </a>
+              <span (click)="ua1()" > <a  style="padding-left:0px; color:black">Personal Details </a></span> 
             </div>
   
             <div class="col-sm-2 col-md-2">
-                <span><a style="color:black;padding-left:0px;" href="./page5.html">Passport Details</a>
+                <span (click)="ua2()"><a style="color:black;padding-left:0px;" >Passport Details</a>
                 </span>
             </div>	
   
             <div class="col-sm-2 col-md-2">
-                <span><a  style="color:black;padding-left:0px;" href="./organform.html">Contact Details </a>
+                <span (click)="ua3()"><a  style="color:black;padding-left:0px;" >Contact Details </a>
                 </span>
             </div>
   
             <div class="col-sm-2 col-md-2">
-                <span><a  style="color:black;padding-left:0px;" href="./page7.html">  Guarantor Details</a>
+                <span (click)="ua4()"><a  style="color:black;padding-left:0px;" >  Guarantor Details</a>
                 </span>
             </div>
   
             <div class="col-sm-2 col-md-2">
-                <span><a  style="padding-left:0px;color:black" href="./page8.html">Current Designation</a></span>
+                <span (click)="ua5()"><a  style="padding-left:0px;color:black"  >Current Designation</a></span>
             </div>
   
             <div class="col-sm-2 col-md-2">
-                <span><a  style="padding-left:0px;color:black" href="./processComp.html">Upload Documents </a>
+                <span (click)="ua6()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
                 </span>
             </div>
         </div>
@@ -94,36 +94,36 @@
          <div class="stepwizard-row setup-panel"></div>
   
             <div  class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">
+                <span style="margin-left:35px;" (click)="ua1()" class="round-tab">
                   <i class="fa fa-check" aria-hidden="true"></i>
                 </span>
             </div>
   
             <div class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">  
+                <span style="margin-left:35px;" (click)="ua2()"class="round-tab">  
                   <i class="fa fa-unCheck" aria-hidden="true"></i>
                 </span>
             </div>
   
             <div class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">
+                <span style="margin-left:35px;" (click)="ua3()"class="round-tab">
                   <i class="fa fa-unCheck" aria-hidden="true"></i>
                 </span>
             </div>
   
             <div class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">
+                <span style="margin-left:35px;"(click)="ua4()" class="round-tab">
                   <i class="fa fa-unCheck" aria-hidden="true"></i>
                 </span>
             </div>
             <div class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">
+                <span style="margin-left:35px;"(click)="ua5()" class="round-tab">
                   <i class="fa fa-unCheck" aria-hidden="true"></i>
                 </span>
             </div>
                    
             <div class="stepwizard-step">
-                <span style="margin-left:35px;" class="round-tab">
+                <span style="margin-left:35px;"(click)="ua6()" class="round-tab">
                   <i class="fa fa-unCheck" aria-hidden="true"></i>
                 </span>
             </div>
