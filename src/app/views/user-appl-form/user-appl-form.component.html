@@ -131,7 +131,7 @@
   <br><br>
        <br>
        <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
-       <form [formGroup]="contactForm"  >
+       <form [formGroup]="contactForm" enctype="multipart/form-data" >
 
      
        <div class="row">
@@ -213,24 +213,26 @@
 
           </div>
           <div class="col-sm-4">
-              <i ripple>
+             
+                  
                 <img src="assets/img/upload-logo.png" style="margin-top: -162%;
-                  margin-left: 56%;
-                  height: 89px;
-                  width: 25%;" viewBox="0 0 24 24">
-              </i>
-              <h3 style="color:cornflowerblue ; margin-top: -70%;
-              margin-left: 52%;font-size: 130.02%">Upload your document here</h3>
+                margin-left: 56%;
+                height: 9px;
+                width: 25%;" viewBox="0 0 24 24" > 
+                
+              <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
+              margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
+             
             </div>
        </div>
        <div class="wrapper">
        
-        <button type="button" class="btn btn-primary" style="width:10%;" (click)="passdetail()">Back</button> &nbsp;  &nbsp;
+        <button type="button" class="btn btn-primary" style="width:10%;" (click)="passDetail()">Back</button> &nbsp;  &nbsp;
         <button type="button" class="btn btn-primary" style="width:10%;" (click)="passportDetails()">Next</button>
      </div>
       </form>
        <br/>
-      
+    
        <br/>
     </div>
   </div>

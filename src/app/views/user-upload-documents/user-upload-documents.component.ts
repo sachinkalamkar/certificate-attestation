@@ -3,7 +3,8 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-upload-documents',
@@ -12,27 +13,50 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class UserUploadDocumentsComponent implements OnInit {
 
+  app_form_data: string;
+
+  uploadForm: FormGroup;
+  submitted = false;
+
+
+  constructor(private formBuilder: FormBuilder, private userservice: UserService, private router: Router, private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    var test = this.route.snapshot.queryParamMap.get('obj');
+
+  console.log("test", JSON.parse(test));
+  const data = JSON.parse(test)
+  this.uploadForm = this.formBuilder.group({
+    certificate_no : [''],
+   
+    name_of_exam : [''],
   
+    year :[''],
+   
+    name_of_institute :[''],
+    
+    
+    test: data
 
-  constructor(private router : Router) { }
-
-  ngOnInit() {}
-
-isCollapsed: boolean = false;
-iconCollapse: string = 'icon-arrow-up';
-
-collapsed(event: any): void {
-  // console.log(event);
+  });
 }
+get f() { return this.uploadForm.controls; }
 
-expanded(event: any): void {
-  // console.log(event);
-}
+  onSubmit() {
+    this.userservice.uploaddoc(this.uploadForm.value).subscribe(data => {
+      console.log("forgot password", this.uploadForm.value)
+      this.uploadForm = this.formBuilder.group({
+        certificate_no: [''],
+        name_of_exam: [''],
+        year: [''],
+        name_of_institute: [''],
+        test: data
 
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
+
+      });
+
+    })
+  }
 currentdesignation(){
 
   this.router.navigate(['user-current-designation'])	  

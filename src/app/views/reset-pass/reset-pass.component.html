@@ -14,7 +14,7 @@
          <div class="cont">
             <h3  style="text-align: center">Reset Password</h3>
             <!-- <span>Sign in with your Google Account</span> -->
-            <form [formGroup]="forgotForm">
+            <form [formGroup]="resetForm">
                <div id="u" class="form-group">
                   <input id="pass1" spellcheck=false class="form-control" formControlName="pass1" type="password"
                      style="margin-left:0" size="8" alt="login" required="">
@@ -48,7 +48,7 @@
                         </i>
                      </p>
                      <div class="form-group">
-                        <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="db()"  ripple>
+                        <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="onSubmit()"  ripple>
                            <span>
                               <h5>SUBMIT</h5>
                            </span>
