@@ -1,18 +1,59 @@
- /* Remove the navbar's default margin-bottom and rounded borders */ 
- .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-  }
-  
-  /* Add a gray background color and some padding to the footer */
-  footer {
-    background-color: #f2f2f2;
-    padding: 25px;
-  }
-  
-.carousel-inner img {
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    min-height:200px;
+   .wrapper {
+   text-align: center;
+   }
+   .button {
+   position: absolute;
+   top: 50%;
+   }
+.header {
+ overflow: hidden;
+
+ padding: 20px 10px;
+}
+html,
+body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgb(243, 243, 243);
+	color: rgba(0, 0, 0, 0.6);
+	font-family: sans-serif;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.header a {
+ float: left;
+ color: black;
+ text-align: left;
+ padding: 12px;
+ text-decoration: none;
+ font-size: 18px; 
+ line-height: 25px;
+ border-radius: 4px;
+}
+.green{
+  color: green
+}
+.header a.logo {
+ font-size: 25px;
+ font-weight: bold;
 }
 
+.fonts{
+  font-size:18px;
+}
+
+.header a.active {
+ background-color: dodgerblue;
+ color: white;
+}
+
+.header-right {
+ float: right;
+}
+.dodgerblue{
+ background-color: dodgerblue;
+}

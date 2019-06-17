@@ -1,98 +1,64 @@
- <style>
-    .center_div{
-    margin: 1%;
-    /* background-color: white; */
-    }
-    .header {
-    overflow: hidden;
-    /* background-color: green; */
-    padding: 2% 2%;
-    height: 10%;
-    }
-    .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
-    }
-    .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-    }
-    .cont {
-    position: relative;
-    padding: 10px;
-    margin: 10px auto 20px auto;
-    width: 390px;
-    height: 30%;
-    border-radius: 3px;
-    background: white;
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.26);
-    overflow: hidden;
-    }
- </style>
- <div class="container-fluid">
-    <div class="header background">
-       <div class="row">
-          <div class="col-md-3" >
-             <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
-          </div>
-          <div class="col-md-9">
-             <h2 align="center" style="padding:2%;"><b>Reset Your Password</b></h2>
-          </div>
-       </div>
-    </div>
-    <div class="row" style="background-color: white; padding:2%">
-       <div class="cont">
-          <h3  style="text-align: center">Set New Password</h3>
-          <span>Sign in with your Google Account</span> 
-          <form>
-             <div id="p" class="form-group">
-                <input id="password" spellcheck=false class="form-control" name="confirmpass" type="text"
-                   style="margin-left:0" size="8" alt="login" required="">
-                <span class="form-highlight"></span>
-                <span class="form-bar"></span>
-                <label for="password" class="float-label">New Password</label>
-                <p class="errorp">
-                   New Password is required
-                   <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                         <path d="M0 0h24v24h-24z" fill="none" />
-                         <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                   </i>
-                </p>
-             </div>
-             <div id="p" class="form-group">
-                <input id="confpassword" spellcheck=false class="form-control" name="confirmpass" type="text"
-                   style="margin-left:0" size="8" alt="login" required="">
-                <span class="form-highlight"></span>
-                <span class="form-bar"></span>
-                <label for="confpassword" class="float-label">confirm Password</label>
-                <p class="errorp">
-                   Confirm Password is required
-                   <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                         <path d="M0 0h24v24h-24z" fill="none" />
-                         <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                   </i>
-                </p>
-             </div>
-             <div class="form-group">
-                <button id="submit" type="submit" class="btn btn-block btn-submit" ripple>
-                   <span>
-                      <h5>SUBMIT </h5>
-                   </span>
-                </button>
-             </div>
-             <br/>
-          </form>
-       </div>
-    </div>
- </div>
- 
+
+   <div class="container-fluid">
+      <div class="header background">
+         <div class="row">
+            <div class="col-md-3" >
+               <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
+            </div>
+            <div class="col-md-9">
+               <h2 style="float:left;margin:2%;"><b>Reset Your Password</b></h2>
+            </div>
+         </div>
+      </div>
+      <div class="row radius">
+         <div class="cont">
+            <h3  style="text-align: center">Reset Password</h3>
+            <!-- <span>Sign in with your Google Account</span> -->
+            <form [formGroup]="forgotForm">
+               <div id="u" class="form-group">
+                  <input id="pass1" spellcheck=false class="form-control" formControlName="pass1" type="password"
+                     style="margin-left:0" size="8" alt="login" required="">
+                  <span class="form-highlight"></span>
+                  <span class="form-bar"></span>
+                  <label for="pass1" class="float-label">Enter Password</label>
+                  <p class="erroru">
+                     Password is required
+                     <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                           <path d="M0 0h24v24h-24z" fill="none" />
+                           <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                        </svg>
+                     </i>
+                  </p>
+                 
+               </div>
+               <div id="u" class="form-group">
+                     <input id="pass2" spellcheck=false class="form-control" formControlName="pass2" type="password"
+                        style="margin-left:0" size="8" alt="login" required="">
+                     <span class="form-highlight"></span>
+                     <span class="form-bar"></span>
+                     <label for="pass2" class="float-label">Confirm Password</label>
+                     <p class="erroru">
+                        Password confirmation is required
+                        <i>
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                              <path d="M0 0h24v24h-24z" fill="none" />
+                              <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                           </svg>
+                        </i>
+                     </p>
+                     <div class="form-group">
+                        <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="db()"  ripple>
+                           <span>
+                              <h5>SUBMIT</h5>
+                           </span>
+                        </button>
+                     </div>
+                     <br/>
+                  </div>
+              
+            </form>
+         </div>
+      
+      </div>
+   </div>

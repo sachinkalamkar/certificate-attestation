@@ -41,5 +41,7 @@ s2(){
 
   this.router.navigate(['view-user-s2'])	  
 }
-
+home(){
+  this.router.navigate(['user-dashboard'])
+}
 }

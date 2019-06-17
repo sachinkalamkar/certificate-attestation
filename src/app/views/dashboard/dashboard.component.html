@@ -1,122 +1,84 @@
- <div class="animated fadeIn">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-xs-12">
-        <div class="row-md-12">
-          <!-- <div class="img-responsive background" -->
-          <div class=" img-responsive background">
-
-            <div class="card-body">
-              <img style="margin-left:95px ;margin-top:80px ;margin-bottom: 30px " src="assets/img/mlogo1.png"
-                alt="Maharashtra Shashan " />
-
-              <h2 style="margin-left:95px; margin-top:80px;"> Higher & Technical Education Department <b>Government of
-                  Maharashtra</b></h2>
-
-            </div>
-
-            <div class="login" style="margin-right:4%;margin-top:-18% ;border-radius: 3%; ">
-
-              <h3 style="margin-left:4%">Welcome to MahaIT</h3>
-              <!-- <span>Sign in with your Google Account</span> -->
-              <form #signInForm="ngForm">
-                <div id="u" class="form-group">
-                  <input id="username" spellcheck=false class="form-control" name="email_id" type="text"
-                    [(ngModel)]="model.email_id" style="margin-left:0 ;margin-top:-10%" size="8" alt="login"
-                    required="">
-                  <span class="form-highlight"></span>
-                  <span class="form-bar"></span>
-                  <label for="username" class="float-label">Email</label>
-                  <p class="erroru">
-                    Username is required
-                    <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24h-24z" fill="none" />
-                        <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                    </i>
-                  </p>
-                </div>
-                <div id="p" class="form-group">
-                  <input id="password" class="form-control" spellcheck=false name="password" type="password"
-                    [(ngModel)]="model.password" style="margin-left:0" size="8" alt="login" required="">
-                  <span class="form-highlight"></span>
-                  <span class="form-bar"></span>
-                  <label for="password" class="float-label">Password</label>
-                  <p class="errorp">
-                    Password is required
-                    <i>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24h-24z" fill="none" />
-                        <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                      </svg>
-                    </i>
-                  </p>
-                </div>
-                <div class="row"></div>
-                <div class="form-group">
-                
-                    <input type="checkbox" id="rem">
-                    <div class="col-md-6"><label for="rem">Remember me </label></div>
-                    <div class="col-md-6"><button type="button" class="btn btn-block btn-link" (click)="forgotpass()"
-                        style="margin-left:28%"> Forgot Password? </button></div>
-                  </div>
-                  <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top: 3%" ripple
-                    (click)="onSubmit()">SIGN
-                    IN</button>
-
-                  <br>
-                  <p style="margin-top:18%">New User? </p>
-                  <button type="button" style="margin-top:-6% " class="btn btn-block btn-link"
-                    (click)="registerhere()">Register Here</button>
-<br/>
-                    <!-- <button type="button" style="margin-top:-6% " class="btn btn-block btn-link"
-                    (click)="registerhere22()">Register Here2</button> -->
-              </form>
-
-            </div>
-
-
-
-
+<div class="container-fluid">
+    <div class="jumbotron backgroundImg" style="height:50%;width:100%;">
+       <div class="row">
+          <div class="col-sm-6 limit">
+             <!-- <div style="margin:4%" > -->
+                <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan" />
+                <h2><b>Maharashtra Higher & Technical Education Department</b></h2>
+             <!-- </div> -->
           </div>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="row" style="background-color: #f5f5f5 ">
-
-      <span style="text-align:centre">
-        <!-- <h3>Try Your <b>CERTIFICATE ATTESTATION & VERIFICATION PROCESS </b></h3> -->
-        <p class="document" style="text-align:center ;margin-top:3%">
-
-          <span style="text-align:centre">
-            <h3>About GOM helps to<b> Higher & Technical Education Department</b></h3>
+          <div class="col-sm-6">
+             <div class="login">
+                <h3 style="margin:4%;">Welcome to MahaIT</h3>
+                <form #signInForm="ngForm">
+                   <div id="u" class="form-group">
+                      <input id="username" spellcheck=false class="form-control" name="email_id" type="text"
+                      [(ngModel)]="model.email_id" style="margin-left:0 ;margin-top:-10%" size="8" alt="login"
+                      required="">
+                      <span class="form-highlight"></span>
+                      <span class="form-bar"></span>
+                      <label for="username" class="float-label">Email</label>
+                      <p class="erroru">
+                         Username is required
+                         <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                               <path d="M0 0h24v24h-24z" fill="none" />
+                               <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                            </svg>
+                         </i>
+                      </p>
+                   </div>
+                   <div id="p" class="form-group">
+                      <input id="password" class="form-control" spellcheck=false name="password" type="password"
+                      [(ngModel)]="model.password" style="margin-left:0" size="8" alt="login" required="">
+                      <span class="form-highlight"></span>
+                      <span class="form-bar"></span>
+                      <label for="password" class="float-label">Password</label>
+                      <p class="errorp">
+                         Password is required
+                         <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                               <path d="M0 0h24v24h-24z" fill="none" />
+                               <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                            </svg>
+                         </i>
+                      </p>
+                   </div>
+                   <div class="row">
+                      <div class="form-group">
+                         <div class="col-md-6"></div>
+                         <div class="col-md-6">
+                            <button type="button" class="btn btn-block btn-link" (click)="forgotpass()">Forgot Password? </button>
+                         </div>
+                      </div>
+                   </div>
+                   <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top:3%" ripple (click)="onSubmit()">SIGN IN</button>
+                </form>
+                <br>
+                <div class="row">
+                   
+                   <div class="col-md-6">
+                      <p>&nbsp;&nbsp;&nbsp;&nbsp;New User? </p>
+                   </div>
+                   <div class="col-md-6">
+                      <button type="button"  class="btn btn-block btn-link" (click)="registerhere()">Register Here</button>
+                   </div>
+                  
+                </div>
+                <!-- <div class="Rectangle-3"></div> -->
+             </div>
+             
+          </div>
+       </div>
+       <div class="row justify-content-center" style="background-color:#ffffff;padding:3%;">
+          <p class="document">
+             <span>
+          <h3>About GOM helps to<b>&nbsp;MahaIT</b></h3>
           </span>
           <br>
-          The Higher & Technical Education Department attests the educational certificates of the students
-          studying in any of the government recognized institute in Maharashtra. The certificates are attested
-          for the purpose of validating the certificates for attaining higher education in a country outside
-          India. Foreign nationals studying in the state of Maharashtra also can attest the educational
-          certificates for validation of the same in other countries. Educational certificates from Xth class
-          (SSC) onwards are attested by the Department.
+          Maharashtra Information Technology Corporation Ltd. (MITC) has been set up as an independent government corporation wholly owned by the State government of Maharashtra vide Government Resolution no. DIT – 1716 / C. No. 286/39, dated 9 August 2016. It is registered under Company Act, 2013 on 6 October 2016.
           <br>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book.
-
-        </p>
-
-
-      </span>
+          MITC is contemplated to act as the nodal agency of Government of Maharashtra to bolster efficient and effective implementation of ICT initiatives and to establish a robust e-Governance eco-system framework.
+          </p>
+       </div>
     </div>
-
-
-
-
-</div> 
-
-

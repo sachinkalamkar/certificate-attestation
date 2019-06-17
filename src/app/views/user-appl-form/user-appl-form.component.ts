@@ -103,10 +103,21 @@ var data;
 
 		this.router.navigate(['user-passport-details'],{ queryParams :{"obj":JSON.stringify(verifyObject.res),si:true}});
 }
-userdash(){
+
+home(){
 
   this.router.navigate(['user-dashboard'])	  
 }
+
+passDetail(){
+
+  this.router.navigate(['user-passport-details'])	  
+}
+h1(){
+
+  this.router.navigate(['user-dashboard'])	  
+}
+
 ua1(){
   this.router.navigate(['user-appl-form'])	  
 }
