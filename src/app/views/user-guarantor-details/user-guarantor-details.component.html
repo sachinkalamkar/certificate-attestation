@@ -269,7 +269,7 @@ letter-spacing: normal; */
         <div class="row">
            <div class="col-sm-6">
                <div class="form-group">
-              <label ><b>Name :</b></label>
+              <label ><b>Name :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="guarantor_name"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guarantor_name.errors }" >
               <div *ngIf="submitted && f.guarantor_name.errors" class="invalid-feedback">
                  <div *ngIf="f.guarantor_name.errors.required">Name is required</div>
@@ -279,7 +279,7 @@ letter-spacing: normal; */
           
            <div class="col-sm-6">
                <div class="form-group">
-              <label ><b>Country :</b></label>
+              <label ><b>Country :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="guarantor_country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guarantor_country.errors }" >
               <div *ngIf="submitted && f.guarantor_country.errors" class="invalid-feedback">
                  <div *ngIf="f.guarantor_country.errors.required">guarantor country required</div>
@@ -290,7 +290,7 @@ letter-spacing: normal; */
         
            <div class="col-sm-6">
                <div class="form-group">
-              <label ><b>State :</b></label>
+              <label ><b>State :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="guarantor_state" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.guarantor_state.errors }" >
               <div *ngIf="submitted && f.guarantor_state.errors" class="invalid-feedback">
                  <div *ngIf="f.guarantor_state.errors.required">guarantor state required</div>
@@ -301,7 +301,7 @@ letter-spacing: normal; */
  
            <div class="col-sm-6">
                <div class="form-group">
-               <label ><b>City :</b></label>
+               <label ><b>City :</b><span style="color: red">*</span></label>
                <input type="text" formControlName="guarantor_city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guarantor_city.errors }" >
                <div *ngIf="submitted && f.guarantor_city.errors" class="invalid-feedback">
                    <div *ngIf="f.guarantor_city.errors.required">Quarantor City required</div>
@@ -311,7 +311,7 @@ letter-spacing: normal; */
          
             <div class="col-sm-6">
                <div class="form-group">
-               <label><b>House Number :</b></label>
+               <label><b>House Number :</b><span style="color: red">*</span></label>
                <input type="text" formControlName="guarantor_house_no" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.guarantor_house_no.errors }" >
                <div *ngIf="submitted && f.guarantor_house_no.errors" class="invalid-feedback">
                    <div *ngIf="f.guarantor_house_no.errors.required">guarantor house no required</div>
@@ -322,7 +322,7 @@ letter-spacing: normal; */
  
            <div class="col-sm-6">
                <div class="form-group">
-               <label><b>Street Number :</b></label>
+               <label><b>Street Number :</b><span style="color: red">*</span></label>
                <input type="text" formControlName="guarantor_street_no" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.guarantor_street_no.errors }" >
                <div *ngIf="submitted && f.guarantor_street_no.errors" class="invalid-feedback">
                    <div *ngIf="f.guarantor_street_no.errors.required">guarantor street no required</div>
@@ -332,7 +332,7 @@ letter-spacing: normal; */
          
             <div class="col-sm-6">
                <div class="form-group">
-               <label ><b>Mobile Number :</b></label>
+               <label ><b>Mobile Number :</b><span style="color: red">*</span></label>
                <input type="text" formControlName="guarantor_contact" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.guarantor_contact.errors }" >
                <div *ngIf="submitted && f.guarantor_contact.errors" class="invalid-feedback">
                    <div *ngIf="f.guarantor_contact.errors.required">guarantor contact required</div>
@@ -343,7 +343,7 @@ letter-spacing: normal; */
      
             <div class="col-sm-6">
                <div class="form-group">
-               <label ><b>Pincode :</b></label>
+               <label ><b>Pincode :</b><span style="color: red">*</span></label>
                <input type="text" formControlName="guarantor_pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guarantor_pincode.errors }" >
                <div *ngIf="submitted && f.guarantor_pincode.errors" class="invalid-feedback">
                    <div *ngIf="f.guarantor_pincode.errors.required">guarantor Pincode required</div>

@@ -208,25 +208,25 @@
               <br><br>
               <div class="form-group">
                  <!-- <div class="col-sm-2">   -->
-                 <input type="radio" name="designation" value="employee" checked> Employee/Self Employee<br>
+                 <input type="radio" name="designation" value="employee" checked> Employee/Self Employee<br><span style="color: red">*</span>
               </div>
            </div>
            <div class="col-sm-6" >
               <br><br>
               <div class="form-group">
                  <!-- <div class="col-sm-2">   -->
-                 <input type="radio" name="designation" value="student"> Student<br>
+                 <input type="radio" name="designation" value="student"> Student<br><span style="color: red">*</span>
               </div>
            </div>
            <div class="col-sm-6">
-              <label for="exampleFormControlInput1" style="float:left"><b>Name of the Organization :</b></label>
+              <label for="exampleFormControlInput1" style="float:left"><b>Name of the Organization :</b><span style="color: red">*</span></label>
               <input type="text" class="form-control" formControlName="name_of_organization" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
               <div *ngIf="submitted && f.name_of_organization.errors" class="invalid-feedback">
                  <div *ngIf="f.name_of_organization.errors.required">House Number</div>
               </div>
            </div>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect1"  style="float:left"><b>Course:</b></label>
+              <label for="exampleFormControlSelect1"  style="float:left"><b>Course:</b><span style="color: red">*</span></label>
               <input type="text" formControlName="course" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.course.errors }"  >
               <div *ngIf="submitted && f.course.errors" class="invalid-feedback">
                  <div *ngIf="f.course.errors.required">House Number</div>
@@ -234,14 +234,14 @@
            </div>
            <br>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address </b></label>
+              <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address </b><span style="color: red">*</span></label>
               <input type="text" formControlName="organization_address" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
               <div *ngIf="submitted && f.organization_address.errors" class="invalid-feedback">
                  <div *ngIf="f.organization_address.errors.required">House Number</div>
               </div>
            </div>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect2"  style="float:left"><b>Name of College :</b></label>
+              <label for="exampleFormControlSelect2"  style="float:left"><b>Name of College :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="name_of_college" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }" >
               <div *ngIf="submitted && f.name_of_college.errors" class="invalid-feedback">
                  <div *ngIf="f.name_of_college.errors.required">House Number</div>
@@ -249,14 +249,14 @@
            </div>
            <br>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect2"  style="float:left"><b>Pan Card :</b></label>
+              <label for="exampleFormControlSelect2"  style="float:left"><b>Pan Card :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="pan_card" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pan_card.errors }"  >
               <div *ngIf="submitted && f.pan_card.errors" class="invalid-feedback">
                  <div *ngIf="f.pan_card.errors.required">House Number</div>
               </div>
            </div>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b></label>
+              <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b><span style="color: red">*</span></label>
               <input type="text" formControlName="college_address" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
               <div *ngIf="submitted && f.college_address.errors" class="invalid-feedback">
                  <div *ngIf="f.college_address.errors.required">House Number</div>
@@ -265,7 +265,7 @@
            <br>
            <br/>
            <div class="col-sm-6">
-              <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b></label>
+              <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b><span style="color: red">*</span></label>
               <input type="text"id="exampleFormControlInput1" formControlName="purpose_for_authentication" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.purpose_for_authentication.errors }" >
               <div *ngIf="submitted && f.purpose_for_authentication.errors" class="invalid-feedback">
                  <div *ngIf="f.purpose_for_authentication.errors.required">House Number</div>

@@ -266,7 +266,7 @@ color: #ffffff;
 
         <div class="col-sm-12">
        <div class ="form-group">
-           <label for="exampleFormControlInput1"><b>Certificate Number :</b></label>
+           <label for="exampleFormControlInput1"><b>Certificate Number :</b><span style="color: red">*</span></label>
 
            <input type="email" id="exampleFormControlInput1"  formControlName="certificate_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }" >
            <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
@@ -278,7 +278,7 @@ color: #ffffff;
 
         <div class="col-sm-12">
             <div class ="form-group">
-           <label for="exampleFormControlSelect1"><b>Name of Examination :</b></label>
+           <label for="exampleFormControlSelect1"><b>Name of Examination :</b><span style="color: red">*</span></label>
 
            <input type="email"id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }" >
            <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
@@ -295,7 +295,7 @@ color: #ffffff;
 
         <div class="col-sm-12">
             <div class ="form-group">
-           <label for="exampleFormControlSelect2"><b>Year :</b></label>
+           <label for="exampleFormControlSelect2"><b>Year :</b><span style="color: red">*</span></label>
 
            <input type="email"  id="exampleFormControlInput1" formControlName="year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. year .errors }" >
            <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
@@ -308,7 +308,7 @@ color: #ffffff;
 
         <div class="col-sm-12">
             <div class ="form-group">
-            <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b></label>
+            <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b><span style="color: red">*</span></label>
 
             <input type="email"  id="exampleFormControlInput1" formControlName="name_of_institute" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }" >
             <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
