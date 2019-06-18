@@ -1,239 +1,238 @@
 
 
 
-<style>
-  
-    .header {
-    overflow: hidden;
-    /* background-color: green; */
-    padding: 4% 7%;
-    height: 20%;
-    }
-    .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
-    }
-    .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-    }
-    .wrapper {
-    text-align: center;
-    }
-    .button {
-    position: absolute;
-    top: 50%;
-    }
-  
-   h2{
-    width: 80%;
-  height: 126px;
-  font-family: ProximaNova-Light;
-  font-size: 45.2px;
-  font-weight: bold;
-  /* font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal; */
-  color: #ffffff;
-   }
-  </style>
-  <div class="header background">
-    <div class="row">
-       <div class="col-md-3" >
-       <span (click)="h1()"> <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan "  /></span>    
-       </div>
-       <div class="col-md-9">
-          <h2><b>APPLICATION PROCESS</b></h2>
+
+<div class="container" style="background-color: white;">
+    <div class="row img-responsive">
+       <div class="header background">
+          <div class="row" style="padding:2%;">
+             <div class="col-md-2">
+                <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
+             </div>
+             <div class="col-md-10">
+                <h2><b>APPLICATION PROCESS</b></h2>
+             </div>
+          </div>
        </div>
     </div>
-  </div>
+    <!-- <div class="row-sm-12" style="background-color:[] #f5f5f5"> -->
  
-  <div style="background-color: #f5f5f5">
-    <div class="container" >
-  <br><br><br>
-        <div class="row">
-            
-            <div class="col-sm-2 col-md-2">
-              <span (click)="ua1()" > <a  style="padding-left:0px; color:black">Personal Details </a></span> 
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua2()"><a style="color:black;padding-left:0px;" >Passport Details</a>
-                </span>
-            </div>	
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua3()"><a  style="color:black;padding-left:0px;" >Contact Details </a>
-                </span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua4()"><a  style="color:black;padding-left:0px;" >Guarantor Details</a>
-                </span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua5()"><a  style="padding-left:0px;color:black"  >Current Designation</a></span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua6()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
-                </span>
-            </div>
-        </div>
-  
-      <div class="stepwizard">
-    
-         <div class="stepwizard-row setup-panel"></div>
-  
-            <div  class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua1()" class="round-tab">
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua2()"class="round-tab">  
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua3()"class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua4()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua5()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-                   
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua6()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-      </div>
-  <br><br>
-       <br>
-       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
-       <form [formGroup]="contactForm" enctype="multipart/form-data" >
-
-     
-       <div class="row">
-
-          <div class="col-sm-7">
-            <div class="form-group">
-             <label for="exampleFormControlInput1"><b>User Type :</b></label>
-             <input type=" text" class="form-control" id="exampleFormControlInput1" formControlName="applicant_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  applicant_type.errors }" >
-             <div *ngIf="submitted && f.applicant_type.errors" class="invalid-feedback">
-                <div *ngIf="f.applicant_type.errors.required">Field required</div>
-            </div>
-          </div>
-          </div>
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect1"><b>Name :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="full_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. full_name.errors }" >
-             <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
-                <div *ngIf="f.full_name.errors.required">Field required</div>
-            </div>
-          </div>
-          </div>
-      
-       
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect2"><b>Sex :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="sex" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sex.errors }" >
-             <div *ngIf="submitted && f.sex.errors" class="invalid-feedback">
-                <div *ngIf="f.sex.errors.required">Field required</div>
-            </div>
-          </div>
-          </div>
-              <div class="col-sm-7">
-                  <div class="form-group">
-                  <label for="exampleFormControlTextarea1"><b>Nationality :</b></label>
-                      <!-- <label for="city"><b>Nationality :</b></label>
-                      <select name="city" id="city">
-                          <option value="sydney">Sydney</option>
-                          <option value="melbourne">Melbourne</option>
-                          <option value="cromwell">Cromwell</option>
-                      </select> -->
-                  
-                  <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nationality" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" >
-                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
-                     <div *ngIf="f.nationality.errors.required">Field required</div>
-                 </div>  
-               </div>
-              </div>
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect2"><b>Date of Birth :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="date_of_birth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date_of_birth.errors }" >
-             <div *ngIf="submitted && f.date_of_birth.errors" class="invalid-feedback">
-                <div *ngIf="f.date_of_birth.errors.required">Field required</div>
-            </div>  
-          </div>
-          </div>
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlTextarea1"><b>Fathers Name:</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="father_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.father_name.errors }" >
-             <div *ngIf="submitted && f.father_name.errors" class="invalid-feedback">
-                <div *ngIf="f.father_name.errors.required">Field required</div>
-            </div>    
-          </div>
-          </div>
-       
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect2"><b>Mothers Name :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1"  formControlName="mother_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mother_name.errors }" >
-             <div *ngIf="submitted && f.mother_name.errors" class="invalid-feedback">
-                <div *ngIf="f.mother_name.errors.required">Field required</div>
-            </div>    
-          </div>
-          </div>
-          <div class="col-md-4">
-
-          </div>
-          <div class="col-sm-4">
-             
-                  
-                <img src="assets/img/upload-logo.png" style="margin-top: -162%;
-                margin-left: 56%;
-                height: 9px;
-                width: 25%;" viewBox="0 0 24 24" > 
+        <div style="background-color: #f5f5f5">
+            <div class="container-fluid" >
+          <br><br><br>
+        
+          
+          <div class="stepwizard ">
                 
-              <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
-              margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
-             
+               <div class="stepwizard-row setup-panel"></div> 
+        
+              <div   class=" stepwizard-step" >
+                 <span style="margin-left:0px;  color: white;" class="round-tab">
+                   <h5 style="margin-top:10px" aria-hidden="true">1</h5>
+                 </span>
+             </div>
+        
+                 <div class="stepwizard-step">
+                     <span style="margin-left:0px;  color: white;" class="round-tab">  
+                        <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                       <h5 style="margin-top:0px" aria-hidden="true">2</h5>
+                     </span>
+                 </div>
+        
+                 <div class="stepwizard-step">
+                     <span style="margin-left:0px; color: white;" class="round-tab">
+                       <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                       <h5 style="margin-top:0px" aria-hidden="true">3</h5>
+                     </span>
+                 </div>
+        
+                 <div class="stepwizard-step">
+                     <span style="margin-left:0px; color: white;" class="round-tab">
+                        <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                       <h5 style="margin-top:0px" aria-hidden="true">4</h5>
+                     </span>
+                 </div>
+                 <div class="stepwizard-step">
+                     <span style="margin-left:0px; color: white;" class="round-tab">
+                        <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                       <h5 style="margin-top:0px" aria-hidden="true">5</h5>
+                     </span>
+                 </div>
+                        
+                 <div class="stepwizard-step">
+                     <span style="margin-left:0px; color: white;" class="round-tab">
+                        <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                       <h5 style="margin-top:0px" aria-hidden="true">6</h5>
+                     </span>
+                 </div>
+           </div>
+          <div class="row" style="padding:10px; " >
+           
+              
+              <div class="col-sm-2 col-md-2 ;">
+                 
+                  <a style=" margin-left: 34px;text-align: center; color:#1386F6">Personal Details </a>
+                 
+               </div>
+        
+           
+        
+              <div class="col-sm-2 col-md-2">
+                  <span><a style="color:black; margin-left: 34px;" >Passport Details</a>
+                  </span>
+              </div>	
+        
+              <div class="col-sm-2 col-md-2">
+                  <span><a  style="color:black; margin-left: 34px;" >Contact Details </a>
+                  </span>
+              </div>
+        
+              <div class="col-sm-2 col-md-2">
+                  <span><a  style="color:black; margin-left: 34px;" >  Guarantor Details</a>
+                  </span>
+              </div>
+        
+              <div class="col-sm-3 col-md-3">
+                  <span><a  style="color:black; margin-left: 34px; " >Current Designation</a></span>
+              </div>
+        
+              <div class="col-sm-1 col-md-1">
+                  <span><a  style="color:black; margin-left: -63px;" >Upload Documents </a>
+                  </span>
+              </div>
+          </div>
+        
+        
+                
+              
+        
+          <br><br>
+               <br>
+               <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
+               <form [formGroup]="contactForm" enctype="multipart/form-data" >
+        
+              
+               <div class="row">
+
+                  <div class="col-sm-4" style="margin: 0 auto">
+                      <img src="assets/img/upload-logo.png" class="Oval" viewBox="0 0 24 24" > 
+              
+                    <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
+                    margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
+                   
+                  </div>
+                  
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                     <label for="exampleFormControlInput1"><b>User Type :</b><span style="color:red">*</span></label>
+
+                     <select formControlName="applicant_type" class="form-control "
+                     [ngClass]="{ 'is-invalid': submitted && f.applicant_type.errors }" placeholder="Type Of User">
+                     <option>Indian</option>
+                     <option>Foreigner</option>
+                     <option>NRI</option>
+                     <option>On Behalf</option>
+  
+                     </select>
+                     <!-- <input type=" text" class="form-control" id="exampleFormControlInput1" formControlName="applicant_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  applicant_type.errors }" > -->
+                     <div *ngIf="submitted && f.applicant_type.errors" class="invalid-feedback">
+                        <div *ngIf="f.applicant_type.errors.required">Field required</div>
+                    </div>
+                  </div>
+                  </div>
+                  
+              
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                     <label for="exampleFormControlSelect1"><b>Name :</b><span style="color:red">*</span></label>
+                     <input type="text" class="form-control" placeholder="First Name" id="exampleFormControlInput1" formControlName="full_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. full_name.errors }" >
+                     <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.full_name.errors.required">Field required</div>
+                    </div>
+                  </div>
+                  </div>
+              
+               
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                     <label for="exampleFormControlSelect2"><b>Gender :</b><span style="color:red">*</span></label>
+                     <select formControlName="sex" value="Choose" class="form-control " 
+                     [ngClass]="{ 'is-invalid': submitted && f.sex.errors }" placeholder=" applicant sex">
+                     
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                     <option value="other">Other</option>
+                     <div *ngIf="submitted && f.sex.errors" class="invalid-feedback">
+                        <div *ngIf="f.sex.errors.required">Field required</div>
+                     </div>
+                  </select>
+                  </div>
+                  </div>
+                      <div class="col-sm-7">
+                          <div class="form-group">
+                              <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
+
+                              <!-- <input type="email" formControlName="nationality" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
+                                 <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                                    <div *ngIf="f.nationality.errors.required">Field required</div>
+                                 </div> -->
+               
+                              <select formControlName="nationality" class="form-control "
+                                 [ngClass]="{ 'is-invalid': submitted && f.sex.errors }" placeholder=" applicant Country Name">
+                                 <option>Indian</option>
+                                 <option>Foreigner</option>
+                                 <option>NRI</option>
+                                 <div *ngIf="submitted && f.sex.errors" class="invalid-feedback">
+                                    <div *ngIf="f.sex.errors.required">Field required</div>
+                                 </div>
+                              </select>
+               
+                       </div>
+                      </div>
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                     <label for="exampleFormControlSelect2"><b>Date of Birth :</b><span style="color:red">*</span></label>
+                     <input type="date" class="form-control" placeholder="Date Of Birth" id="exampleFormControlInput1" formControlName="date_of_birth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.date_of_birth.errors }" >
+                     <div *ngIf="submitted && f.date_of_birth.errors" class="invalid-feedback">
+                        <div *ngIf="f.date_of_birth.errors.required">Field required</div>
+                    </div>  
+                  </div>
+                  </div>
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                     <label for="exampleFormControlTextarea1"><b>Father's Name:</b><span style="color:red">*</span></label>
+                     <input type="text" class="form-control" placeholder="Father's Name"  id="exampleFormControlInput1" formControlName="father_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.father_name.errors }" >
+                     <div *ngIf="submitted && f.father_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.father_name.errors.required">Field required</div>
+                    </div>    
+                  </div>
+                  </div>
+               
+                  <div class="col-sm-7">
+                      <div class="form-group">
+                     <label for="exampleFormControlSelect2"><b>Mother's Name :</b><span style="color:red">*</span></label>
+                     <input type="text" class="form-control" placeholder="Mother's Name" id="exampleFormControlInput1"  formControlName="mother_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mother_name.errors }" >
+                     <div *ngIf="submitted && f.mother_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.mother_name.errors.required">Field required</div>
+                    </div>    
+                  </div>
+                  </div>
+                
+               </div>
+              
+               <div class="wrapper">
+               
+                <button type="button" class="btn btn-primary" style="width:10%;" (click)="passDetail()">Back</button> &nbsp;  &nbsp;
+                <button type="button" class="btn btn-primary" style="width:10%;" (click)="passportDetails()">Next</button>
+             </div>
+              </form>
+               <br/>
+            
+               <br/>
             </div>
-       </div>
-       
-       <div class="wrapper">
-       
-        <button type="button" class="btn btn-primary" style="width:10%;" (click)="passDetail()">Back</button> &nbsp;  &nbsp;
-        <button type="button" class="btn btn-primary" style="width:10%;" (click)="passportDetails()">Next</button>
-     </div>
-      </form>
-       <br/>
     
-       <br/>
-    </div>
-  </div>
+ 
+ 
+ </div>
+ 
