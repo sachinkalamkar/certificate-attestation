@@ -78,7 +78,7 @@
            
         
               <div class="col-sm-2 col-md-2">
-                  <span><a style="color:black; margin-left: 34px;" >Passport Details</a>
+                  <span (click)="ua2()"><a style="color:black; margin-left: 34px;" >Passport Details</a>
                   </span>
               </div>	
         
@@ -111,17 +111,12 @@
                <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
                <form [formGroup]="contactForm" enctype="multipart/form-data" >
         
+           
               
-               <div class="row">
+               <div class="row ">
 
-                  <div class="col-sm-4" style="margin: 0 auto">
-                      <img src="assets/img/upload-logo.png" class="Oval" viewBox="0 0 24 24" > 
-              
-                    <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
-                    margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
-                   
-                  </div>
-                  
+                
+
                   <div class="col-sm-7">
                     <div class="form-group">
                      <label for="exampleFormControlInput1"><b>User Type :</b><span style="color:red">*</span></label>
@@ -140,7 +135,7 @@
                     </div>
                   </div>
                   </div>
-                  
+                
               
                   <div class="col-sm-7">
                       <div class="form-group">
@@ -220,7 +215,22 @@
                   </div>
                 
                </div>
-              
+               
+
+               <div class="row">
+                  <div class="col-sm-4" style="float:left">
+                   
+                        
+                      <img src="assets/img/upload-logo.png" class="Oval" viewBox="0 0 24 24" > 
+                      
+                      
+                      
+                    <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
+                    margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
+                   
+                  </div>
+              </div>
+
                <div class="wrapper">
                
                 <button type="button" class="btn btn-primary" style="width:10%;" (click)="passDetail()">Back</button> &nbsp;  &nbsp;
