@@ -17,14 +17,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  login(authCredentials) {
-    return this.http.post('http://document-attestation-backend.herokuapp.com/studentlogin', authCredentials, this.noAuthHeader);
+  login(data) {
+    return this.http.post('http://document-attestation-backend.herokuapp.com/studentlogin',data);
   }
 
   registration(user) {
     console.log(user);
 
-    return this.http.post('http://127.0.0.1:3000/registration',{'user':user});
+    return this.http.post('http://127.0.0.1:3000/registration',user);
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -61,10 +61,16 @@ export class UserService {
   resetpass(password) {
     return this.http.post('http://127.0.0.1:3000/resetPassword', password);
   }
+  emailotp(email_otp) {
+    return this.http.post('http://127.0.0.1:3000/emailOtp', email_otp);
+  }
   sendotp(contact)
   
     {
       return this.http.post('http://127.0.0.1:3000/sendOtp', {'contact':contact});
+    }
+    newappli(data){
+      return this.http.post('http://127.0.0.1:3000/newApplication',data);
     }
     verifyotp(otp,request){
       return this.http.post('http://127.0.0.1:3000/verifyOtp',{'otp':otp,'request':request});

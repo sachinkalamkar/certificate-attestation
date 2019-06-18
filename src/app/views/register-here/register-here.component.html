@@ -1,131 +1,146 @@
 <div class="container" style="background-color: white;">
-<div class="row img-responsive">
-<div class="header background">
-   <div class="row"  style="padding:2%;">
-      <div class="col-md-2">
-         <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
-      </div>
-      <div class="col-md-10">
-         <h2><b>REGISTER YOUR ACCOUNT</b></h2>
+   <div class="row img-responsive">
+      <div class="header background">
+         <div class="row" style="padding:2%;">
+            <div class="col-md-2">
+               <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
+            </div>
+            <div class="col-md-10">
+               <h2><b>REGISTER YOUR ACCOUNT</b></h2>
+            </div>
+         </div>
       </div>
    </div>
-</div>
-</div>
-<!-- <div class="row-sm-12" style="background-color:[] #f5f5f5"> -->
-    
+   <!-- <div class="row-sm-12" style="background-color:[] #f5f5f5"> -->
+
 
    <form [formGroup]="resetForm">
-         
-    
-         <div class="center">
+
+
+      <div class="center">
          <h3 style="text-align:center"><b>Welcome to government of Maharashtra please create your account</b></h3>
       </div>
 
-         <div class="row">
+      <div class="row">
 
-            <div class="col-sm-6">
-               <div class="form-group">
-                  <label><b>First name :</b></label>
+         <div class="col-sm-6">
+            <div class="form-group">
+               <label for="exampleFormControlInput1" style=" margin-top: 21px;"><b>First name :</b></label> 
 
-                  <input type="email" class="form-control"  formControlName="first_name"
-                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" placeholder="applicant First name">
-                  <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
-                     <div *ngIf="f.first_name.errors.required">Field required</div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-sm-6">
-               <div class="form-group">
-                  <label><b>Email ID :</b></label>
-
-                  <input type="email" class="form-control" formControlName="email_id"
-                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" placeholder="applicant Email ID">
-                  <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
-                     <div *ngIf="f.email_id.errors.required">Field required</div>
-                  </div>
+               <input type="text" formControlName="first_name"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
+                  placeholder="applicant First name">
+               <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                  <div *ngIf="f.first_name.errors.required">Field required</div>
                </div>
             </div>
          </div>
-         <br><br>
+         <div class="col-sm-6">
+            <div class="form-group">
+               <!-- <label for="exampleFormControlSelect1"><b>Email ID :</b></label> -->
+               <label class="radio-inline">
+                  <input type="radio" name="email" value="email" (change)="toggle('email')" checked> Email Id<br>
+              
+               </label>
+               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+               <label class="radio-inline">
+                  <input type="radio" name="email" value="phone" (change)="toggle('phone')"> Phone Number<br>
+               </label>
 
-         <div class="row">
 
-            <div class="col-sm-6">
-               <div class="form-group">
+               <input id="sch" type="hidden" formControlName="email_choice">
+                  
+               <div class="input-group" id="emailDiv">
+                  <input type="email" *ngIf="marked" formControlName="email_id" class="form-control"
+                  required [pattern]="emailRegex" placeholder="applicant Email ID">
+                  
+                  &nbsp;&nbsp;&nbsp;
+                  <input type="number" *ngIf="marked" formControlName="contact" class="form-control" 
+                     placeholder="applicant Phone Number">
 
-                  <label ><b>Middle name :</b></label>
-
-                  <input type="email" class="form-control"  formControlName="middle_name"
-                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }" placeholder=" applicant Middle name">
-                  <div *ngIf="submitted && f.middle_nameerrors" class="invalid-feedback">
-                     <div *ngIf="f.middle_name.errors.required">Field required</div>
-                  </div>
+                      
+                     
                </div>
+
+
+
+
+               <div class="input-group" id="phoneDiv">
+                  <span *ngIf="marked1">
+                     <input type="number" formControlName="contact" class="form-control"
+                
+                        placeholder=" applicant Phone number">
+
+
+                     <span>
+                        <h5 class=" btn btn-link" (click)="sendotp()"> Send OTP</h5>
+                     </span>
+                  </span>
+
+                  <span *ngIf="marked1">
+                     <input type="text" formControlName="otp" class="form-control">
+                       
+                     <h5 class="btn btn-link" (click)="verifyotp()"> Verify OTP</h5>
+
+                  </span>
+                  <span *ngIf="marked1">
+                     <input type="text" formControlName="email_id" class="form-control">
+                       
+                  </span>
+                   
+               </div>
+               
             </div>
+         </div>
+      </div>
+     
 
-                    <div class="col-sm-6">
-               <div class="form-group">
+      <div class="row">
 
-                  <label ><b>Phone number :</b></label>
-              <span>   <input type="number" formControlName="contact" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" placeholder=" applicant Phone number" placeholder="+91">
-                  <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
-                     <div *ngIf="f.contact.errors.required">Field required</div>
-                  </div>
+         <div class="col-sm-6">
+            <div class="form-group">
 
-                 <span> <h5 class=" btn btn-link" (click)="sendotp()"> Send OTP</h5></span>
-               </span> 
+               <label for="exampleFormControlSelect2"><b>Middle name :</b></label>
+
+               <input type="email" formControlName="middle_name"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }"
+                  placeholder=" applicant Middle name">
+               <div *ngIf="submitted && f.middle_name.errors" class="invalid-feedback">
+                  <div *ngIf="f.middle_name.errors.required">Field required</div>
                </div>
             </div>
          </div>
 
-         <div class="row">
+   
 
-            <div class="col-sm-6">
-               <div class="form-group">
+         <div class="col-sm-6">
+            <div class="form-group">
 
-                  <label><b>Last name :</b></label>
+               <label for="exampleFormControlSelect2"><b>Last name :</b></label>
 
-                  <input type="text" formControlName="last_name" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder=" applicant Last Name">
-                  <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
-                     <div *ngIf="f.last_name.errors.required">Field required</div>
-                  </div>
-
+               <input type="text" formControlName="last_name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder=" applicant Last Name">
+               <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                  <div *ngIf="f.last_name.errors.required">Field required</div>
                </div>
+
             </div>
-
-            <div class="col-sm-6">
-               <div class="form-group">
-
-                  <label ><b>Enter OTP :</b></label>
-
-                  <input type="email" formControlName="otp" class="form-control"
-                     [ngClass]="{'is-invalid': submitted && f.otp.errors }"><h5 class="btn btn-link" (click)="verifyotp()"> Verify OTP</h5> 
-                  <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
-                     <div *ngIf="f.otp.errors.required">Field required</div>
-                  </div>
-                  <!-- <h5 class="btn btn-link" (click)="sendotp()"> Verify OTP</h5> -->
-               </div>
-            </div>
-
-
          </div>
+</div>
+     
 
-         <div class="row">
+     
 
-            <div class="col-sm-6">
-               <div class="form-group">
+      <div class="row">
 
-                  <label ><b>Nationality :</b></label>
+         <div class="col-sm-6">
+            <div class="form-group">
 
-                  <!-- <input type="email" formControlName="nationality" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
-                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
-                     <div *ngIf="f.nationality.errors.required">Field required</div>
-                  </div> -->
+               <label for="exampleFormControlSelect2"><b>Nationality :</b></label>
 
-                  <select formControlName="nationality" class="form-control "
+             
+
+               <select formControlName="nationality" class="form-control "
                   [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" placeholder=" applicant Country Name">
                   <option>India</option>
                   <option>China</option>
@@ -134,112 +149,112 @@
                      <div *ngIf="f.nationality.errors.required">Field required</div>
                   </div>
                </select>
-               
-               </div>
+
             </div>
+         </div>
 
 
 
-            <div class="col-sm-6">
-               <div class="form-group">
+         <div class="col-sm-6">
+            <div class="form-group">
 
-                  <label ><b>Gender:</b></label>
+               <label for="exampleFormControlSelect2"><b>Gender:</b></label>
 
-                  <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
+               <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
                           <div *ngIf="f.gender.errors.required">Field required</div>
                       </div>   -->
 
-                  <select formControlName="gender" class="form-control "
-                     [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Gender">
-                     <option>Male</option>
-                     <option>Female</option>
-                     <option>Other</option>
-                     <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                        <div *ngIf="f.gender.errors.required">Field required</div>
-                     </div>
-                  </select>
+               <select formControlName="gender" class="form-control "
+                  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                     <div *ngIf="f.gender.errors.required">Field required</div>
+                  </div>
+               </select>
                <!-- </div> -->
             </div>
 
          </div>
 
-         </div>
-<br><br>
+      </div>
+      <br><br>
 
 
 
 
-         <div class="row">
+      <div class="row">
 
-            <div class="col-sm-6">
-               <div class="form-group">
+         <div class="col-sm-6">
+            <div class="form-group">
 
-                  <label for="exampleFormControlSelect2"><b>Password:</b></label>
+               <label for="exampleFormControlSelect2"><b>Password:</b></label>
 
-                  <input type="password" formControlName="password" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                     <div *ngIf="f.password.errors.required">Field required</div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-sm-6">
-               <div class="form-group">
-
-                  <label for="exampleFormControlSelect2"><b>Confirm Password:</b></label>
-
-                  <input type="password" formControlName="confirm_password" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
-                  <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-                     <div *ngIf="f.confirm_password.errors.required">Field required</div>
-                  </div>
+               <input type="password" formControlName="password" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
+               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+               
+             
                </div>
             </div>
          </div>
-         <br><br>
+         <!-- <div class="col-sm-6">
+            <div class="form-group">
 
-         <div class="row">
-            <div class="col-sm-6">
-               <div class="form-group">
+               <label for="exampleFormControlSelect2"><b>Confirm Password:</b></label>
 
-                  <label for="exampleFormControlSelect2"><b>Date Of Birth:</b></label>
+               <input type="password" formControlName="confirm_password" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
+               <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+                  <div *ngIf="f.confirm_password.errors.required">Field required</div>
 
-                  <input type="text" formControlName="dob" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="dd/mm/yy">
-                  <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                     <div *ngIf="f.dob.errors.required">Field required</div>
-                  </div>
                </div>
             </div>
-            <div class="col-sm-6">
-               <!-- <div class="form-group"> -->
+         </div> -->
+      </div>
+      <br><br>
 
-                  <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
+      <div class="row">
+         <div class="col-sm-6">
+            <div class="form-group">
 
-               <!-- </div> -->
+               <label for="exampleFormControlSelect2"><b>Date Of Birth:</b></label>
+
+               <input type="date" formControlName="dob" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter DOB">
+               <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                  <div *ngIf="f.dob.errors.required">Field required</div>
+               </div>
             </div>
-            <input type="hidden" value="contact_status">
          </div>
-       
-<br>
+         <div class="col-sm-6">
+            <!-- <div class="form-group"> -->
 
-         <div class="wrapper">
+            <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
 
-            <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
-
+            <!-- </div> -->
          </div>
-      
-<br>
+      </div>
 
-   
-   
+      <br>
 
-   
+      <div class="wrapper">
+
+         <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
+
+      </div>
+
+      <br>
 
 
-</form>
+
+
+
+
+
+   </form>
 
 
 </div>
-

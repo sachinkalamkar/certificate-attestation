@@ -10,11 +10,12 @@
           <div class="col-sm-6">
              <div class="login">
                 <h3 style="margin:4%;">Welcome to MahaIT</h3>
-                <form #signInForm="ngForm">
-                   <div id="u" class="form-group">
-                      <input id="username" spellcheck=false class="form-control" name="email_id" type="text"
-                      [(ngModel)]="model.email_id" style="margin-left:0 ;margin-top:-10%" size="8" alt="login"
-                      required="">
+                <form #signInForm="ngForm"(ngSubmit)="onSubmit(signInForm)">
+                   <div  class="form-group">
+                      <input type="text" name="email_id" #email_id="ngModel"[(ngModel)]="model.email_id" class="form-control"
+                 [pattern]="emailRegex" required
+                     style="margin-left:0 ;margin-top:-10%" size="8" >
+                      
                       <span class="form-highlight"></span>
                       <span class="form-bar"></span>
                       <label for="username" class="float-label">Email</label>
@@ -28,9 +29,9 @@
                          </i>
                       </p>
                    </div>
-                   <div id="p" class="form-group">
-                      <input id="password" class="form-control" spellcheck=false name="password" type="password"
-                      [(ngModel)]="model.password" style="margin-left:0" size="8" alt="login" required="">
+                   <div class="form-group">
+                      <input type="password"name="password"#password="ngModel"  [(ngModel)]="model.password" class="form-control"
+                     style="margin-left:0" size="8"required>
                       <span class="form-highlight"></span>
                       <span class="form-bar"></span>
                       <label for="password" class="float-label">Password</label>
@@ -52,7 +53,10 @@
                          </div>
                       </div>
                    </div>
-                   <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top:3%" ripple (click)="onSubmit()">SIGN IN</button>
+                   <div class="alert" *ngIf="serverErrorMessages">
+                     {{serverErrorMessages}}
+                 </div>
+                   <button id="submit" type="submit" class="btn btn-block btn-submit" style="margin-top:3%" ripple>SIGN IN</button>
                 </form>
                 <br>
                 <div class="row">
@@ -65,6 +69,7 @@
                    </div>
                   
                 </div>
+              
                 <!-- <div class="Rectangle-3"></div> -->
              </div>
              
