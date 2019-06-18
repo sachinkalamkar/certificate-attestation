@@ -1,8 +1,21 @@
-.background {
+// .background {
+// 	background-image: url("assets/img/lawyer-today11.png");
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// }
+.background{
+	width: 100%;
+	height: 50%;
 	background-image: url("assets/img/lawyer-today11.png");
-	background-repeat: no-repeat;
 	background-size: cover;
-}
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+ }​
+ .img-center{
+ display: block;
+ margin-left:2%;
+ margin-right:2%;
+ }
 .center_div{
   margin: 1%;
   /* background-color: white; */
