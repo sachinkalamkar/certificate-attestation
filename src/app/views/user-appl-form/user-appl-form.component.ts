@@ -63,6 +63,9 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
 
 }
   ngOnInit() {
+    $("input[type='image']").click(function() {
+      $("input[id='my_file']").click();
+  });
     this.contactForm = this.formBuilder.group ({
       applicant_type : ['',Validators.required],
         full_name : ['',Validators.required],

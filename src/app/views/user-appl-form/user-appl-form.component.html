@@ -110,19 +110,19 @@
                <br>
                <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
                <form [formGroup]="contactForm" enctype="multipart/form-data" >
-        
+        <div class="row">
+                <div class="col-sm-4" style="margin: 0 auto">
+                    
+                        <input type="image" src="assets/img/upload-logo.png" class="Oval" viewBox="0 0 24 24" > 
+                        <input type="file" id="my_file" style="display: contents;" />
+                      <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
+                      margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
+                     
+                    </div>
+        </div>
               
                <div class="row">
-
-                  <div class="col-sm-4" style="margin: 0 auto">
-                      <img src="assets/img/upload-logo.png" class="Oval" viewBox="0 0 24 24" > 
-              
-                    <button class="btn btn-link" style="color:cornflowerblue ; margin-top: -70%; 
-                    margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
-                   
-                  </div>
-                  
-                  <div class="col-sm-7">
+                <div class="col-sm-7">
                     <div class="form-group">
                      <label for="exampleFormControlInput1"><b>User Type :</b><span style="color:red">*</span></label>
 
