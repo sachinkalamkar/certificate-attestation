@@ -18,6 +18,7 @@ import { ViewUserS6Component } from './views/view-user-s6/view-user-s6.component
 // =====================GOM =========================
 import { ForgotPassComponent } from './views/forgot-pass/forgot-pass.component';
 import { ResetPassComponent } from './views/reset-pass/reset-pass.component';
+import { EmailOtpComponent } from './views/email-otp/email-otp.component';
 import { RegisterHereComponent } from './views/register-here/register-here.component';
 import { UserApplFormComponent } from './views/user-appl-form/user-appl-form.component';
 import { AdminAppComponent } from './views/admin-app/admin-app.component';
@@ -30,6 +31,10 @@ import { UserContactDetailsComponent } from './views/user-contact-details/user-c
 import { UserGuarantorDetailsComponent } from './views/user-guarantor-details/user-guarantor-details.component';
 import { UserCurrentDesignationComponent } from './views/user-current-designation/user-current-designation.component';
 import { UserUploadDocumentsComponent } from './views/user-upload-documents/user-upload-documents.component';
+
+import { UserProfileComponent } from './views/user-profile/user-profile.component';
+import { UserMandatoryDocumentsComponent } from './views/user-mandatory-documents/user-mandatory-documents.component';
+import { UserSelectDateComponent } from './views/user-select-date/user-select-date.component';
 
 export const routes: Routes = [
 
@@ -70,6 +75,14 @@ export const routes: Routes = [
     path:'reset-pass',
   
     component :ResetPassComponent,
+
+  },
+
+  {
+
+    path:'email-otp',
+  
+    component :EmailOtpComponent,
 
   },
 
@@ -129,6 +142,7 @@ export const routes: Routes = [
     component : UserUploadDocumentsComponent,
 
   },
+
   {
 
     path:'admin-app',
@@ -146,10 +160,36 @@ export const routes: Routes = [
   {
 
     path:'date-picker',
-  
     component :DatepickerComponent
+ 
+  },
+
+
+
+  {
+
+    path:'user-profile',
+    component :UserProfileComponent
+    
+  },
+  {
+
+    path:'user-mandatory-documents',
+  
+    component :UserMandatoryDocumentsComponent
 
   },
+  {
+
+    path:'user-select-date',
+  
+    component :UserSelectDateComponent
+
+  },
+
+
+
+
 
   {
 

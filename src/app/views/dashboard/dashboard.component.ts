@@ -181,7 +181,7 @@ $(document).ready(function() {
 
 forgotpass(){
   // this.router.navigate(['forgot-pass'])
-  this.router.navigate(['forgot-pass']);
+  this.router.navigate(['email-otp']);
 
 } 
 // onAdmin(){

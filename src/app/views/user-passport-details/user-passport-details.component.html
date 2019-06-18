@@ -132,13 +132,13 @@
       </div>
   <br><br>
        <br>
-       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
+       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account </b></h3>
        <form [formGroup]="passportForm"  >
        <div class="row">
           <div class="col-sm-7">
               <div class="form-group">
              <label for="exampleFormControlInput1"><b>Passport Number :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName=" passport_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. passport_number.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_number" class="form-control" [ngClass]="{'is-invalid': submitted && f. passport_number.errors }" >
              <div *ngIf="submitted && f. passport_number.errors" class="invalid-feedback">
                 <div *ngIf="f. passport_number.errors.required">Passport Number  required</div>
             </div>
@@ -147,7 +147,7 @@
           <div class="col-sm-7">
               <div class="form-group">
              <label for="exampleFormControlSelect1"><b>Place of Issue :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1"formControlName="passport_issue_place" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_issue_place.errors }" >
+             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="passport_issue_place" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_issue_place.errors }" >
              <div *ngIf="submitted && f.passport_issue_place" class="invalid-feedback">
                 <div *ngIf="f.passport_issue_place.required">Place of Issue required</div>
             </div>
@@ -156,13 +156,13 @@
           <div class="col-sm-7">
               <div class="form-group">
              <label for="exampleFormControlSelect2"><b>Expiry Date :</b></label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="passport_expiry_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_expiry_date.errors }">
+             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_expiry_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_expiry_date.errors }">
              <div *ngIf="submitted && f.passport_expiry_date.errors" class="invalid-feedback">
-                <div *ngIf="f.passport_expiry_date.errors.required">Expiry Daterequired</div>
+                <div *ngIf="f.passport_expiry_date.errors.required">Expiry Date required</div>
             </div>
             </div>
           </div>
-    
+    <input type ="hidden" formControlName="test">
   
           <div class="col-sm-4">
               <i ripple>
@@ -199,7 +199,7 @@
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>({{passport_number}})</td>
+          <td>fvkmdk</td>
           <td>Mumbai</td>
           <td>28.05.2025</td>
           <td> 30.05.2019</td>

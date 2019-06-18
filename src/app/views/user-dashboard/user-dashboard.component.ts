@@ -36,12 +36,13 @@ s1(){
 		this.router.navigate(['view-user-s1'])	  
 }
 appli(){
-
 		this.router.navigate(['user-appl-form'])	  
 }
-h1(){
-
+home(){
   this.router.navigate(['user-dashboard'])	  
+}
+doc(){
+  this.router.navigate(['user-mandatory-documents'])	  
 }
 
 }

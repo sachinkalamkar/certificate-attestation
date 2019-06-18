@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import * as $ from 'jquery'
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -7,12 +6,13 @@ import { HttpClient,HttpEventType } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { NgForm } from "@angular/forms";
+
 @Component({
-  selector: 'app-view-user-s1',
-  templateUrl: './view-user-s1.component.html',
-  styleUrls: ['./view-user-s1.component.scss']
+  selector: 'app-user-mandatory-documents',
+  templateUrl: './user-mandatory-documents.component.html',
+  styleUrls: ['./user-mandatory-documents.component.scss']
 })
-export class ViewUserS1Component implements OnInit {
+export class UserMandatoryDocumentsComponent implements OnInit {
 
   constructor(private router : Router) { }
 
@@ -41,10 +41,11 @@ s2(){
 
   this.router.navigate(['view-user-s2'])	  
 }
-appli(){
-  this.router.navigate(['user-dashboard'])
-}
 home(){
   this.router.navigate(['user-dashboard'])
 }
+doc(){
+  this.router.navigate(['user-mandatory-documents'])	  
+}
+
 }

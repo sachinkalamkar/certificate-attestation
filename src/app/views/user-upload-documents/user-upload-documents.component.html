@@ -128,7 +128,7 @@ color: #ffffff;
 
           <div class="col-sm-2 col-md-2">
 
-              <span (click)="ua1()"><a style="color:#4dbab5;padding-left:0px;">Passport Details</a>
+              <span (click)="ua2()"><a style="color:#4dbab5;padding-left:0px;">Passport Details</a>
 
               </span>
 
@@ -138,7 +138,7 @@ color: #ffffff;
 
           <div class="col-sm-2 col-md-2">
 
-              <span (click)="ua1()"><a  style="color:#4dbab5;padding-left:0px;" >Contact Details </a>
+              <span (click)="ua3()"><a  style="color:#4dbab5;padding-left:0px;" >Contact Details </a>
 
               </span>
 
@@ -148,7 +148,7 @@ color: #ffffff;
 
           <div class="col-sm-2 col-md-2">
 
-              <span (click)="ua1()" ><a  style="color:#4dbab5;padding-left:0px;" >  Guarantor Details</a>
+              <span (click)="ua4()" ><a  style="color:#4dbab5;padding-left:0px;" >  Guarantor Details</a>
 
               </span>
 
@@ -158,7 +158,7 @@ color: #ffffff;
 
           <div class="col-sm-2 col-md-2">
 
-              <span (click)="ua1()"><a  style="padding-left:0px;color:#4dbab5" >Current Designation</a></span>
+              <span (click)="ua5()"><a  style="padding-left:0px;color:#4dbab5" >Current Designation</a></span>
 
           </div>
 
@@ -166,7 +166,7 @@ color: #ffffff;
 
           <div class="col-sm-2 col-md-2">
 
-              <span (click)="ua1()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
+              <span (click)="ua6()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
 
               </span>
 
@@ -259,29 +259,34 @@ color: #ffffff;
      <br><hr> <br> <br>
 
      <h3 class="text-center"></h3>
-
+<form [formGroup]="uploadForm">
      <div class="row">
 
        <div class="row-sm-12">
 
         <div class="col-sm-12">
-
+       <div class ="form-group">
            <label for="exampleFormControlInput1"><b>Certificate Number :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
-
+           <input type="email" id="exampleFormControlInput1"  formControlName="certificate_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }" >
+           <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
+              <div *ngIf="f.certificate_no.errors.required">Expiry Date required</div>
+          </div>
         </div>
 
-       
+      </div>
 
         <div class="col-sm-12">
-
+            <div class ="form-group">
            <label for="exampleFormControlSelect1"><b>Name of Examination :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
+           <input type="email"id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }" >
+           <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
+              <div *ngIf="f.name_of_exam.errors.required">Expiry Date required</div>
+          </div>
 
         </div>
-
+        </div>
        </div>
 
 
@@ -289,21 +294,27 @@ color: #ffffff;
        <div class="row-sm-12">
 
         <div class="col-sm-12">
-
+            <div class ="form-group">
            <label for="exampleFormControlSelect2"><b>Year :</b></label>
 
-           <input type="email" class="form-control" id="exampleFormControlInput1" >
+           <input type="email"  id="exampleFormControlInput1" formControlName="year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. year .errors }" >
+           <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+              <div *ngIf="f.year.errors.required">Expiry Date required</div>
+          </div>
 
+        </div>
         </div>
 
 
-
         <div class="col-sm-12">
-
+            <div class ="form-group">
             <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b></label>
 
-            <input type="email" class="form-control" id="exampleFormControlInput1" >
-
+            <input type="email"  id="exampleFormControlInput1" formControlName="name_of_institute" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }" >
+            <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
+               <div *ngIf="f. name_of_institute.errors.required">Expiry Date required</div>
+           </div>
+            </div>
          </div>
 
         </div>
@@ -333,7 +344,7 @@ color: #ffffff;
           </div>
 
      </div>
-
+    </form>
      <br/>
 
      <br/>

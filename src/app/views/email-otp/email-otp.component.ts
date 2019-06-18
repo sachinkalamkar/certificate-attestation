@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery'
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,11 +8,12 @@ import { UserService } from '../../user.service';
 import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-forgot-pass',
-  templateUrl: './forgot-pass.component.html',
-  styleUrls: ['./forgot-pass.component.scss']
+  selector: 'app-email-otp',
+  templateUrl: './email-otp.component.html',
+  styleUrls: ['./email-otp.component.scss']
 })
-export class ForgotPassComponent implements OnInit {
+export class EmailOtpComponent implements OnInit {
+
   forgotForm: FormGroup;
   constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
 
@@ -136,7 +136,6 @@ $(document).ready(function() {
   });
  
 }
-
 onSubmit(){
   this.userservice.forgotpass(this.forgotForm.value).subscribe(data=>{
     console.log("forgot password",this.forgotForm.value)
@@ -152,4 +151,5 @@ resetpass(){
 db(){
   this.router.navigate(['dashboard'])
 }
+
 }
