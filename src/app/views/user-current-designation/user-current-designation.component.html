@@ -99,7 +99,10 @@
            <div class="col-sm-1 col-md-1">
                <span ><a  style="color:black; margin-left: -63px;" >Upload Documents </a>
                </span>
-           </div>
+           <br>
+
+           
+
        </div>
      
      
@@ -110,87 +113,166 @@
          <hr>
          <h3 class="text-center"><b></b></h3>
          <div class="wrapper">
-            <form [formGroup]="contactForm">
-               <div class="row">
-                  <div class="col-sm-6" style="float:left">
-                     <br><br>
-                     <div class="form-group">
-                      
-                        <input type="radio" name="designation" value="employee" checked> Employee/Self Employee<br>
+
+               <form [formGroup]="contactForm">
+          
+                  <div class="row">
+          
+                     <div class="col-sm-6" style="float:left">
+          
+                        <br><br>
+          
+                        <div class="form-group">
+          
+                           <!-- <div class="col-sm-2">   -->
+          
+                           <input type="radio" name="designation" value="employee" checked> Employee/Self Employee<br>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <div class="col-sm-6" >
-                     <br><br>
-                     <div class="form-group">
-                      
-                        <input type="radio" name="designation" value="student"> Student<br>
+          
+                     <div class="col-sm-6" >
+          
+                        <br><br>
+          
+                        <div class="form-group">
+          
+                           <!-- <div class="col-sm-2">   -->
+          
+                           <input type="radio" name="designation" value="student"> Student<br>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlInput1" style="float:left"><b>Name of the Organization :</b></label>
-                     <input type="text" class="form-control" formControlName="name_of_organization" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
-                     <div *ngIf="submitted && f.name_of_organization.errors" class="invalid-feedback">
-                        <div *ngIf="f.name_of_organization.errors.required">House Number</div>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlInput1" style="float:left"><b>Name of the Organization :</b><span style="color: red">*</span></label>
+          
+                        <input type="text" class="form-control" formControlName="name_of_organization" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
+          
+                        <div *ngIf="submitted && f.name_of_organization.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.name_of_organization.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect1"  style="float:left"><b>Course:</b></label>
-                     <input type="text" formControlName="course" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.course.errors }"  >
-                     <div *ngIf="submitted && f.course.errors" class="invalid-feedback">
-                        <div *ngIf="f.course.errors.required">House Number</div>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect1"  style="float:left"><b>Course:</b><span style="color: red">*</span></label>
+          
+                        <input type="text" formControlName="course" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.course.errors }"  >
+          
+                        <div *ngIf="submitted && f.course.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.course.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <br>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address </b></label>
-                     <input type="text" formControlName="organization_address" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
-                     <div *ngIf="submitted && f.organization_address.errors" class="invalid-feedback">
-                        <div *ngIf="f.organization_address.errors.required">House Number</div>
+          
+                     <br>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address </b><span style="color: red">*</span></label>
+          
+                        <input type="text" formControlName="organization_address" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
+          
+                        <div *ngIf="submitted && f.organization_address.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.organization_address.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect2"  style="float:left"><b>Name of College :</b></label>
-                     <input type="text" formControlName="name_of_college" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }" >
-                     <div *ngIf="submitted && f.name_of_college.errors" class="invalid-feedback">
-                        <div *ngIf="f.name_of_college.errors.required">House Number</div>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect2"  style="float:left"><b>Name of College :</b><span style="color: red">*</span></label>
+          
+                        <input type="text" formControlName="name_of_college" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }" >
+          
+                        <div *ngIf="submitted && f.name_of_college.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.name_of_college.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <br>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect2"  style="float:left"><b>Pan Card :</b></label>
-                     <input type="text" formControlName="pan_card" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pan_card.errors }"  >
-                     <div *ngIf="submitted && f.pan_card.errors" class="invalid-feedback">
-                        <div *ngIf="f.pan_card.errors.required">House Number</div>
+          
+                     <br>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect2"  style="float:left"><b>Pan Card :</b><span style="color: red">*</span></label>
+          
+                        <input type="text" formControlName="pan_card" id="exampleFormControlInput1"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pan_card.errors }"  >
+          
+                        <div *ngIf="submitted && f.pan_card.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.pan_card.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b></label>
-                     <input type="text" formControlName="college_address" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
-                     <div *ngIf="submitted && f.college_address.errors" class="invalid-feedback">
-                        <div *ngIf="f.college_address.errors.required">House Number</div>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b><span style="color: red">*</span></label>
+          
+                        <input type="text" formControlName="college_address" id="exampleFormControlInput1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.college_address.errors }"  >
+          
+                        <div *ngIf="submitted && f.college_address.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.college_address.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
-                  </div>
-                  <br>
-                  <br/>
-                  <div class="col-sm-6">
-                     <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b></label>
-                     <input type="text"id="exampleFormControlInput1" formControlName="purpose_for_authentication" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.purpose_for_authentication.errors }" >
-                     <div *ngIf="submitted && f.purpose_for_authentication.errors" class="invalid-feedback">
-                        <div *ngIf="f.purpose_for_authentication.errors.required">House Number</div>
+          
+                     <br>
+          
+                     <br/>
+          
+                     <div class="col-sm-6">
+          
+                        <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b><span style="color: red">*</span></label>
+          
+                        <input type="text"id="exampleFormControlInput1" formControlName="purpose_for_authentication" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.purpose_for_authentication.errors }" >
+          
+                        <div *ngIf="submitted && f.purpose_for_authentication.errors" class="invalid-feedback">
+          
+                           <div *ngIf="f.purpose_for_authentication.errors.required">House Number</div>
+          
+                        </div>
+          
                      </div>
+          
                   </div>
-               </div>
-               <br><br>
-               <input type="hidden" formControlName="test">
-             
-               <div class="wrapper">
-                  <button type="button" class="btn btn-primary" style="width:10%;" (click)="guarantordetail()">Back</button> &nbsp;  &nbsp;
-                  <button type="button" class="btn btn-primary" style="width:10%;" (click)="uploadDocument()">Next</button>
-               </div>
-            </form>
-            
-   
-        
-         <br>
-      </div>
+          
+                  <input type="hidden" formControlName="test">
+          
+                  <div class="wrapper">
+          
+                     <button type="button" class="btn btn-primary" style="width:10%;" (click)="guarantordetail()">Back</button> &nbsp;  &nbsp;
+          
+                     <button type="button" class="btn btn-primary" style="width:10%;" (click)="uploadDocument()">Next</button>
+          
+                  </div>
+          
+               </form>
+          
+               <br/>
+          
+               <br/>
+          
+            </div>
+          
+          
+
+      
     </div> 

@@ -22,6 +22,11 @@ export class UserUploadDocumentsComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private userservice: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    $("input[type='image']").click(function() {
+
+      $("input[id='my_file']").click();
+
+  });
     var test = this.route.snapshot.queryParamMap.get('obj');
 
   console.log("test", JSON.parse(test));

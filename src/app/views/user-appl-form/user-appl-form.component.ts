@@ -23,7 +23,7 @@ imgURL: any;
 public message: string;
  public serverData:any;
  verifyStatus: string;
-
+ applicant_type: string = '';
 preview(files) {
   if (files.length === 0)
     return;

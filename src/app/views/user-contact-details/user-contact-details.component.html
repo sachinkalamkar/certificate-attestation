@@ -1,366 +1,370 @@
-<div class="container" style="background-color: white;">
-  <div class="row img-responsive">
-    <div class="header background">
-      <div class="row" style="padding:2%;">
-        <div class="col-md-2">
-            <span (click)="home()" ><img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></span>
-        </div>
-        <div class="col-md-10">
-          <h2><b>APPLICATION PROCESS</b></h2>
-        </div>
+
+
+
+  
+  <div class="container" style="background-color: white;">
+      <div class="row img-responsive">
+         <div class="header background">
+            <div class="row" style="padding:2%;">
+               <div class="col-md-2">
+                  <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
+               </div>
+               <div class="col-md-10">
+                  <h2><b>APPLICATION PROCESS</b></h2>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-
-
-
-
-
-
-  <div style="background-color: #f5f5f5">
-    <div class="container">
-      <br><br><br>
-
-
-      <div class="stepwizard ">
-
-        <div class="stepwizard-row setup-panel"></div>
-
-        <div class=" stepwizard-step">
-          <span style="margin-left:0px;  color: white;" class="round-tab">
-            <h5 style="margin-top:10px" aria-hidden="true">1</h5>
-          </span>
-        </div>
-
-        <div class="stepwizard-step">
-          <span style="margin-left:0px;  color: white;" class="round-tab">
-            <i class="fa fa-unCheck" aria-hidden="true"></i>
-            <h5 style="margin-top:0px" aria-hidden="true">2</h5>
-          </span>
-        </div>
-
-        <div class="stepwizard-step">
-          <span style="margin-left:0px; color: white;" class="round-tab">
-            <i class="fa fa-unCheck" aria-hidden="true"></i>
-            <h5 style="margin-top:0px" aria-hidden="true">3</h5>
-          </span>
-        </div>
-
-        <div class="stepwizard-step">
-          <span style="margin-left:0px; color: white;" class="round-tab">
-            <i class="fa fa-unCheck" aria-hidden="true"></i>
-            <h5 style="margin-top:0px" aria-hidden="true">4</h5>
-          </span>
-        </div>
-        <div class="stepwizard-step">
-          <span style="margin-left:0px; color: white;" class="round-tab">
-            <i class="fa fa-unCheck" aria-hidden="true"></i>
-            <h5 style="margin-top:0px" aria-hidden="true">5</h5>
-          </span>
-        </div>
-
-        <div class="stepwizard-step">
-          <span style="margin-left:0px; color: white;" class="round-tab">
-            <i class="fa fa-unCheck" aria-hidden="true"></i>
-            <h5 style="margin-top:0px" aria-hidden="true">6</h5>
-          </span>
-        </div>
-      </div>
-      <div class="row" style="padding:10px; ">
-
-
-        <div class="col-sm-2 col-md-2 ;">
-
-          <span (click)="ua1()"> <a style=" margin-left: 34px;text-align: center; color:#1386F6">Personal Details
-            </a></span>
-
-        </div>
-
-
-
-        <div class="col-sm-2 col-md-2">
-          <span (click)="ua2()"><a style="color:#1386F6; margin-left: 34px;">Passport Details</a>
-          </span>
-        </div>
-
-        <div class="col-sm-2 col-md-2">
-          <span><a style="color:#1386F6; margin-left: 34px;">Contact Details </a>
-          </span>
-        </div>
-
-        <div class="col-sm-2 col-md-2">
-          <span><a style="color:black; margin-left: 34px;"> Guarantor Details</a>
-          </span>
-        </div>
-
-        <div class="col-sm-3 col-md-3">
-          <span><a style="color:black; margin-left: 34px; ">Current Designation</a></span>
-        </div>
-
-        <div class="col-sm-1 col-md-1">
-          <span><a style="color:black; margin-left: -63px;">Upload Documents </a>
-          </span>
-        </div>
-      </div>
-
-
-      <br><br><br>
-      <hr>
-
-
-
-      <h3 class="text-center"><b></b></h3>
-      <div class="wrapper">
-        <form [formGroup]="contactForm">
-          <div class="row">
-            <div class="col-sm-6">Permanent Adress</div>
-
-            <div class="col-sm-6">
-
-
-
-              <label>Present Address</label>
-
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" (change)="toggleVisibility($event)" id="yourBox">
-                <label class="custom-control-label" for="yourBox">Same as a permanent address</label>
-              </div>
+     
+  
+  
+  
+  
+  
+    <div style="background-color: #f5f5f5">
+        <div class="container">
+          <br><br><br>
+  
+  
+          <div class="stepwizard ">
+                  
+              <div class="stepwizard-row setup-panel"></div> 
+       
+             <div   class=" stepwizard-step" >
+                <span style="margin-left:0px;  color: white;" class="round-tab">
+                  <h5 style="margin-top:10px" aria-hidden="true">1</h5>
+                </span>
             </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="exampleFormControlInput1" style="float:left"><b>Country :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_country"
-                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
-                <div *ngIf="submitted && f.permanent_country.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_country.errors.required">Country required</div>
+       
+                <div class="stepwizard-step">
+                    <span style="margin-left:0px;  color: white;" class="round-tab">  
+                       <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                      <h5 style="margin-top:0px" aria-hidden="true">2</h5>
+                    </span>
                 </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-                  <label for="present_country" style="float:left"><b>Country :</b></label>
-                  <input type="text" id="present_country" formControlName="present_country" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
+       
+                <div class="stepwizard-step">
+                    <span style="margin-left:0px; color: white;" class="round-tab">
+                      <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                      <h5 style="margin-top:0px" aria-hidden="true">3</h5>
+                    </span>
                 </div>
-                <div *ngIf="submitted && f.present_country.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_country.errors.required">Country required</div>
+       
+                <div class="stepwizard-step">
+                    <span style="margin-left:0px; color: white;" class="round-tab">
+                       <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                      <h5 style="margin-top:0px" aria-hidden="true">4</h5>
+                    </span>
                 </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-
-                <label for="exampleFormControlSelect2" style="float:left"><b>State :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_state" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }">
-
-                <div *ngIf="submitted && f.permanent_state.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_state.errors.required">Staterequired</div>
+                <div class="stepwizard-step">
+                    <span style="margin-left:0px; color: white;" class="round-tab">
+                       <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                      <h5 style="margin-top:0px" aria-hidden="true">5</h5>
+                    </span>
                 </div>
-              </div>
-            </div>
-
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-
-                <div *ngIf="!marked">
-                  <label for="city" style="float:left"><b>State :</b></label>
-
-                  <input type="text" id="present_state" formControlName="present_state" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }">
+                       
+                <div class="stepwizard-step">
+                    <span style="margin-left:0px; color: white;" class="round-tab">
+                       <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                      <h5 style="margin-top:0px" aria-hidden="true">6</h5>
+                    </span>
                 </div>
-
-                <div *ngIf="submitted && f.present_state.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_state.errors.required">State required</div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-
-                <label for="exampleFormControlSelect2" style="float:left"><b>City :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_city" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }">
-
-                <div *ngIf="submitted && f.permanent_city.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_city.errors.required">Cityrequired</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-                  <label for="present_city" style="float:left"><b>City:</b></label>
-                  <input type="text" id="present_city" formControlName="present_city" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.present_city.errors }">
-                </div>
-                <div *ngIf="submitted && f.present_city.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_city.errors.required">Cityrequired</div>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_house_number"
-                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_house_number.errors }">
-                <div *ngIf="submitted && f.permanent_house_number.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_house_number.errors.required">House Number</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-                  <label for="present_house_number" style="float:left"><b>House Number :</b></label>
-                  <input type="text" id="present_house_number" formControlName="present_house_number"
-                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_number.errors }">
-                </div>
-                <div *ngIf="submitted && f.present_house_number.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_house_number.errors.required">House Number</div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1" style="float:left"><b>Street Number:</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_street_number"
-                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_street_number.errors }">
-                <div *ngIf="submitted && f.permanent_street_number.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_street_number.errors.required">House Number</div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-
-                  <label for="present_street_number" style="float:left"><b>Street Number :</b></label>
-                  <input type="text" id="present_street_number" formControlName="present_street_number"
-                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_street_number.errors }">
-                </div>
-                <div *ngIf="submitted && f.present_street_number.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_street_number.errors.required">Street Number</div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="exampleFormControlSelect2" style="float:left"><b>Pincode :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName=" permanent_pincode"
-                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }">
-                <div *ngIf="submitted && f. permanent_pincode.errors" class="invalid-feedback">
-                  <div *ngIf="f. permanent_pincode.errors.required">House Number</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-
-                  <label for="present_pincode" style="float:left"><b>Pincode:</b></label>
-                  <input type="text" id="present_pincode" formControlName="present_pincode" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.present_pincode.errors }">
-                </div>
-
-                <div *ngIf="submitted && f.present_pincode.errors" class="invalid-feedback">
-                  <div *ngIf="f.present_pincode.errors.required">pin code Number</div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b></label>
-                <input type="text" id="exampleFormControlInput1" formControlName="permanent_mobile" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.permanent_mobile.errors }">
-                <div *ngIf="submitted && f.permanent_mobile.errors" class="invalid-feedback">
-                  <div *ngIf="f.permanent_mobile.errors.required">Mobile Number</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-
-                  <label for="present_mobile" style="float:left"><b>Mobile Number :</b></label>
-                  <input type="text" id="present_mobile" formControlName=" present_mobile" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.present_mobile.errors }">
-                </div>
-
-                <div *ngIf="submitted && f. present_mobile.errors" class="invalid-feedback">
-                  <div *ngIf="f .present_mobile.errors.required"> Mobile Number</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="email_id" style="float:left"><b>Email ID:</b></label>
-                <input type="text" id="email_id" formControlName="email_id" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
-                <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
-                  <div *ngIf="f.email_id.errors.required">email_id Number</div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-sm-6">
-              <div class="form-group">
-                <div *ngIf="!marked">
-
-                  <label for="email_id" style="float:left"><b>Email ID :</b></label>
-                  <input type="text" id="email_id" formControlName="email_id" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
-                </div>
-                <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
-                  <div *ngIf="f.email_id.errors.required">email Id required</div>
-                </div>
-              </div>
-
-            </div>
-            <input type="hidden" value=test>
-
-
-            <div class="wrapper">
-
-              <button type="button" class="btn btn-primary" style=" width: 67%;margin-left: 500%;"
-                (click)="contactDetail()">Next</button>&nbsp; &nbsp;
-              <button type="button" class="btn btn-primary" style="    width: 67%;margin-left: 414%;margin-top: -78%;"
-                (click)=" passdetail()">Back </button>
-
-            </div>
-
           </div>
-        </form>
-
-      </div>
-
-
-
-
-    </div>
-
-  </div>
+         <div class="row" style="padding:10px; " >
+          
+             
+             <div class="col-sm-2 col-md-2 ;">
+                
+              <span (click)="ua1()"> <a style=" margin-left: 34px;text-align: center; color:#1386F6">Personal Details </a></span>  
+                
+              </div>
+       
+          
+       
+             <div class="col-sm-2 col-md-2">
+                 <span (click)="ua2()"><a style="color:#1386F6; margin-left: 34px;" >Passport Details</a>
+                 </span>
+             </div>	
+       
+             <div class="col-sm-2 col-md-2">
+                 <span><a  style="color:#1386F6; margin-left: 34px;" >Contact Details </a>
+                 </span>
+             </div>
+       
+             <div class="col-sm-2 col-md-2">
+                 <span><a  style="color:black; margin-left: 34px;" >  Guarantor Details</a>
+                 </span>
+             </div>
+       
+             <div class="col-sm-3 col-md-3">
+                 <span><a  style="color:black; margin-left: 34px; " >Current Designation</a></span>
+             </div>
+       
+             <div class="col-sm-1 col-md-1">
+                 <span><a  style="color:black; margin-left: -63px;" >Upload Documents </a>
+                 </span>
+             </div>
+         </div>
+  
+  
+          <br><br><br>
+          <hr>
+  
+  
+  
+          <h3 class="text-center"><b></b></h3>
+          <div class="wrapper">
+            <form [formGroup]="contactForm">
+              <div class="row">
+                <div class="col-sm-6">Permanent Adress</div>
+      
+                <div class="col-sm-6">
+      
+      
+      
+                  <label>Present Address</label>
+      
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" (change)="toggleVisibility($event)" id="yourBox">
+                    <label class="custom-control-label" for="yourBox">Same as a permanent address</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1" style="float:left"><b>Country :</b><span style="color: red">*</span></label>
+                    <input type="text" id="exampleFormControlInput1" formControlName="permanent_country"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
+                    <div *ngIf="submitted && f.permanent_country.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_country.errors.required">Country required</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+                      <label for="present_country" style="float:left"><b>Country :</b><span style="color: red">*</span></label>
+                      <input type="text" id="present_country" formControlName="present_country"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.present_country.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_country.errors.required">Country required</div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+      
+                    <label for="exampleFormControlSelect2" style="float:left"><b>State :</b><span style="color: red">*</span></label>
+                    <input type="text"  id="exampleFormControlInput1" formControlName="permanent_state"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }">
+      
+                    <div *ngIf="submitted && f.permanent_state.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_state.errors.required">Staterequired</div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                
+                    <div *ngIf="!marked">
+                      <label for="city" style="float:left"><b>State :</b><span style="color: red">*</span></label>
+      
+                      <input type="text"  id="present_state" formControlName="present_state"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }">
+                    </div>
+  
+                    <div *ngIf="submitted && f.present_state.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_state.errors.required">State required</div>
+                    </div>
+                    
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+      
+                    <label for="exampleFormControlSelect2" style="float:left"><b>City :</b><span style="color: red">*</span></label>
+                    <input type="text"id="exampleFormControlInput1" formControlName="permanent_city"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }">
+      
+                    <div *ngIf="submitted && f.permanent_city.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_city.errors.required">Cityrequired</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+                      <label for="present_city" style="float:left"><b>City:</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_city" formControlName="present_city"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_city.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.present_city.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_city.errors.required">Cityrequired</div>
+      
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
+                    <input type="text"  id="exampleFormControlInput1"
+                      formControlName="permanent_house_number" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.permanent_house_number.errors }">
+                    <div *ngIf="submitted && f.permanent_house_number.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_house_number.errors.required">House Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+                      <label for="present_house_number" style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_house_number" formControlName="present_house_number"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_number.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.present_house_number.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_house_number.errors.required">House Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+                
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="float:left"><b>Street Number:</b><span style="color: red">*</span></label>
+                    <input type="text" id="exampleFormControlInput1"
+                      formControlName="permanent_street_number" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.permanent_street_number.errors }">
+                    <div *ngIf="submitted && f.permanent_street_number.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_street_number.errors.required">House Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+      
+                      <label for="present_street_number" style="float:left"><b>Street Number :</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_street_number"
+                        formControlName="present_street_number" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.present_street_number.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.present_street_number.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_street_number.errors.required">Street Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2" style="float:left"><b>Pincode :</b><span style="color: red">*</span></label>
+                    <input type="text" id="exampleFormControlInput1" formControlName=" permanent_pincode"class="form-control" 
+                      [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }">
+                    <div *ngIf="submitted && f. permanent_pincode.errors" class="invalid-feedback">
+                      <div *ngIf="f. permanent_pincode.errors.required">House Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+      
+                      <label for="present_pincode" style="float:left"><b>Pincode:</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_pincode" formControlName="present_pincode" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.present_pincode.errors }">
+                    </div>
+      
+                    <div *ngIf="submitted && f.present_pincode.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_pincode.errors.required">pin code Number</div>
+                    </div>
+                  </div>
+      
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
+                    <input type="text" id="exampleFormControlInput1" formControlName="permanent_mobile" class="form-control" 
+                      [ngClass]="{ 'is-invalid': submitted && f.permanent_mobile.errors }">
+                    <div *ngIf="submitted && f.permanent_mobile.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_mobile.errors.required">Mobile Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+      
+                      <label for="present_mobile" style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_mobile" formControlName=" present_mobile" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && f.present_mobile.errors }">
+                    </div>
+      
+                    <div *ngIf="submitted && f. present_mobile.errors" class="invalid-feedback">
+                      <div *ngIf="f .present_mobile.errors.required"> Mobile Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email_id" style="float:left"><b>Email ID:</b><span style="color: red">*</span></label>
+                    <input type="text"  id="email_id" formControlName="email_id" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
+                    <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
+                      <div *ngIf="f.email_id.errors.required">email_id Number</div>
+                    </div>
+                  </div>
+                </div>
+      
+      
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div *ngIf="!marked">
+      
+                      <label for="email_id" style="float:left"><b>Email ID :</b><span style="color: red">*</span></label>
+                      <input type="text"  id="email_id" formControlName="email_id" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
+                    </div>
+                    <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
+                      <div *ngIf="f.email_id.errors.required">email Id required</div>
+                    </div>
+                  </div>
+      
+                </div>
+      <input type ="hidden" value=test>
+      
+      
+                <div class="wrapper">
+                  
+                  <button type="button" class="btn btn-primary" style=" width: 67%;margin-left: 500%;" (click)="contactDetail()">Next</button>&nbsp; &nbsp;
+                  <button type="button" class="btn btn-primary" style="    width: 67%;margin-left: 414%;margin-top: -78%;" (click)=" passdetail()">Back </button>
+                  
+                </div>
+      
+              </div>
+            </form>
+      
+          </div>
+      
+      
+      
+      
+        </div>
+      
+      </div> 

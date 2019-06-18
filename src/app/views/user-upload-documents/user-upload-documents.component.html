@@ -1,13 +1,9 @@
-
-
-
-
 <div class="container" style="background-color: white;">
   <div class="row img-responsive">
     <div class="header background">
       <div class="row" style="padding:2%;">
         <div class="col-md-2">
-            <span (click)="home()" ><img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></span>
+          <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
         </div>
         <div class="col-md-10">
           <h2><b>APPLICATION PROCESS</b></h2>
@@ -85,21 +81,21 @@
         </div>
 
         <div class="col-sm-2 col-md-2">
-          <span (click)="ua3()"><a style="color:#1386F6; margin-left: 34px;">Contact Details </a>
+          <span><a style="color:black; margin-left: 34px;">Contact Details </a>
           </span>
         </div>
 
         <div class="col-sm-2 col-md-2">
-          <span (click)="ua4()"><a style="color:#1386F6; margin-left: 34px;"> Guarantor Details</a>
+          <span><a style="color:black; margin-left: 34px;"> Guarantor Details</a>
           </span>
         </div>
 
         <div class="col-sm-3 col-md-3">
-          <span (click)="ua5()"><a style="color:#1386F6;margin-left: 34px; ">Current Designation</a></span>
+          <span><a style="color:black; margin-left: 34px; ">Current Designation</a></span>
         </div>
 
         <div class="col-sm-1 col-md-1">
-          <span (click)="ua6()"><a style="color:#1386F6; margin-left: -63px;">Upload Documents </a>
+          <span><a style="color:black; margin-left: -63px;">Upload Documents </a>
           </span>
         </div>
       </div>
@@ -108,110 +104,189 @@
 
       <br><br>
       <br>
-      <hr> <br> <br>
-
-      <h3 class="text-center"></h3>
       <form [formGroup]="uploadForm">
+
         <div class="row">
+
+
 
           <div class="row-sm-12">
 
+
+
             <div class="col-sm-12">
+
               <div class="form-group">
-                <label for="exampleFormControlInput1"><b>Certificate Number :</b></label>
+
+                <label for="exampleFormControlInput1"><b>Certificate Number :</b><span
+                    style="color: red">*</span></label>
+
+
 
                 <input type="email" id="exampleFormControlInput1" formControlName="certificate_no" class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }">
+
                 <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
+
                   <div *ngIf="f.certificate_no.errors.required">Expiry Date required</div>
+
                 </div>
+
               </div>
+
+
 
             </div>
 
+
+
             <div class="col-sm-12">
+
               <div class="form-group">
-                <label for="exampleFormControlSelect1"><b>Name of Examination :</b></label>
+
+                <label for="exampleFormControlSelect1"><b>Name of Examination :</b><span
+                    style="color: red">*</span></label>
+
+
 
                 <input type="email" id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }">
+
                 <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
+
                   <div *ngIf="f.name_of_exam.errors.required">Expiry Date required</div>
+
                 </div>
 
+
+
               </div>
+
             </div>
+
           </div>
+
+
+
+
 
 
 
           <div class="row-sm-12">
 
+
+
             <div class="col-sm-12">
+
               <div class="form-group">
-                <label for="exampleFormControlSelect2"><b>Year :</b></label>
+
+                <label for="exampleFormControlSelect2"><b>Year :</b><span style="color: red">*</span></label>
+
+
 
                 <input type="email" id="exampleFormControlInput1" formControlName="year" class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f. year .errors }">
+
                 <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+
                   <div *ngIf="f.year.errors.required">Expiry Date required</div>
+
                 </div>
 
+
+
               </div>
+
             </div>
+
+
+
 
 
             <div class="col-sm-12">
+
               <div class="form-group">
-                <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b></label>
+
+                <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b><span
+                    style="color: red">*</span></label>
+
+
 
                 <input type="email" id="exampleFormControlInput1" formControlName="name_of_institute"
                   class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }">
+
                 <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
+
                   <div *ngIf="f. name_of_institute.errors.required">Expiry Date required</div>
+
                 </div>
+
               </div>
+
             </div>
 
+
+
           </div>
-        
+
+
+
+
+
 
 
           <div class="col-sm-4">
 
+
+
             <h3 style="color:cornflowerblue ; margin-top: 0%;
-   
-               margin-left: 12%; font-size: 110.02%">CERTIFICATE TO BE UPLOADED</h3>
+       
+       
+       
+                   margin-left: 12%; font-size: 110.02%">CERTIFICATE TO BE UPLOADED</h3>
+
 
 
             <i ripple>
 
-              <img src="assets/img/upload-logo.png" style="margin-top: 2%;
-   
-                   margin-left: 34%;    height: 69px;  width: 21%;
-   
-                 " viewBox="0 0 24 24">
+
+
+              <input type="image" src="assets/img/upload-logo.png" style="margin-top: 2%;
+       
+       
+       
+                       margin-left: 34%;    height: 69px;  width: 21%;
+       
+       
+       
+                     " viewBox="0 0 24 24">
+
+              <input type="file" id="my_file" style="display: none;" />
+
+
 
             </i>
 
+
+
             <h3 style="color:cornflowerblue ; margin-top: 5%;
-   
-               margin-left: 22%; font-size: 110.02%">Upload Document Here</h3>
+       
+       
+       
+                   margin-left: 22%; font-size: 110.02%">Upload Document Here</h3>
+
+
 
           </div>
 
+
+
         </div>
 
-
-<button type="button" class="btn btn-primary" style="width:10%; " (click)="currentdesignation()">Add </button>
       </form>
       <br />
-
       <br />
-
       <br />
-
-
 
       <table class="table">
 
@@ -279,8 +354,6 @@
 
 
 
-
-
           </tr>
 
 
@@ -288,13 +361,9 @@
         </tbody>
 
       </table>
-
       <br>
-
       <hr>
-
-      <br>
-
+      <br />
       <h4><b style="margin-top:3%">UPLOAD ID PROOFS</b></h4>
 
       <table class="table">
@@ -363,8 +432,6 @@
 
 
 
-
-
           </tr>
 
 
@@ -372,65 +439,95 @@
         </tbody>
 
       </table>
-
       <br>
-
       <hr>
-
       <div class="row">
+
+
 
         <div class="col-sm-6" style="float:left">
 
+
+
           <br><br>
+
+
 
           <div class="form-group">
 
 
+
+            <!-- <div class="col-sm-2">   -->
+
+
+
             <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+
+
 
             <label for="rem" style="float:center">Applicant will visit himself for Attestation</label>
 
+
+
           </div>
 
+
+
         </div>
+
+
+
+
 
 
 
         <div class="col-sm-6">
 
+
+
           <br><br>
+
+
 
           <div class="form-group">
 
 
 
+            <!-- <div class="col-sm-2">   -->
+
+
+
             <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+
+
 
             <label for="rem" style="float:center">Applicant will authorize representative to visit on applicant's behalf
               for attestation</label>
 
+
+
           </div>
+
+
 
         </div>
 
+
+
       </div>
-
-
-
-
-
       <div class="wrapper">
+
         <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentdesignation()">Back</button>
         &nbsp; &nbsp;
+
         <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactDetails()">Submit</button>
+
+
 
       </div>
 
+
+
       <br />
-
-
-      <br>
-
-      <br>
     </div>
   </div>
