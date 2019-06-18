@@ -20,7 +20,6 @@ export class EmailOtpComponent implements OnInit {
     ngOnInit() {
     this.forgotForm = this.formbuilder.group({
     email_otp: ['']
-     
     });
   
 

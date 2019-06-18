@@ -23,7 +23,7 @@ imgURL: any;
 public message: string;
  public serverData:any;
  verifyStatus: string;
-
+ applicant_type: string = '';
 preview(files) {
   if (files.length === 0)
     return;
@@ -63,6 +63,9 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
 
 }
   ngOnInit() {
+    $("input[type='image']").click(function() {
+      $("input[id='my_file']").click();
+  });
     this.contactForm = this.formBuilder.group ({
      
       applicant_type : ['',Validators.required],

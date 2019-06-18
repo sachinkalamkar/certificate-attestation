@@ -60,5 +60,7 @@ this.router.navigate(['user-appl-form'])
 doc(){
   this.router.navigate(['user-mandatory-documents'])	  
 }
-
+profile(){
+  this.router.navigate(['user-profile'])	  
+}
 }

@@ -65,6 +65,10 @@ export class UserPassportDetailsComponent implements OnInit {
 
     this.router.navigate(['user-appl-form'])
   }
+  home(){
+
+    this.router.navigate(['user-dashboard'])	  
+  }
 
   ua1() {
     this.router.navigate(['user-appl-form'])

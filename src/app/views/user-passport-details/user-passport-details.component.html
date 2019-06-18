@@ -1,228 +1,207 @@
 
-<style>
-    /* * {box-sizing: border-box;}
-    body { 
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    } */
-    .header {
-    overflow: hidden;
-    /* background-color: green; */
-    padding: 3% 7%;
-    height: 10%;
-    }
-    .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px; 
-    line-height: 25px;
-    border-radius: 4px;
-    }
-    .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-    }
-    .wrapper {
-    text-align: center;
-    }
-    .button {
-    position: absolute;
-    top: 50%;
-    }
-  
-   h2{
-    width: 80%;
-  height: 176px;
-  font-family: ProximaNova-Light;
-  font-size: 60.2px;
-  font-weight: bold;
-  /* font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal; */
-  color: #ffffff;
-   }
-  </style>
-  <div class="header background">
-    <div class="row">
-       <div class="col-md-3" >
-          <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
-       </div>
-       <div class="col-md-9">
-          <h2 class=""><b>APPLICATION PROCESS</b></h2>
-       </div>
-    </div>
-  </div>
-  <!-- <br><br><br><br> -->
-  <div style="background-color: #f5f5f5">
-    <div class="container" >
-      <br><br><br>
-        <div class="row">
-            
-            <div class="col-sm-2 col-md-2">
-               <span (click)="ua1()" ><a  style="padding-left:0px; color:#4dbab5">Personal Details </a></span> 
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua2()"><a style="color:black;padding-left:0px;" >Passport Details</a>
-                </span>
-            </div>	
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua3()"><a  style="color:black;padding-left:0px;" >Contact Details </a>
-                </span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua4()"><a  style="color:black;padding-left:0px;">  Guarantor Details</a>
-                </span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua5()"><a  style="padding-left:0px;color:black" >Current Designation</a></span>
-            </div>
-  
-            <div class="col-sm-2 col-md-2">
-                <span (click)="ua6()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
-                </span>
-            </div>
-        </div>
-  
-      <div class="stepwizard">
-    
-         <div class="stepwizard-row setup-panel"></div>
-  
-            <div  class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua1()" class="round-tab">
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua2()"class="round-tab">  
-                  <i class="fa fa-check" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua3()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-  
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua4()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;" (click)="ua5()"class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-                   
-            <div class="stepwizard-step">
-                <span style="margin-left:35px;"(click)="ua6()" class="round-tab">
-                  <i class="fa fa-unCheck" aria-hidden="true"></i>
-                </span>
-            </div>
-      </div>
-  <br><br>
-       <br>
-       <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account </b></h3>
-       <form [formGroup]="passportForm"  >
-       <div class="row">
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlInput1"><b>Passport Number :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_number" class="form-control" [ngClass]="{'is-invalid': submitted && f. passport_number.errors }" >
-             <div *ngIf="submitted && f. passport_number.errors" class="invalid-feedback">
-                <div *ngIf="f. passport_number.errors.required">Passport Number  required</div>
-            </div>
-            </div>
-        </div>
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect1"><b>Place of Issue :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="passport_issue_place" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_issue_place.errors }" >
-             <div *ngIf="submitted && f.passport_issue_place" class="invalid-feedback">
-                <div *ngIf="f.passport_issue_place.required">Place of Issue required</div>
-            </div>
-            </div>
-          </div>
-          <div class="col-sm-7">
-              <div class="form-group">
-             <label for="exampleFormControlSelect2"><b>Expiry Date :</b></label>
-             <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_expiry_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_expiry_date.errors }">
-             <div *ngIf="submitted && f.passport_expiry_date.errors" class="invalid-feedback">
-                <div *ngIf="f.passport_expiry_date.errors.required">Expiry Date required</div>
-            </div>
-            </div>
-          </div>
-    <input type ="hidden" formControlName="test">
-  
-          <div class="col-sm-4">
-              <i ripple>
-                <img src="assets/img/upload-logo.png" style="margin-top: -32%;
-                  margin-left: 18%;    height: 69px;
-    width: 21%;
-                " viewBox="0 0 24 24">
-              </i>
-              <h3 style="color:cornflowerblue ; margin-top: -5%;
-              margin-left: 2%; font-size: 110.02%">Upload Scaned Copy of Passport</h3>
-            </div>
-       </div>
-       <div class="wrapper">
-        <button type="button" class="btn btn-primary" style="width:20%;" (click)=" onSubmit()">Submit</button>
-     </div>
-      </form>
-       <br/>
-       <br/>
-       <br/>
-      
-  <table class="table">
-      <caption>List of documents</caption>
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Passport Number </th>
-          <th scope="col">Place of Issue </th>
-          <th scope="col">Expiry Date </th>
-          <th scope="col">Upload Date </th>
-          <th scope="col">View Document</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>fvkmdk</td>
-          <td>Mumbai</td>
-          <td>28.05.2025</td>
-          <td> 30.05.2019</td>
-          <td>view document</td>
-          
-          
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>#123412</td>
-          <td>Mumbai</td>
-          <td>28.05.2025</td>
-          <td> 30.05.2019</td>
-          <td>view document</td>
-          
-          
 
-        </tr>
+
+  <div class="container" style="background-color: white;">
+      <div class="row img-responsive">
+         <div class="header background">
+            <div class="row" style="padding:2%;">
+               <div class="col-md-2">
+                  <span (click)="home()" ><img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></span>
+               </div>
+               <div class="col-md-10">
+                  <h2><b>APPLICATION PROCESS</b></h2>
+               </div>
+            </div>
+         </div>
+      </div>
+     
+
+   <div style="background-color: #f5f5f5">
+      <div class="container" >
+        <br><br><br>
+         
+
+
+        <div class="stepwizard ">
+                  
+            <div class="stepwizard-row setup-panel"></div> 
+     
+           <div   class=" stepwizard-step" >
+              <span style="margin-left:0px;  color: white;" class="round-tab">
+                <h5 style="margin-top:10px" aria-hidden="true">1</h5>
+              </span>
+          </div>
+     
+              <div class="stepwizard-step">
+                  <span style="margin-left:0px;  color: white;" class="round-tab">  
+                     <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                    <h5 style="margin-top:0px" aria-hidden="true">2</h5>
+                  </span>
+              </div>
+     
+              <div class="stepwizard-step">
+                  <span style="margin-left:0px; color: white;" class="round-tab">
+                    <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                    <h5 style="margin-top:0px" aria-hidden="true">3</h5>
+                  </span>
+              </div>
+     
+              <div class="stepwizard-step">
+                  <span style="margin-left:0px; color: white;" class="round-tab">
+                     <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                    <h5 style="margin-top:0px" aria-hidden="true">4</h5>
+                  </span>
+              </div>
+              <div class="stepwizard-step">
+                  <span style="margin-left:0px; color: white;" class="round-tab">
+                     <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                    <h5 style="margin-top:0px" aria-hidden="true">5</h5>
+                  </span>
+              </div>
+                     
+              <div class="stepwizard-step">
+                  <span style="margin-left:0px; color: white;" class="round-tab">
+                     <i class="fa fa-unCheck" aria-hidden="true"></i> 
+                    <h5 style="margin-top:0px" aria-hidden="true">6</h5>
+                  </span>
+              </div>
+        </div>
+       <div class="row" style="padding:10px; " >
         
-      </tbody>
-    </table>
-    <br>
-      
-       <br/>
-    </div>
-  </div>
+           
+           <div class="col-sm-2 col-md-2 ;">
+              
+            <span (click)="ua1()"> <a style=" margin-left: 34px;text-align: center; color:#1386F6">Personal Details </a></span>  
+              
+            </div>
+     
+        
+     
+           <div class="col-sm-2 col-md-2">
+               <span (click)="ua2()"><a style="color:#1386F6; margin-left: 34px;" >Passport Details</a>
+               </span>
+           </div>	
+     
+           <div class="col-sm-2 col-md-2">
+               <span><a  style="color:black; margin-left: 34px;" >Contact Details </a>
+               </span>
+           </div>
+     
+           <div class="col-sm-2 col-md-2">
+               <span><a  style="color:black; margin-left: 34px;" >  Guarantor Details</a>
+               </span>
+           </div>
+     
+           <div class="col-sm-3 col-md-3">
+               <span><a  style="color:black; margin-left: 34px; " >Current Designation</a></span>
+           </div>
+     
+           <div class="col-sm-1 col-md-1">
+               <span><a  style="color:black; margin-left: -63px;" >Upload Documents </a>
+               </span>
+           </div>
+       </div>
+     
+     
+             
+    <br><br>
+         <br>
+        
+         <form [formGroup]="passportForm"  >
+         <div class="row">
+            <div class="col-sm-7">
+                <div class="form-group">
+               <label for="exampleFormControlInput1"><b>Passport Number :</b><span style="color: red">*</span></label>
+               <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_number" class="form-control" [ngClass]="{'is-invalid': submitted && f. passport_number.errors }" >
+               <div *ngIf="submitted && f. passport_number.errors" class="invalid-feedback">
+                  <div *ngIf="f. passport_number.errors.required">Passport Number  required</div>
+              </div>
+              </div>
+          </div>
+            <div class="col-sm-7">
+                <div class="form-group">
+               <label for="exampleFormControlSelect1"><b>Place of Issue :</b><span style="color: red">*</span></label>
+               <input type="text" class="form-control" id="exampleFormControlInput1"formControlName="passport_issue_place" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_issue_place.errors }" >
+               <div *ngIf="submitted && f.passport_issue_place" class="invalid-feedback">
+                  <div *ngIf="f.passport_issue_place.required">Place of Issue required</div>
+              </div>
+              </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="form-group">
+               <label for="exampleFormControlSelect2"><b>Expiry Date :</b><span style="color: red">*</span></label>
+               <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="passport_expiry_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.passport_expiry_date.errors }">
+               <div *ngIf="submitted && f.passport_expiry_date.errors" class="invalid-feedback">
+                  <div *ngIf="f.passport_expiry_date.errors.required">Expiry Date required</div>
+              </div>
+              </div>
+            </div>
+      <input type ="hidden" formControlName="test">
+    
+            <div class="col-sm-4">
+                <i ripple>
+                  <img src="assets/img/upload-logo.png" style="margin-top: -32%;
+                    margin-left: 18%;    height: 69px;
+      width: 21%;
+                  " viewBox="0 0 24 24">
+                </i>
+                <h3 style="color:cornflowerblue ; margin-top: -5%;
+                margin-left: 2%; font-size: 110.02%">Upload Scaned Copy of Passport</h3>
+              </div>
+         </div>
+         <div class="wrapper">
+            <button type="button" class="btn btn-primary" style="width:10%;" (click)="userappli()">Back</button> &nbsp;
+          <button type="button" class="btn btn-primary" style="width:10%;" (click)=" onSubmit()">Next</button>
+         
+               
+              
+        
+       </div>
+        </form>
+         <br/>
+         <br/>
+         <br/>
+        
+    <table class="table">
+        <caption>List of documents</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Passport Number </th>
+            <th scope="col">Place of Issue </th>
+            <th scope="col">Expiry Date </th>
+            <th scope="col">Upload Date </th>
+            <th scope="col">View Document</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>fvkmdk</td>
+            <td>Mumbai</td>
+            <td>28.05.2025</td>
+            <td> 30.05.2019</td>
+            <td>view document</td>
+            
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>#123412</td>
+            <td>Mumbai</td>
+            <td>28.05.2025</td>
+            <td> 30.05.2019</td>
+            <td>view document</td>
+            
+            
+  
+          </tr>
+          
+        </tbody>
+      </table>
+      <br>
+        
+         <br/>
+      </div>
+    </div> 

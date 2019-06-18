@@ -25,11 +25,11 @@
 
          <div class="col-sm-6">
             <div class="form-group">
-               <label for="exampleFormControlInput1" style=" margin-top: 21px;"><b>First name :</b></label> 
+               <label for="exampleFormControlInput1"><b>First name :</b><span style="color:red">*</span></label> 
 
                <input type="text" formControlName="first_name"
                   class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
-                  placeholder="applicant First name">
+                  placeholder=" First name">
                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
                   <div *ngIf="f.first_name.errors.required">Field required</div>
                </div>
@@ -84,8 +84,9 @@
 
                   </span>
                   <span *ngIf="marked1">
+                     <label>Email Id</label>
                      <input type="text" formControlName="email_id" class="form-control">
-                       
+                   
                   </span>
                    
                </div>
@@ -116,18 +117,34 @@
          <div class="col-sm-6">
             <div class="form-group">
 
-               <label for="exampleFormControlSelect2"><b>Last name :</b></label>
+               <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label>
 
                <input type="text" formControlName="last_name" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder=" applicant Last Name">
+                  [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder="  Last Name">
                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
                   <div *ngIf="f.last_name.errors.required">Field required</div>
                </div>
 
             </div>
          </div>
-</div>
-     
+
+            
+         <div class="col-sm-6">
+               <div class="form-group">
+   
+                  <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
+   
+                  <input type="date" formControlName="dob" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter Date Of Birth">
+                  <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                     <div *ngIf="f.dob.errors.required">Field required</div>
+                  </div>
+               </div>
+            </div>
+     </div>
+    <br><br>
+         
+
 
      
 
@@ -136,17 +153,17 @@
          <div class="col-sm-6">
             <div class="form-group">
 
-               <label for="exampleFormControlSelect2"><b>Nationality :</b></label>
+               <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
 
              
 
                <select formControlName="nationality" class="form-control "
-                  [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" placeholder=" applicant Country Name">
-                  <option>India</option>
-                  <option>China</option>
-                  <option>England</option>
-                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
-                     <div *ngIf="f.nationality.errors.required">Field required</div>
+                  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Country Name">
+                  <option>Indian</option>
+                  <option>Foreigner</option>
+                  <option>NRI</option>
+                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                     <div *ngIf="f.gender.errors.required">Field required</div>
                   </div>
                </select>
 
@@ -158,7 +175,7 @@
          <div class="col-sm-6">
             <div class="form-group">
 
-               <label for="exampleFormControlSelect2"><b>Gender:</b></label>
+               <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label>
 
                <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
@@ -180,6 +197,7 @@
          </div>
 
       </div>
+
       <br><br>
 
 
@@ -190,7 +208,7 @@
          <div class="col-sm-6">
             <div class="form-group">
 
-               <label for="exampleFormControlSelect2"><b>Password:</b></label>
+               <label for="exampleFormControlSelect2"><b>Password:</b><span style="color:red">*</span></label>
 
                <input type="password" formControlName="password" class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
@@ -203,7 +221,7 @@
          <!-- <div class="col-sm-6">
             <div class="form-group">
 
-               <label for="exampleFormControlSelect2"><b>Confirm Password:</b></label>
+               <label for="exampleFormControlSelect2"><b>Confirm Password:</b><span style="color:red">*</span></label>
 
                <input type="password" formControlName="confirm_password" class="form-control"
                   [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
@@ -214,21 +232,12 @@
             </div>
          </div> -->
       </div>
+
       <br><br>
 
       <div class="row">
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Date Of Birth:</b></label>
-
-               <input type="date" formControlName="dob" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter DOB">
-               <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                  <div *ngIf="f.dob.errors.required">Field required</div>
-               </div>
-            </div>
-         </div>
+        
+        
          <div class="col-sm-6">
             <!-- <div class="form-group"> -->
 
@@ -245,7 +254,7 @@
          <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
 
       </div>
-
+<h5>Already Registerd?</h5>
       <br>
 
 
