@@ -126,12 +126,12 @@
                     <div class="form-group">
                      <label for="exampleFormControlInput1"><b>User Type :</b><span style="color:red">*</span></label>
 
-                     <select formControlName="applicant_type" class="form-control "
+                     <select [(ngModel)]="applicant_type" class="form-control " [ngModelOptions]="{standalone: true}"
                      [ngClass]="{ 'is-invalid': submitted && f.applicant_type.errors }" placeholder="Type Of User">
                      <option>Indian</option>
                      <option>Foreigner</option>
                      <option>NRI</option>
-                     <option>On Behalf</option>
+                     <option value="behalf">On Behalf</option>
   
                      </select>
                      <!-- <input type=" text" class="form-control" id="exampleFormControlInput1" formControlName="applicant_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  applicant_type.errors }" > -->
@@ -140,6 +140,13 @@
                     </div>
                   </div>
                   </div>
+                  <div class="col-sm-7">
+                        <div class="form-group"  *ngIf="applicant_type === 'behalf'">
+                       <label><b>Relationship with user :</b><span style="color:red">*</span></label>
+                       <input type="text" class="form-control" placeholder=" Name" ngModel [ngModelOptions]="{standalone: true}"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f. full_name.errors }" >
+                       
+                    </div>
+                    </div>
                 
               
                   <div class="col-sm-7">
@@ -178,7 +185,7 @@
                                     <div *ngIf="f.nationality.errors.required">Field required</div>
                                  </div> -->
                
-                              <select formControlName="nationality" class="form-control "
+                              <select formControlName="nationality" class="form-control"
                                  [ngClass]="{ 'is-invalid': submitted && f.sex.errors }" placeholder=" applicant Country Name">
                                  <option>Indian</option>
                                  <option>Foreigner</option>
