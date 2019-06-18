@@ -66,7 +66,10 @@ export class UserCurrentDesignationComponent implements OnInit {
 guarantordetail(){
     this.router.navigate(['user-guarantor-details'])
   }
+  home(){
 
+    this.router.navigate(['user-dashboard'])	  
+  }
   
 ua1(){
   this.router.navigate(['user-appl-form'])	  
