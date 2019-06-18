@@ -22,6 +22,8 @@ export class RegisterHereComponent implements OnInit {
   verifyStatus:string;
   resetForm:FormGroup
   submitted = false;
+  marked=false;
+ 
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
@@ -149,6 +151,12 @@ processVal(res){
      localStorage.setItem(this.verifyStatus,verifyObject.res.message);
    })
  }
+
+ toggle(e){
+  this.marked=e.target.value;
+  console.log(this.marked)
+ }
+
 
 
 }
