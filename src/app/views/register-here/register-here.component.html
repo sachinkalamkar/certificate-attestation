@@ -25,9 +25,9 @@
 
             <div class="col-sm-6">
                <div class="form-group">
-                  <label for="exampleFormControlInput1"><b>First name :</b></label>
+                  <label><b>First name :</b></label>
 
-                  <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"
+                  <input type="email" class="form-control"  formControlName="first_name"
                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" placeholder="applicant First name">
                   <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
                      <div *ngIf="f.first_name.errors.required">Field required</div>
@@ -36,9 +36,9 @@
             </div>
             <div class="col-sm-6">
                <div class="form-group">
-                  <label for="exampleFormControlSelect1"><b>Email ID :</b></label>
+                  <label><b>Email ID :</b></label>
 
-                  <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email_id"
+                  <input type="email" class="form-control" formControlName="email_id"
                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" placeholder="applicant Email ID">
                   <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
                      <div *ngIf="f.email_id.errors.required">Field required</div>
@@ -53,9 +53,9 @@
             <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlSelect2"><b>Middle name :</b></label>
+                  <label ><b>Middle name :</b></label>
 
-                  <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="middle_name"
+                  <input type="email" class="form-control"  formControlName="middle_name"
                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }" placeholder=" applicant Middle name">
                   <div *ngIf="submitted && f.middle_nameerrors" class="invalid-feedback">
                      <div *ngIf="f.middle_name.errors.required">Field required</div>
@@ -63,23 +63,12 @@
                </div>
             </div>
 
-            <!-- <div class="col-sm-6">
-          <div class="form-group">
-            <div class='input-group date' id='datetimepicker3'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-time"></span>
-                </span>
-            </div>
-        </div>
-      </div> -->
-
-            <div class="col-sm-6">
+                    <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlTextarea1"><b>Phone number :</b></label>
-              <span>   <input type="number" id="exampleFormControlInput1" formControlName="contact" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" placeholder=" applicant Phone number">
+                  <label ><b>Phone number :</b></label>
+              <span>   <input type="number" formControlName="contact" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.contact.errors }" placeholder=" applicant Phone number" placeholder="+91">
                   <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
                      <div *ngIf="f.contact.errors.required">Field required</div>
                   </div>
@@ -95,7 +84,7 @@
             <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlSelect2"><b>Last name :</b></label>
+                  <label><b>Last name :</b></label>
 
                   <input type="text" formControlName="last_name" class="form-control"
                      [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder=" applicant Last Name">
@@ -109,10 +98,10 @@
             <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlTextarea1"><b>Enter OTP :</b></label>
+                  <label ><b>Enter OTP :</b></label>
 
                   <input type="email" formControlName="otp" class="form-control"
-                     [ngClass]="{'is-invalid': submitted && f.otp.errors }"><h5 class="btn btn-link" (click)="sendotp()"> Verify OTP</h5> 
+                     [ngClass]="{'is-invalid': submitted && f.otp.errors }"><h5 class="btn btn-link" (click)="verifyotp()"> Verify OTP</h5> 
                   <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
                      <div *ngIf="f.otp.errors.required">Field required</div>
                   </div>
@@ -128,7 +117,7 @@
             <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlSelect2"><b>Nationality :</b></label>
+                  <label ><b>Nationality :</b></label>
 
                   <!-- <input type="email" formControlName="nationality" class="form-control"
                      [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
@@ -136,13 +125,13 @@
                      <div *ngIf="f.nationality.errors.required">Field required</div>
                   </div> -->
 
-                  <select formControlName="gender" class="form-control "
-                  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Country Name">
+                  <select formControlName="nationality" class="form-control "
+                  [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" placeholder=" applicant Country Name">
                   <option>India</option>
                   <option>China</option>
                   <option>England</option>
-                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                     <div *ngIf="f.gender.errors.required">Field required</div>
+                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                     <div *ngIf="f.nationality.errors.required">Field required</div>
                   </div>
                </select>
                
@@ -154,7 +143,7 @@
             <div class="col-sm-6">
                <div class="form-group">
 
-                  <label for="exampleFormControlSelect2"><b>Gender:</b></label>
+                  <label ><b>Gender:</b></label>
 
                   <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
@@ -216,8 +205,8 @@
 
                   <label for="exampleFormControlSelect2"><b>Date Of Birth:</b></label>
 
-                  <input type="date" formControlName="dob" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter DOB">
+                  <input type="text" formControlName="dob" class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="dd/mm/yy">
                   <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                      <div *ngIf="f.dob.errors.required">Field required</div>
                   </div>
@@ -230,13 +219,14 @@
 
                <!-- </div> -->
             </div>
+            <input type="hidden" value="contact_status">
          </div>
        
 <br>
 
          <div class="wrapper">
 
-            <button type="button" class="btn btn-primary"  (click)="startpage()">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
 
          </div>
       
