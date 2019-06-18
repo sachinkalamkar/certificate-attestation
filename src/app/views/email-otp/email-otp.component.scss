@@ -1,93 +1,60 @@
 
-   .background{
-    background-image: url("assets/img/lawyer-today11.png");
-   background-repeat: no-repeat;
-    background-size: cover;
-
+.background{
+     background-image: url("assets/img/lawyer-today11.png");
+     background-repeat: no-repeat;
+     background-size: 100%;
+     height: 30%;
 }
-
-
-.modal {
- display: none; /* Hidden by default */
- position: fixed; /* Stay in place */
- z-index: 1; /* Sit on top */
- left: 0;
- top: 0;
- width: 100%; /* Full width */
- height: 100%; /* Full height */
- overflow: auto; /* Enable scroll if needed */
- background-color: rgb(0,0,0); /* Fallback color */
- background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
- padding-top: 60px;
-}
-
-h2 {
-   width: 100%;
-   font-size: 62px;
-   color: #ffffff;
-}
-.center_div{
- margin: 1%;
- /* background-color: white; */
- }
- .header {
- overflow: hidden;
- /* background-color: green; */
- padding: 2% 2%;
- height: 10%;
- }
- .header a {
- float: left;
- color: black;
- text-align: center;
- padding: 12px;
- text-decoration: none;
- font-size: 18px; 
- line-height: 25px;
- border-radius: 4px;
- }
- .header a.logo {
- font-size: 25px;
- font-weight: bold;
- }
- .cont {
- position: relative;
- padding: 10px;
- margin: 10px auto 20px auto;
- width: 390px;
- height: 30%;
- border-radius: 3%;
- background: white;
- box-shadow: 0 1px 5px 0 rgba(0,0,0,0.26);
- overflow: hidden;
- }
- .radius{
-   background-color: white; 
-   padding:2%;
-   border-radius: 3%;
- }
-  .document{
-   width: 100%;
-   height: 150px;
-   font-family: sans-serif;
-   font-size: 17.8px;
-   font-weight: normal;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: 1.75;
-   letter-spacing: normal;
-   text-align: center;
-   color:black;
+.center {
+	margin: auto;
+	width: 100%;
+	/* border: 3px solid green; */
+	padding: 4%;
   }
-  input{
-   width: 620px;
-   height: 80px;
-   opacity: 0.33;
-   border-radius: 43px;
-   border: solid 1px #979797;
-   background-color: #ffffff;
-   margin-left: 45%;
- }
+   
+.header {
+	overflow: hidden;
+	width:100%;
+	height: 50%;
+	}
+	
+	.header a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px; 
+	line-height: 25px;
+	border-radius: 4px;
+	}
+	.header a.logo {
+	font-size: 25px;
+	font-weight: bold;
+	}
+	.wrapper {
+	text-align: center;
+	}
+	.button {
+	position: absolute;
+	top: 50%;
+	}
+h2 {
+	width: 100%;
+	font-size: 62px;
+	color: #ffffff;
+}
+  .cont {
+  position: relative;
+  padding: 10px;
+  margin: 10px auto 20px auto;
+  width: 390px;
+  height: 30%;
+  border-radius: 3%;
+  background: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.26);
+  overflow: hidden;
+  }
 
 
   .input1{
@@ -123,20 +90,25 @@ h2 {
    margin: 0;
 }
 
-html, body 
-{
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   background: rgb(243, 243, 243);
-   color: rgba(0,0,0,0.6);
-   font-family: sans-serif;
-   -webkit-user-select: none;
-   -moz-user-select: none;
-   -ms-user-select: none;
-   -o-user-select: none;
-   user-select: none;
-}
+// html, body 
+// {
+// 	position: absolute;
+// 	height: 100%;
+// 	width: 100%;
+// 	background:white;
+// 	color: rgba(0,0,0,0.6);
+// 	font-family: sans-serif;
+// 	-webkit-user-select: none;
+// 	-moz-user-select: none;
+// 	-ms-user-select: none;
+// 	-o-user-select: none;
+// 	user-select: none;
+// }
+//   .radius{
+//     background-color: white; 
+//     margin:2%;
+//     border-radius: 2%;
+//   }
 
 body header {
    position: relative;
@@ -231,7 +203,7 @@ position: relative;
 form {
    position: relative;
    width: 350px;
-   margin: 50px 15px;
+   // margin: 50px 15px;
 }
 
 .form-group {
@@ -507,8 +479,3 @@ footer a:focus {
  cursor: inherit;
 }
 
-[ripple] .touch {
- background: rgba(255, 255, 255, 0.3);
- pointer-events: none;
- border-radius: 100%;
-}
