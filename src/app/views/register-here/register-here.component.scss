@@ -8,8 +8,13 @@
    
 .header {
 	overflow: hidden;
-	padding: 2%;
+	width:100%;
+
 	height: 50%;
+	}
+	.rc-anchor-normal {
+		height: 74px;
+		width: 80%;
 	}
 	.header a {
 	float: left;
