@@ -71,7 +71,10 @@ contactdetail(){
 
   this.router.navigate(['user-contact-details'])	  
 }
+home(){
 
+  this.router.navigate(['user-dashboard'])	  
+}
 ua1(){
   this.router.navigate(['user-appl-form'])	  
 }

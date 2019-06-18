@@ -61,6 +61,10 @@ currentdesignation(){
 
   this.router.navigate(['user-current-designation'])	  
 }
+home(){
+
+  this.router.navigate(['user-dashboard'])	  
+}
 contactDetails(){
 
 		this.router.navigate(['user-dashboard'])	  

@@ -71,6 +71,10 @@ toggleVisibility(e){
 passdetail(){
   this.router.navigate(['user-passport-details'])
 }
+home(){
+
+  this.router.navigate(['user-dashboard'])	  
+}
 
 
 ua1(){
