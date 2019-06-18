@@ -39,11 +39,11 @@
             <div class="form-group">
                <!-- <label for="exampleFormControlSelect1"><b>Email ID :</b></label> -->
                <label class="radio-inline">
-                  <input type="radio" name="email" value="email" (change)="toggle($event)"> Email Id<br>
+                  <input type="radio" name="email" value="email" (change)="toggle('email')" checked> Email Id<br>
                </label>
                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                <label class="radio-inline">
-                  <input type="radio" name="email" value="phone" (change)="toggle1($event)"> Phone Number<br>
+                  <input type="radio" name="email" value="phone" (change)="toggle('phone')"> Phone Number<br>
                </label>
 
 
@@ -51,15 +51,15 @@
                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" placeholder="applicant Email ID"> <br>
                      <input type="number" *ngIf="marked" class="form-control" id="exampleFormControlInput1" formControlName="number"
                      class="form-control" placeholder="applicant Phone Number"> -->
-               <div class="input-group">
+               <div class="input-group" id="emailDiv">
                   <input type="email" *ngIf="marked" formControlName="email" class="form-control"
                      placeholder="applicant Email ID">&nbsp;&nbsp;&nbsp;
                   <input type="number" *ngIf="marked" formControlName="contact" class="form-control"
                      placeholder="applicant Phone Number">
                </div>
-               <div class="input-group">
-                  <span *ngIf="!marked">
-                     <input type="number" id="exampleFormControlInput2" formControlName="contact" class="form-control"
+               <div class="input-group" id="phoneDiv">
+                  <span *ngIf="marked1">
+                     <input type="number" formControlName="contact1" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"
                         placeholder=" applicant Phone number">
 
@@ -69,8 +69,8 @@
                      </span>
                   </span>
 
-                  <span *ngIf="!marked">
-                     <input type="email" id="exampleFormControlInput2" formControlName="otp" class="form-control"
+                  <span *ngIf="marked1">
+                     <input type="text" formControlName="otp" class="form-control"
                         [ngClass]="{'is-invalid': submitted && f.otp.errors }">
                      <h5 class="btn btn-link" (click)="sendotp()"> Verify OTP</h5>
 

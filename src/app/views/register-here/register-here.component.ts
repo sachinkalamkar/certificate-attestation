@@ -6,6 +6,7 @@ import { HttpClient,HttpEventType } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
+//import { lstat } from 'fs';
 
 @Component({
   selector: 'app-register-here',
@@ -22,7 +23,8 @@ export class RegisterHereComponent implements OnInit {
   verifyStatus:string;
   resetForm:FormGroup
   submitted = false;
-  marked=false;
+  marked=true;
+  marked1:any
  
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
@@ -153,8 +155,21 @@ processVal(res){
  }
 
  toggle(e){
-  this.marked=e.target.value;
-  console.log(this.marked)
+  console.log(e)
+  if(e==='email'){
+    this.marked=true
+  }
+  else{
+    this.marked=false;
+  }
+   if(e==='phone'){
+    this.marked1=true;
+  }
+  else{
+    this.marked1=false
+  }
+  
+
  }
 
 
