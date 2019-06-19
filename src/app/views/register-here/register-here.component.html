@@ -3,7 +3,7 @@
       <div class="header background">
          <div class="row" style="padding:2%;">
             <div class="col-md-2">
-               <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
+            <span (click)="db()"> <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan "/> </span>  
             </div>
             <div class="col-md-10">
                <h2><b>REGISTER YOUR ACCOUNT</b></h2>
@@ -20,10 +20,11 @@
       <div class="center">
          <h3 style="text-align:center"><b>Welcome to government of Maharashtra please create your account</b></h3>
       </div>
-
+      <h6><b>Registor Via :</b></h6>
       <div class="row">
-        
-            <div class="col-sm-12">
+      
+            
+        <div class="col-sm-12">
                   <div class="form-group">
                      
                      <!-- <label for="exampleFormControlSelect1"><b>Email ID :</b></label> -->
@@ -99,7 +100,7 @@
                   <div class="form-group">
                      <label for="exampleFormControlInput1"><b>First name :</b><span style="color:red">*</span></label> 
       
-                     <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"
+                     <input type="email" class="form-control"  formControlName="first_name"
                         class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
                         placeholder=" First name">
                      <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
@@ -113,7 +114,7 @@
          
                         <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label>
          
-                        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="middle_name"
+                        <input type="email" class="form-control"  formControlName="middle_name"
                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }"
                            placeholder="  Middle name">
                         <div *ngIf="submitted && f.middle_nameerrors" class="invalid-feedback">
@@ -149,8 +150,8 @@
          
                         <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
          
-                        <input type="date" formControlName="dob" class="form-control"
-                           [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter Date Of Birth">
+                        <input type="datetime" formControlName="dob" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="dd/mm/yyyy">
                         <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                            <div *ngIf="f.dob.errors.required">Field required</div>
                         </div>
@@ -273,7 +274,7 @@
          <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
 
       </div>
-<h5>Already Registerd?</h5>
+
       <br>
 
 
