@@ -23,8 +23,8 @@
                            <div class="cont" >
                               <h3  style="text-align: center">OTP Verification</h3>
                               <form [formGroup]="forgotForm">
-                                 <div id="u" class="form-group">
-                                    <input id="username" spellcheck=false class="form-control" formControlName="email_id" type="text"
+                                 <div class="form-group">
+                                    <input  type="text"formControlName="email_otp"class="form-control"
                                        style="margin-left:0" size="8" alt="login" required="">
                                     <span class="form-highlight"></span>
                                     <span class="form-bar"></span>
@@ -39,7 +39,7 @@
                                        </i>
                                     </p>
                                     <div class="form-group">
-                                          <button type="submit" class="btn btn-primary"  (click)="resetpass()">Submit</button>
+                                          <button type="submit" class="btn btn-primary"  (click)="otppass()">Submit</button>
 
                                        <!-- <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="resetpass()"  ripple>
                                           <span>

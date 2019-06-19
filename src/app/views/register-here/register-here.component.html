@@ -92,175 +92,182 @@
        
 
 
-      <div class="row">
 
-         <div class="col-sm-6">
-            <div class="form-group">
-               <label for="exampleFormControlInput1"><b>First name :</b><span style="color:red">*</span></label> 
+         <div class="row">
 
-               <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"
-                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
-                  placeholder=" First name">
-               <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
-                  <div *ngIf="f.first_name.errors.required">Field required</div>
-               </div>
-            </div>
-         </div>
-
-         <div class="col-sm-6">
-               <div class="form-group">
-   
-                  <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label>
-   
-                  <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="middle_name"
-                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }"
-                     placeholder="  Middle name">
-                  <div *ngIf="submitted && f.middle_nameerrors" class="invalid-feedback">
-                     <div *ngIf="f.middle_name.errors.required">Field required</div>
+               <div class="col-sm-6">
+                  <div class="form-group">
+                     <label for="exampleFormControlInput1"><b>First name :</b><span style="color:red">*</span></label> 
+      
+                     <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
+                        placeholder=" First name">
+                     <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.first_name.errors.required">Field required</div>
+                     </div>
                   </div>
                </div>
-            </div>
+      
+               <div class="col-sm-6">
+                     <div class="form-group">
          
-      </div>
-
-     <br><br>
-
-      <div class="row">
-
-
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label>
-
-               <input type="text" formControlName="last_name" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder="  Last Name">
-               <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
-                  <div *ngIf="f.last_name.errors.required">Field required</div>
-               </div>
-
-            </div>
-         </div>
-
-            
-         <div class="col-sm-6">
-               <div class="form-group">
-   
-                  <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
-   
-                  <input type="date" formControlName="dob" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter Date Of Birth">
-                  <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                     <div *ngIf="f.dob.errors.required">Field required</div>
-                  </div>
-               </div>
-            </div>
-     </div>
-    <br><br>
+                        <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label>
          
-
-
-     
-
-      <div class="row">
-
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
-
-               <!-- <input type="email" formControlName="nationality" class="form-control"
-                     [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
-                  <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
-                     <div *ngIf="f.nationality.errors.required">Field required</div>
-                  </div> -->
-
-               <select formControlName="nationality" class="form-control "
-                  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Country Name">
-                  <option>Indian</option>
-                  <option>Foreigner</option>
-                  <option>NRI</option>
-                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                     <div *ngIf="f.gender.errors.required">Field required</div>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="middle_name"
+                           class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }"
+                           placeholder="  Middle name">
+                        <div *ngIf="submitted && f.middle_nameerrors" class="invalid-feedback">
+                           <div *ngIf="f.middle_name.errors.required">Field required</div>
+                        </div>
+                     </div>
                   </div>
-               </select>
-
+               
             </div>
-         </div>
-
-
-
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label>
-
-               <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
-                       <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                          <div *ngIf="f.gender.errors.required">Field required</div>
-                      </div>   -->
-
-               <select formControlName="gender" class="form-control "
-                  [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Gender">
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
-                  <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                     <div *ngIf="f.gender.errors.required">Field required</div>
+      
+           <br><br>
+      
+            <div class="row">
+      
+      
+               <div class="col-sm-6">
+                  <div class="form-group">
+      
+                     <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label>
+      
+                     <input type="text" formControlName="last_name" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder="  Last Name">
+                     <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                        <div *ngIf="f.last_name.errors.required">Field required</div>
+                     </div>
+      
                   </div>
-               </select>
-               <!-- </div> -->
+               </div>
+      
+                  
+               <div class="col-sm-6">
+                     <div class="form-group">
+         
+                        <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
+         
+                        <input type="date" formControlName="dob" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter Date Of Birth">
+                        <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                           <div *ngIf="f.dob.errors.required">Field required</div>
+                        </div>
+                     </div>
+                  </div>
+           </div>
+          <br><br>
+               
+      
+      
+           
+      
+            <div class="row">
+      
+               <div class="col-sm-6">
+                  <div class="form-group">
+      
+                     <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
+      
+                     <!-- <input type="email" formControlName="nationality" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
+                        <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                           <div *ngIf="f.nationality.errors.required">Field required</div>
+                        </div> -->
+      
+                     <select formControlName="nationality" class="form-control "
+                        [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Country Name">
+                        <option>Indian</option>
+                        <option>Foreigner</option>
+                        <option>NRI</option>
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                           <div *ngIf="f.gender.errors.required">Field required</div>
+                        </div>
+                     </select>
+      
+                  </div>
+               </div>
+      
+      
+      
+               <div class="col-sm-6">
+                  <div class="form-group">
+      
+                     <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label>
+      
+                     <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
+                             <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                                <div *ngIf="f.gender.errors.required">Field required</div>
+                            </div>   -->
+      
+                     <select formControlName="gender" class="form-control "
+                        [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                           <div *ngIf="f.gender.errors.required">Field required</div>
+                        </div>
+                     </select>
+                     <!-- </div> -->
+                  </div>
+      
+               </div>
+      
             </div>
-
-         </div>
-
-      </div>
-
-      <br><br>
-
-
-
-
-      <div class="row">
-
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Password:</b><span style="color:red">*</span></label>
-
-               <input type="password" formControlName="password" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
-               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                  <div *ngIf="f.password.errors.required">Field required</div>
+      
+            <br><br>
+      
+      
+      
+      
+            <div class="row">
+      
+               <div class="col-sm-6">
+                  <div class="form-group">
+      
+                     <label for="exampleFormControlSelect2"><b>Password:</b><span style="color:red">*</span></label>
+      
+                     <input type="password" formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
+                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Field required</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="form-group">
+      
+                     <label for="exampleFormControlSelect2"><b>Confirm Password:</b><span style="color:red">*</span></label>
+      
+                     <input type="password" formControlName="confirm_password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
+                     <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirm_password.errors.required">Field required</div>
+                     </div>
+                  </div>
                </div>
             </div>
-         </div>
-         <div class="col-sm-6">
-            <div class="form-group">
-
-               <label for="exampleFormControlSelect2"><b>Confirm Password:</b><span style="color:red">*</span></label>
-
-               <input type="password" formControlName="confirm_password" class="form-control"
-                  [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
-               <div *ngIf="submitted && f.confirm_password.errors" class="invalid-feedback">
-                  <div *ngIf="f.confirm_password.errors.required">Field required</div>
+      
+            <br><br>
+            <div class="row">
+            <div class="col-sm-6">
+                  <!-- <div class="form-group"> -->
+      
+                  <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
+      
+                  <!-- </div> -->
                </div>
             </div>
-         </div>
-      </div>
+      
+            <br>
+           
+      
+      
 
-      <br><br>
-      <div class="row">
-      <div class="col-sm-6">
-            <!-- <div class="form-group"> -->
 
-            <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
 
-            <!-- </div> -->
-         </div>
-      </div>
-
-      <br>
       <div class="row">
         <div class="col-sm-12" style="text-align: center">  <p>Already Registered? </p> <span><a href="/dashboard">Login Here</a>   </span></div>
          
@@ -272,7 +279,7 @@
          <button type="button" class="btn btn-primary" (click)="startpage()">Submit</button>
 
       </div>
-
+<h5>Already Registerd?</h5>
       <br>
 
 

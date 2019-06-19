@@ -3,9 +3,10 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
+
 //import { lstat } from 'fs';
 
 @Component({
@@ -20,105 +21,100 @@ export class RegisterHereComponent implements OnInit {
   serverErrorMessages: string;
   req_id:string;
   otpResponse:string;
-  verifyStatus:string;
+  email_choice=true;
+  contact_status=false;
+  verifyStatus:string = 'fail';
   resetForm:FormGroup
   submitted = false;
   marked=true;
   marked1:any
- 
+
+
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
   console.log(response.success);
   console.log(response.token);
   }
-  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder ) { }
+  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
+
+  
   ngOnInit() {
-    
     this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
       middle_name:[''],
       nationality:[''],
       contact:[''],
-      email_id:[''],
+      email_id:['',[Validators.required, Validators.email]],
       gender:[''],
-      password:[''],
-      confirm_password:[''],otp:[''],
-      dob:[''],contact_status:true
-   });
+      password:['',[Validators.required, Validators.minLength(6)]],
+     dob:[''],
+     otp:[''],
+     email_choice:[''],
+     contact_status:['']
+
   
+   
+   } )
+  // ,{validator: this.checkIfMatchingPasswords('password','confirm_password')});
+  
+   this.resetForm.controls['email_choice'].setValue(this.email_choice);
+   this.resetForm.controls['contact_status'].setValue(this.verifyStatus === 'success'?true:false);
+   }
+
+  //  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+  //   return (group: FormGroup) => {
+  //     let passwordInput = group.controls[passwordKey],
+  //         passwordConfirmationInput = group.controls[passwordConfirmationKey];
+  //     if (passwordInput.value !== passwordConfirmationInput.value) {
+  //       return passwordConfirmationInput.setErrors({notEquivalent: true})
+  //     }
+  //     else {
+  //         return passwordConfirmationInput.setErrors(null);
+  //     }
+  //   }
+  // }
     
-    //  document.getElementById('signUpForm').addEventListener('startpage',signupsForm);
-    
-    //  function signupsForm(e){
-    //     e.preventDefault();
-    //     const first_name = document.querySelector('#first_name');
-    //     const email = document.querySelector('#email');
-    //     const middle_name = document.querySelector('#middle_name');
-    //     const last_name = document.querySelector('#last_name');
-    //     const dob = document.querySelector('#dob');
-    //     const gender = document.querySelector('#gender');
-    //     const  nationality = document.querySelector('#nationality');
-    //     const contact = document.querySelector('#contact');
-
-
-    //     const captcha = document.querySelector('#g-recaptcha');
-    //     return this.http.post('/http//127.0.0.1:3000/subscribe',{
-    //         headers:{
-    //             'Accept':'application/json',
-    //             'Content-type':'application/json'
-    //         },
-    //         body:JSON.stringify({first_name,email,middle_name,last_name,dob,gender,nationality,contact,captcha:captcha})
-    //     })
-    //     .then((res)=>res.json())
-    //     .then((data)=>{
-    //         console.log(data,"neeli==========>")
-
-    //     });
-        
-    // }
-    // var onloadCallback = function() {
-    //   alert("grecaptcha is ready!");
-    // }; 
-    
-
-
-
-
-}
-get f() { return this.resetForm.controls; }
+  
+get f() { return this.resetForm.controls}
 startpage() {
+ 
   this.submitted=true
    
-  if(this.resetForm.invalid){
-    return
-  }
-   if(localStorage.getItem(this.verifyStatus)==='successs'){ 
-this.userservice.registration(this.resetForm.value).subscribe(res => {
- 
-  this.resetForm = this.formbuilder.group({
-      first_name:[''],
-      last_name:[''],
-      middle_name:[''],
-      nationality:[''],
-      contact:[''],
-      email_id:[''],
-      gender:[''],
-      password:[''],
-      confirm_password:[''],
-      otp:[''],
-      dob:[''],contact_status:true
-        });
+  if (this.email_choice){
+    this.userservice.registration(this.resetForm.value).subscribe(res=> {
+      console.log("datatatt",JSON.stringify(this.resetForm.value))
+   console.log("response-------",res)
+   alert('Sucessfully registerd');
+      this.router.navigate(['email-otp'])
+    })
     
-  })
-  this.router.navigate(['dashboard'])
-} 
+  }
   else
-  return false
-}
+  {
+    if(localStorage.getItem(this.verifyStatus).trim().toString()==='success')
+    {
+      this.userservice.registration(this.resetForm.value).subscribe(res=> {
+        console.log("datatatt",JSON.stringify(this.resetForm.value))
+     console.log("response-------",res)
+    
+     alert('Sucessfully registerd');
+        this.router.navigate(['dashboard'])
+      })
+    }
+    else
+    {
+      alert('OTP verification failed');
+    }
+  }
+  
+  
+} 
+  
+
 
 sendotp(){
   console.log("contct number",this.resetForm.value.contact);
@@ -141,6 +137,8 @@ processVal(res){
   console.log("response----",res);
  
 }
+
+
  verifyotp(){
    var verifyObject;
    console.log("otp of the number ",this.resetForm.value.otp,localStorage.getItem(this.req_id))
@@ -150,27 +148,38 @@ processVal(res){
      console.log("otp of the numbersss ",data)
       verifyObject={"res":data}
      console.log("contact",verifyObject.res.message);
+     this.verifyStatus = verifyObject.res.message;
+     console.log("78945",this.verifyStatus);
      localStorage.setItem(this.verifyStatus,verifyObject.res.message);
+     this.resetForm.controls['contact_status'].setValue(this.verifyStatus === 'success'?true:false);
+   
    })
+
  }
 
  toggle(e){
   console.log(e)
   if(e==='email'){
     this.marked=true
+    this.email_choice = true;
+
   }
   else{
-    this.marked=false;
+    this.marked=false;    
+
   }
    if(e==='phone'){
     this.marked1=true;
+    this.email_choice = false;
   }
   else{
     this.marked1=false
   }
   
 
- }
+  this.resetForm.controls['email_choice'].setValue(this.email_choice);
+  
+   }
 
  db(){
   this.router.navigate(['dashboard'])

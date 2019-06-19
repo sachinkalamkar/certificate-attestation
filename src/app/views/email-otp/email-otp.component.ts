@@ -15,14 +15,11 @@ import { NgForm } from "@angular/forms";
 export class EmailOtpComponent implements OnInit {
 
   forgotForm: FormGroup;
-  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
+  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder,public route: ActivatedRoute) { }
 
-  ngOnInit() {
-
-
+    ngOnInit() {
     this.forgotForm = this.formbuilder.group({
-      email_id: ['']
-     
+    email_otp: ['']
     });
   
 
@@ -136,13 +133,17 @@ $(document).ready(function() {
   });
  
 }
-onSubmit(){
-  this.userservice.forgotpass(this.forgotForm.value).subscribe(data=>{
+otppass(){
+  this.userservice.emailotp(this.forgotForm.value).subscribe(data=>{
     console.log("forgot password",this.forgotForm.value)
-    this.forgotForm = this.formbuilder.group({
-      email_id: ['']
-     
-    });
+    console.log("otp respone----",data)
+    
+   if(JSON.parse(JSON.stringify(data)).message ==='sucesss'){
+    this.router.navigate(['dashboard'])
+   }else{
+     alert(JSON.parse(JSON.stringify(data)).message);
+   }
+   
   })
 }
 resetpass(){
