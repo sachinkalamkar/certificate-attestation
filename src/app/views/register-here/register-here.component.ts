@@ -54,8 +54,8 @@ export class RegisterHereComponent implements OnInit {
      dob:[''],
      otp:[''],
      email_choice:[''],
-     contact_status:['']
-
+     contact_status:[''],
+     confirm_password:['']
   
    
    } )
