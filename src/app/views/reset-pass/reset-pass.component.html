@@ -1,66 +1,78 @@
-
-   <div class="container background" style="background-color: darkgreen">
-         <div class="header">
-               <!-- <a><img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></a>   -->
-               <div class="row" style="padding:2%;">
-                  <div class="col-md-3">
-                     <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
-                  </div>
-                  <div class="col-md-9">
-                     <h2 ><b>Reset Your Password</b></h2>
-                  </div>
+<div class="container background" style="background-color: darkgreen">
+      <div class="header">
+            <!-- <a><img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></a>   -->
+            <div class="row" style="padding:2%;">
+               <div class="col-md-3">
+                  <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
+               </div>
+               <div class="col-md-9">
+                  <h2 ><b>Reset Your Password</b></h2>
                </div>
             </div>
-      </div>
-      <div class="row radius">
-         <div class="cont">
-            <h3  style="text-align: center">Reset Password</h3>
-            <!-- <span>Sign in with your Google Account</span> -->
-            <form [formGroup]="resetForm">
-               <div id="u" class="form-group">
-                  <input id="pass1" spellcheck=false class="form-control" formControlName="pass1" type="password"
-                     style="margin-left:0" size="8" alt="login" required="">
-                  <span class="form-highlight"></span>
-                  <span class="form-bar"></span>
-                  <label for="pass1" class="float-label">Enter Password</label>
-                  <p class="erroru">
-                     Password is required
-                     <i>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                           <path d="M0 0h24v24h-24z" fill="none" />
-                           <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                        </svg>
-                     </i>
-                  </p>
-                 
-               </div>
-               <div id="u" class="form-group">
-                     <input id="pass2" spellcheck=false class="form-control" formControlName="pass2" type="password"
-                        style="margin-left:0" size="8" alt="login" required="">
-                     <span class="form-highlight"></span>
-                     <span class="form-bar"></span>
-                     <label for="pass2" class="float-label">Confirm Password</label>
-                     <p class="erroru">
-                        Password confirmation is required
-                        <i>
-                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                              <path d="M0 0h24v24h-24z" fill="none" />
-                              <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                           </svg>
-                        </i>
-                     </p>
-                     <div class="form-group">
-                        <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="onSubmit()"  ripple>
-                           <span>
-                              <h5>SUBMIT</h5>
-                           </span>
-                        </button>
-                     </div>
-                     <br/>
-                  </div>
-              
-            </form>
          </div>
-      
-      </div>
-  
+   </div>
+
+
+     
+   <div class="container bg-light d-flex flex-fill flex-column">
+             
+         <!-- Main body of page -->
+         <div class="col-sm-12" style="height:100%">
+ 
+             <!-- Main part of the page. Content should have full height and scroll vertically if necessary -->
+             <div class="row centered-form center-block radius">
+
+                  <div class="cont">
+                        <h3  style="text-align: center">Reset Password</h3>
+                        <!-- <span>Sign in with your Google Account</span> -->
+                        <form [formGroup]="resetForm">
+                           <div id="u" class="form-group">
+                              <input id="pass1" spellcheck=false class="form-control" formControlName="new_password" type="password"
+                                 style="margin-left:0" size="8" alt="login" required="">
+                              <span class="form-highlight"></span>
+                              <span class="form-bar"></span>
+                              <label for="pass1" class="float-label">Enter Password</label>
+                              <p class="erroru">
+                                 Password is required
+                                 <i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                       <path d="M0 0h24v24h-24z" fill="none" />
+                                       <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                                    </svg>
+                                 </i>
+                              </p>
+                             
+                           </div>
+                           <div id="u" class="form-group">
+                                 <input id="pass2" spellcheck=false class="form-control" formControlName="confirm_pass" type="password"
+                                    style="margin-left:0" size="8" alt="login" required="">
+                                 <span class="form-highlight"></span>
+                                 <span class="form-bar"></span>
+                                 <label for="pass2" class="float-label">Confirm Password</label>
+                                 <p class="erroru">
+                                    Password confirmation is required
+                                    <i>
+                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                          <path d="M0 0h24v24h-24z" fill="none" />
+                                          <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                                       </svg>
+                                    </i>
+                                 </p>
+                                 <div class="form-group">
+                                       <button type="submit" class="btn btn-primary"  (click)="db()">Submit</button>
+
+                                    <!-- <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="onSubmit()"  ripple>
+                                       <span>
+                                          <h5>SUBMIT</h5>
+                                       </span>
+                                    </button> -->
+                                 </div>
+                                 <br/>
+                              </div>
+                          
+                        </form>
+                     </div>
+                  
+               </div>
+               </div>
+               </div>

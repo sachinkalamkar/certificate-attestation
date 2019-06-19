@@ -172,6 +172,8 @@ processVal(res){
 
  }
 
-
+ db(){
+  this.router.navigate(['dashboard'])
+}
 
 }

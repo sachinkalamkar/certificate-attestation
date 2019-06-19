@@ -22,6 +22,77 @@
       </div>
 
       <div class="row">
+        
+            <div class="col-sm-12">
+                  <div class="form-group">
+                     
+                     <!-- <label for="exampleFormControlSelect1"><b>Email ID :</b></label> -->
+                     <label class="radio-inline ">
+                        <input type="radio" name="email" value="email" (change)="toggle('email')" checked> Email Id <span style="color:red">*</span><br>
+                     </label>
+                     
+                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <label class="radio-inline ">
+                        <input type="radio" name="email" value="phone" (change)="toggle('phone')"> Phone Number<span style="color:red">*</span><br>
+                     </label>
+                   
+      
+                     <!-- <input type="email" *ngIf="marked" class="form-control" id="exampleFormControlInput1" formControlName="email_id"
+                           class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" placeholder="applicant Email ID"> <br>
+                           <input type="number" *ngIf="marked" class="form-control" id="exampleFormControlInput1" formControlName="number"
+                           class="form-control" placeholder="applicant Phone Number"> -->
+
+                     <div class="row" id="emailDiv">
+                    <div class="col-md-6">
+                       
+                        <input type="email" *ngIf="marked" formControlName="email" class="form-control"
+                           placeholder=" Email ID"> &nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col-md-6">
+                        <input type="number" *ngIf="marked" formControlName="contact" class="form-control"
+                           placeholder=" Phone Number">
+                        </div>
+                     </div>
+                     <div class="row" id="phoneDiv">
+                      <div class="col-sm-6">
+                        <span *ngIf="marked1">
+                           <input type="number"  formControlName="contact1" class="form-control "
+                              [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"
+                              placeholder=" Phone number">
+      
+      
+                           <span>
+                              <h5 class=" btn btn-link" (click)="sendotp()"> Send OTP</h5>
+                           </span>
+                        </span>
+                        
+                        </div>
+                        <div class="col-sm-6">
+                        <span *ngIf="marked1">
+                           <input type="number" formControlName="otp" class="form-control row-sm-6" placeholder=" enter 4 digit OTP"
+                              [ngClass]="{'is-invalid': submitted && f.otp.errors }">
+                           <h5 class="btn btn-link" (click)="verifyotp()"  > Verify OTP</h5>
+      
+                        </span>
+                        </div>
+                        <div class="col-sm-6">
+                              <span *ngIf="marked1">
+                                 <input type="email" formControlName="email_id" class="form-control row-sm-6" placeholder="Enter Email">
+                       
+                              </span>
+                              </div>
+                     </div>
+                    
+                     
+                  </div>
+               </div>
+        
+         </div>
+
+       
+
+
+      <div class="row">
 
          <div class="col-sm-6">
             <div class="form-group">
@@ -179,54 +250,8 @@
       </div>
 
       <br><br>
-
       <div class="row">
-        
-         <div class="col-sm-6">
-               <div class="form-group">
-                  <!-- <label for="exampleFormControlSelect1"><b>Email ID :</b></label> -->
-                  <label class="radio-inline">
-                     <input type="radio" name="email" value="email" (change)="toggle('email')" checked> Email Id <span style="color:red">*</span><br>
-                  </label>
-                  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                  <label class="radio-inline">
-                     <input type="radio" name="email" value="phone" (change)="toggle('phone')"> Phone Number<span style="color:red">*</span><br>
-                  </label>
-   
-   
-                  <!-- <input type="email" *ngIf="marked" class="form-control" id="exampleFormControlInput1" formControlName="email_id"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }" placeholder="applicant Email ID"> <br>
-                        <input type="number" *ngIf="marked" class="form-control" id="exampleFormControlInput1" formControlName="number"
-                        class="form-control" placeholder="applicant Phone Number"> -->
-                  <div class="input-group" id="emailDiv">
-                     <input type="email" *ngIf="marked" formControlName="email" class="form-control"
-                        placeholder=" Email ID">&nbsp;&nbsp;&nbsp;
-                     <input type="number" *ngIf="marked" formControlName="contact" class="form-control"
-                        placeholder=" Phone Number">
-                  </div>
-                  <div class="input-group" id="phoneDiv">
-                     <span *ngIf="marked1">
-                        <input type="number" formControlName="contact1" class="form-control"
-                           [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"
-                           placeholder=" Phone number">
-   
-   
-                        <span>
-                           <h5 class=" btn btn-link" (click)="sendotp()"> Send OTP</h5>
-                        </span>
-                     </span>
-                     &nbsp;&nbsp;&nbsp; 
-                     <span *ngIf="marked1">
-                        <input type="text" formControlName="otp" class="form-control" placeholder=" enter 4 digit OTP"
-                           [ngClass]="{'is-invalid': submitted && f.otp.errors }">
-                        <h5 class="btn btn-link" (click)="verifyotp()"  > Verify OTP</h5>
-   
-                     </span>
-                  </div>
-                  
-               </div>
-            </div>
-         <div class="col-sm-6">
+      <div class="col-sm-6">
             <!-- <div class="form-group"> -->
 
             <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
@@ -235,6 +260,11 @@
          </div>
       </div>
 
+      <br>
+      <div class="row">
+        <div class="col-sm-12" style="text-align: center">  <p>Already Registered? </p> <span><a href="/dashboard">Login Here</a>   </span></div>
+         
+      </div>
       <br>
 
       <div class="wrapper">
