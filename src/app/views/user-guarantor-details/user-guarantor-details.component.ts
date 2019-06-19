@@ -8,7 +8,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 
 import { HttpClient,HttpEventType } from '@angular/common/http';
 
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { UserService } from '../../user.service';
 
@@ -50,35 +50,35 @@ export class UserGuarantorDetailsComponent implements OnInit {
 
      
 
-      guarantor_name : [''],
+      guarantor_name : ['',Validators.required],
 
     
 
-      guarantor_country : [''],
+      guarantor_country : ['',Validators.required],
 
      
 
-      guarantor_state : [''],
+      guarantor_state : ['',Validators.required],
 
      
 
-      guarantor_city : [''],
+      guarantor_city : ['',Validators.required],
 
      
 
-      guarantor_house_no : [''],
+      guarantor_house_no : ['',Validators.required],
 
      
 
-      guarantor_street_no : [''],
+      guarantor_street_no : ['',Validators.required],
 
       
 
-      guarantor_contact : [''],
+      guarantor_contact : ['',Validators.required],
 
       
 
-      guarantor_pincode : [''],
+      guarantor_pincode : ['',Validators.required],
 
     
 

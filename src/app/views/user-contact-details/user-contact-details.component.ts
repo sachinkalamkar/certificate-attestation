@@ -29,20 +29,19 @@ export class UserContactDetailsComponent implements OnInit {
     present_street_no :['', Validators.required],
     present_pincode : ['', Validators.required],
     present_mobile : ['', Validators.required],
-
-    permanent_country : ['', Validators.required],
-
+    email_id : ['', Validators.required],
+      permanent_country:['', Validators.required],
       permanent_state : ['', Validators.required],
       permanent_city :['', Validators.required],
       permanent_house_no : ['', Validators.required],
       permanent_street_no :['', Validators.required],
       permanent_pincode : ['', Validators.required],
       permanent_mobile : ['', Validators.required],
-      email_id:['', Validators.required],
+      alternate_email_id:['', Validators.required],
           test:data
   });
   }
-  get f() { return this. contactForm.controls; }
+  get f() { return this.contactForm.controls; }
   contactDetail(){
      this.submitted=true
     var data;
