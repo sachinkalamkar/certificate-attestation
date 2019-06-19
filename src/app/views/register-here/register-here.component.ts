@@ -28,20 +28,24 @@ export class RegisterHereComponent implements OnInit {
   submitted = false;
   marked=true;
   marked1:any
-
-
+  userdetail:any=[];
+api:any=[]
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
   console.log(response.success);
   console.log(response.token);
   }
-  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
+  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder,private route:ActivatedRoute) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
 
   
   ngOnInit() {
+
+    
+
+    
     this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
@@ -60,6 +64,13 @@ export class RegisterHereComponent implements OnInit {
   
    this.resetForm.controls['email_choice'].setValue(this.email_choice);
    this.resetForm.controls['contact_status'].setValue(this.verifyStatus === 'success'?true:false);
+
+   this.userservice.apiscountry().subscribe(data=>{
+     
+    this.api=data
+   
+  console.log("data of some country coc", this.api)
+  })
    }
 
    checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
@@ -81,6 +92,10 @@ startpage() {
  
   this.submitted=true
    
+  if(this.resetForm.invalid)
+  {
+    return 
+  }
   if (this.email_choice){
     this.userservice.registration(this.resetForm.value).subscribe(res=> {
       console.log("datatatt",JSON.stringify(this.resetForm.value))
@@ -88,7 +103,7 @@ startpage() {
    var response=JSON.parse(JSON.stringify(res)).message;
    console.log("response---",JSON.parse(JSON.stringify(response)));
 
-     if(response === "Your contact or email id is already registered with us."){
+  if(response === "Your contact or email id is already registered with us."){
     alert(response)
      }
       else{
@@ -104,8 +119,10 @@ startpage() {
       this.userservice.registration(this.resetForm.value).subscribe(res=> {
         console.log("datatatt",JSON.stringify(this.resetForm.value))
      console.log("response-------",res)
-    
-     alert(res)
+     var response=JSON.parse(JSON.stringify(res)).message;
+   console.log("response---",JSON.parse(JSON.stringify(response)));
+
+     alert(response)
         this.router.navigate(['dashboard'])
       })
     }
@@ -124,6 +141,7 @@ sendotp(){
   console.log("contct number",this.resetForm.value.contact);
   var response;
    var res=this.userservice.sendotp(this.resetForm.value.contact).subscribe(data=>{
+    console.log("contct number idss",this.resetForm.value.contact);
      console.log("contct numberfgfdgfd",JSON.stringify(data));
      var jsonParse=JSON.parse(JSON.stringify(data));
     
@@ -185,6 +203,8 @@ processVal(res){
   
    }
 
-
+ db(){
+  this.router.navigate(['dashboard'])
+}
 
 }

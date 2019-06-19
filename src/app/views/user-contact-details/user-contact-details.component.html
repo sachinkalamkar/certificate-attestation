@@ -114,7 +114,7 @@
   
           <h3 class="text-center"><b></b></h3>
           <div class="wrapper">
-            <form [formGroup]="contactForm">
+            <form [formGroup]="contactForm" nonvalidate>
               <div class="row">
                 <div class="col-sm-6">Permanent Adress</div>
       
@@ -215,12 +215,11 @@
   
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
-                    <input type="text"  id="exampleFormControlInput1"
-                      formControlName="permanent_house_number" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.permanent_house_number.errors }">
-                    <div *ngIf="submitted && f.permanent_house_number.errors" class="invalid-feedback">
-                      <div *ngIf="f.permanent_house_number.errors.required">House Number</div>
+                    <label style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
+                    <input type="text" formControlName="permanent_house_n0" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.permanent_house_no.errors }">
+                    <div *ngIf="submitted && f.permanent_house_no.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_house_no.errors.required">House Number</div>
                     </div>
                   </div>
                 </div>
@@ -228,12 +227,12 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <div *ngIf="!marked">
-                      <label for="present_house_number" style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
-                      <input type="text"  id="present_house_number" formControlName="present_house_number"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_number.errors }">
+                      <label for="present_house_no" style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
+                      <input type="text"  id="present_house_no" formControlName="present_house_no"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_house_no.errors }">
                     </div>
-                    <div *ngIf="submitted && f.present_house_number.errors" class="invalid-feedback">
-                      <div *ngIf="f.present_house_number.errors.required">House Number</div>
+                    <div *ngIf="submitted && f.present_house_no.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_house_no.errors.required">House Number</div>
                     </div>
                   </div>
                 </div>
@@ -241,12 +240,11 @@
                 
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1" style="float:left"><b>Street Number:</b><span style="color: red">*</span></label>
-                    <input type="text" id="exampleFormControlInput1"
-                      formControlName="permanent_street_number" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.permanent_street_number.errors }">
-                    <div *ngIf="submitted && f.permanent_street_number.errors" class="invalid-feedback">
-                      <div *ngIf="f.permanent_street_number.errors.required">House Number</div>
+                    <label  style="float:left"><b>Street Number:</b><span style="color: red">*</span></label>
+                    <input type="text"  formControlName="permanent_street_no" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.permanent_street_no.errors }">
+                    <div *ngIf="submitted && f.permanent_street_no.errors" class="invalid-feedback">
+                      <div *ngIf="f.permanent_street_no.errors.required">House Number</div>
                     </div>
                   </div>
                 </div>
@@ -256,13 +254,13 @@
                   <div class="form-group">
                     <div *ngIf="!marked">
       
-                      <label for="present_street_number" style="float:left"><b>Street Number :</b><span style="color: red">*</span></label>
-                      <input type="text"  id="present_street_number"
-                        formControlName="present_street_number" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.present_street_number.errors }">
+                      <label  style="float:left"><b>Street Number :</b><span style="color: red">*</span></label>
+                      <input type="text" 
+                        formControlName="present_street_no" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.present_street_no.errors }">
                     </div>
-                    <div *ngIf="submitted && f.present_street_number.errors" class="invalid-feedback">
-                      <div *ngIf="f.present_street_number.errors.required">Street Number</div>
+                    <div *ngIf="submitted && f.present_street_no.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_street_no.errors.required">Street Number</div>
                     </div>
                   </div>
                 </div>
@@ -270,8 +268,8 @@
       
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect2" style="float:left"><b>Pincode :</b><span style="color: red">*</span></label>
-                    <input type="text" id="exampleFormControlInput1" formControlName=" permanent_pincode"class="form-control" 
+                    <label style="float:left"><b>Pincode :</b><span style="color: red">*</span></label>
+                    <input type="text" formControlName=" permanent_pincode"class="form-control" 
                       [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }">
                     <div *ngIf="submitted && f. permanent_pincode.errors" class="invalid-feedback">
                       <div *ngIf="f. permanent_pincode.errors.required">House Number</div>
@@ -297,8 +295,8 @@
       
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
-                    <input type="text" id="exampleFormControlInput1" formControlName="permanent_mobile" class="form-control" 
+                    <label  style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
+                    <input type="text"  formControlName="permanent_mobile" class="form-control" 
                       [ngClass]="{ 'is-invalid': submitted && f.permanent_mobile.errors }">
                     <div *ngIf="submitted && f.permanent_mobile.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_mobile.errors.required">Mobile Number</div>
@@ -310,21 +308,21 @@
                   <div class="form-group">
                     <div *ngIf="!marked">
       
-                      <label for="present_mobile" style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
-                      <input type="text"  id="present_mobile" formControlName=" present_mobile" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.present_mobile.errors }">
+                      <label style="float:left"><b>Mobile Number :</b><span style="color: red">*</span></label>
+                      <input type="text"  formControlName="present_mobile" class="form-control"
+                       [ngClass]="{'is-invalid': submitted && f.present_mobile.errors }">
                     </div>
       
-                    <div *ngIf="submitted && f. present_mobile.errors" class="invalid-feedback">
-                      <div *ngIf="f .present_mobile.errors.required"> Mobile Number</div>
+                    <div *ngIf="submitted && f.present_mobile.errors" class="invalid-feedback">
+                      <div *ngIf="f.present_mobile.errors.required"> Mobile Number</div>
                     </div>
                   </div>
                 </div>
       
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="email_id" style="float:left"><b>Email ID:</b><span style="color: red">*</span></label>
-                    <input type="text"  id="email_id" formControlName="email_id" class="form-control"
+                    <label  style="float:left"><b>Email ID:</b><span style="color: red">*</span></label>
+                    <input type="text"   formControlName="email_id" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
                     <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
                       <div *ngIf="f.email_id.errors.required">email_id Number</div>
@@ -337,12 +335,12 @@
                   <div class="form-group">
                     <div *ngIf="!marked">
       
-                      <label for="email_id" style="float:left"><b>Email ID :</b><span style="color: red">*</span></label>
-                      <input type="text"  id="email_id" formControlName="email_id" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
+                      <label  style="float:left"><b>Email ID :</b><span style="color: red">*</span></label>
+                      <input type="text"   formControlName="alternate_email_id" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.alternate_email_id.errors }">
                     </div>
-                    <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
-                      <div *ngIf="f.email_id.errors.required">email Id required</div>
+                    <div *ngIf="submitted && f.alternate_email_id.errors" class="invalid-feedback">
+                      <div *ngIf="f.alternate_email_id.errors.required">email Id required</div>
                     </div>
                   </div>
       

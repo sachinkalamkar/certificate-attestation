@@ -85,4 +85,7 @@ export class UserService {
     personal(data){
       return this.http.post('https://document-attestation-backend.herokuapp.com/verifyOtp',data)
     }
+    apiscountry(){
+      return this.http.get('https://document-attestation-backend.herokuapp.com/countries')
+    }
 }

@@ -32,13 +32,13 @@ export class UserUploadDocumentsComponent implements OnInit {
   console.log("test", JSON.parse(test));
   const data = JSON.parse(test)
   this.uploadForm = this.formBuilder.group({
-    certificate_no : [''],
+    certificate_no : ['',Validators.required],
    
-    name_of_exam : [''],
+    name_of_exam : ['',Validators.required],
   
-    year :[''],
+    year :['',Validators.required],
    
-    name_of_institute :[''],
+    name_of_institute :['',Validators.required],
     
     
     test: data
@@ -51,10 +51,10 @@ get f() { return this.uploadForm.controls; }
     this.userservice.uploaddoc(this.uploadForm.value).subscribe(data => {
       console.log("forgot password", this.uploadForm.value)
       this.uploadForm = this.formBuilder.group({
-        certificate_no: [''],
-        name_of_exam: [''],
-        year: [''],
-        name_of_institute: [''],
+        certificate_no: ['',Validators.required],
+        name_of_exam: ['',Validators.required],
+        year: ['',Validators.required],
+        name_of_institute: ['',Validators.required],
         test: data
 
 

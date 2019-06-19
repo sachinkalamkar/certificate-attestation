@@ -22,20 +22,20 @@ export class UserCurrentDesignationComponent implements OnInit {
     console.log("test", JSON.parse(test));
     const data = JSON.parse(test)
     this.contactForm = this.formBuilder.group ({
-      designation : [''],
-      name_of_organization : [''],
+      designation : ['',Validators.required],
+      name_of_organization : ['',Validators.required],
       
-      organization_address : [''],
+      organization_address : ['',Validators.required],
      
-      pan_card_number : [''],
+      pan_card_number : ['',Validators.required],
     
-      purpose_for_authentication :[''],
+      purpose_for_authentication :['',Validators.required],
     
-      course : [''],
+      course : ['',Validators.required],
      
-      name_of_college : [''],
+      name_of_college : ['',Validators.required],
     
-      college_address : [''],
+      college_address : ['',Validators.required],
   
       test:data
      
