@@ -30,6 +30,7 @@ export class RegisterHereComponent implements OnInit {
   marked1:any
   userdetail:any=[];
 api:any=[]
+api1:any=[]
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
@@ -71,9 +72,9 @@ api:any=[]
    
   console.log("data of some country coc", this.api)
   })
-   }
+}
 
-   checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordKey],
           passwordConfirmationInput = group.controls[passwordConfirmationKey];
