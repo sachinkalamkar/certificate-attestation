@@ -47,36 +47,33 @@ export class RegisterHereComponent implements OnInit {
       last_name:[''],
       middle_name:[''],
       nationality:[''],
-      contact:[''],
+      contact:['',[Validators.required, Validators.minLength(10)]],
       email_id:['',[Validators.required, Validators.email]],
       gender:[''],
       password:['',[Validators.required, Validators.minLength(6)]],
      dob:[''],
      otp:[''],
      email_choice:[''],
-     contact_status:['']
-
-  
-   
-   } )
-  // ,{validator: this.checkIfMatchingPasswords('password','confirm_password')});
+     contact_status:[''],confirm_password:['']
+    } 
+  ,{validator: this.checkIfMatchingPasswords('password','confirm_password')});
   
    this.resetForm.controls['email_choice'].setValue(this.email_choice);
    this.resetForm.controls['contact_status'].setValue(this.verifyStatus === 'success'?true:false);
    }
 
-  //  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
-  //   return (group: FormGroup) => {
-  //     let passwordInput = group.controls[passwordKey],
-  //         passwordConfirmationInput = group.controls[passwordConfirmationKey];
-  //     if (passwordInput.value !== passwordConfirmationInput.value) {
-  //       return passwordConfirmationInput.setErrors({notEquivalent: true})
-  //     }
-  //     else {
-  //         return passwordConfirmationInput.setErrors(null);
-  //     }
-  //   }
-  // }
+   checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+          passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+          return passwordConfirmationInput.setErrors(null);
+      }
+    }
+  }
     
   
 get f() { return this.resetForm.controls}
@@ -88,11 +85,18 @@ startpage() {
     this.userservice.registration(this.resetForm.value).subscribe(res=> {
       console.log("datatatt",JSON.stringify(this.resetForm.value))
    console.log("response-------",res)
-   alert('Sucessfully registerd');
-      this.router.navigate(['email-otp'])
+   var response=JSON.parse(JSON.stringify(res)).message;
+   console.log("response---",JSON.parse(JSON.stringify(response)));
+
+     if(response === "Your contact or email id is already registered with us."){
+    alert(response)
+     }
+      else{
+        this.router.navigate(['email-otp'])
+      }
     })
-    
   }
+
   else
   {
     if(localStorage.getItem(this.verifyStatus).trim().toString()==='success')
@@ -101,7 +105,7 @@ startpage() {
         console.log("datatatt",JSON.stringify(this.resetForm.value))
      console.log("response-------",res)
     
-     alert('Sucessfully registerd');
+     alert(res)
         this.router.navigate(['dashboard'])
       })
     }

@@ -141,12 +141,23 @@ onSubmit(){
   this.userservice.forgotpass(this.forgotForm.value).subscribe(data=>{
     console.log("forgot password",this.forgotForm.value)
     console.log("hbshc",data)
-    this.router.navigate(['reset-pass'])
-  })
-}
-resetpass(){
+ 
+    var response=JSON.parse(JSON.stringify(data)).message;
+    console.log("response---",JSON.parse(JSON.stringify(response)));
+    
+    if(response === "Entered email id is not registered with us."){
+    
+      alert(response)
+    }
+else
+{
   this.router.navigate(['reset-pass'])
+
 }
+    })
+  }
+  
+
 db(){
   this.router.navigate(['dashboard'])
 }
