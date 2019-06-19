@@ -150,8 +150,8 @@
          
                         <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
          
-                        <input type="date" formControlName="dob" class="form-control"
-                           [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder=" enter Date Of Birth">
+                        <input type="datetime" formControlName="dob" class="form-control"
+                           [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="dd/mm/yyyy">
                         <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                            <div *ngIf="f.dob.errors.required">Field required</div>
                         </div>
