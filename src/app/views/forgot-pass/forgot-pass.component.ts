@@ -140,10 +140,8 @@ $(document).ready(function() {
 onSubmit(){
   this.userservice.forgotpass(this.forgotForm.value).subscribe(data=>{
     console.log("forgot password",this.forgotForm.value)
-    this.forgotForm = this.formbuilder.group({
-      email_id: ['']
-     
-    });
+    console.log("hbshc",data)
+    this.router.navigate(['reset-pass'])
   })
 }
 resetpass(){
