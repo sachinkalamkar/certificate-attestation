@@ -39,20 +39,14 @@ api1:any=[]
   }
   constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder,private route:ActivatedRoute) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
-
-  
+   
   ngOnInit() {
-
-    
-
-    
-    this.resetForm= this.formbuilder.group({
+  this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
       middle_name:[''],
       nationality:[''],
-      contact:['',[Validators.required, Validators.minLength(10)]],
+      contact:['',[Validators.required,Validators.minLength(12)]],
       email_id:['',[Validators.required, Validators.email]],
       gender:[''],
       password:['',[Validators.required, Validators.minLength(6)]],

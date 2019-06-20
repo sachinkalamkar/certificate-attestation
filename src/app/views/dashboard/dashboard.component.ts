@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
 onSubmit(form: NgForm){
 console.log("hdsbcnmxmclsmdkldsmkl")
 console.log('--------------->',form.value);
-  if (this.model.email_id === 'admin@gmail.com' && this.model.password === '123456') {
+  if (this.model.email_id === 'deskoffice@mahait.com' && this.model.password === '123456') {
     this.userservice.login(form.value).subscribe(
       res => {
         console.log('--------------->', form.value)
@@ -41,7 +41,7 @@ console.log('--------------->',form.value);
       }
     );
   }
-  else if (this.model.email_id === 'deputy@gmail.com' && this.model.password === '123456') {
+  else if (this.model.email_id === 'admin@mahait.com' && this.model.password === '123456') {
     this.userservice.login(form.value).subscribe(
       res => {
         console.log('--------------->', form.value)
@@ -53,7 +53,7 @@ console.log('--------------->',form.value);
       }
     );
   }
-  else if (this.model.email_id === 'desk@gmail.com' && this.model.password === '123456') {
+  else if (this.model.email_id === 'deskoffice@mahait.com'&& this.model.password === '123456') {
     this.userservice.login(form.value).subscribe(
       res => {
         console.log('--------------->', form.value)
