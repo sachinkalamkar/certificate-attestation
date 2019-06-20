@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
 
@@ -17,6 +17,7 @@ import { NgForm } from '@angular/forms';
 
   
 export class RegisterHereComponent implements OnInit {
+  myRecaptcha = new FormControl(false);
   showSucessMessage: boolean;
   serverErrorMessages: string;
   req_id:string;
@@ -200,6 +201,14 @@ processVal(res){
 
  db(){
   this.router.navigate(['dashboard'])
+}
+
+onScriptLoad() {
+  console.log('Google reCAPTCHA loaded and is ready for use!')
+}
+
+onScriptError() {
+  console.log('Something went long when loading the Google reCAPTCHA')
 }
 
 }

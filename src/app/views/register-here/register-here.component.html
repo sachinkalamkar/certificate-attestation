@@ -250,8 +250,12 @@
             <div class="col-sm-6">
                   <!-- <div class="form-group"> -->
       
-                  <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div>
-      
+                  <!-- <div class="g-recaptcha" data-sitekey="6Ld0CqkUAAAAAFY3v4I6YG7wDNrqXjcAtkaXQh0-"></div> -->
+                  <recaptcha
+                  [formControl]="myRecaptcha"
+                  (scriptLoad)="onScriptLoad()"
+                  (scriptError)="onScriptError()"
+                ></recaptcha>
                   <!-- </div> -->
                </div>
             </div>
