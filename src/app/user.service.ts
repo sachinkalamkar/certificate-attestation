@@ -4,12 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../app/user'
 
 import { HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
- 
+  apiURL: string = environment.apiURL
 
   badgeCount: number;
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
@@ -18,13 +19,13 @@ export class UserService {
 
 
   login(data) {
-    return this.http.post('https://document-attestation-backend.herokuapp.com/studentlogin',data);
+    return this.http.post(`${this.apiURL}/studentlogin`,data);
   }
 
   registration(user) {
     console.log(user);
 
-    return this.http.post('https://document-attestation-backend.herokuapp.com/registration',user);
+    return this.http.post(`${this.apiURL}/registration`,user);
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -98,4 +99,6 @@ apistate(country_id){
 apicity(state_id){
   return this.http.post('https://document-attestation-backend.herokuapp.com/cities',state_id)
 }
+
+
 }

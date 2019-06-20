@@ -18,7 +18,9 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     var test = this.route.snapshot.queryParamMap.get('_id');
+    var application_no = this.route.snapshot.queryParamMap.get('application_no');
     console.log("test", test);
+   console.log("application_no",application_no)
     // const data = JSON.parse(test)
     this.passportForm = this.formBuilder.group({
 
@@ -42,7 +44,7 @@ toggleCollapse(): void {
   this.isCollapsed = !this.isCollapsed;
   this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
 }
-s1(){
+viewDetails(){
 
 		this.router.navigate(['view-user-s1'])	  
 }
