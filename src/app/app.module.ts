@@ -7,7 +7,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { RecaptchaModule } from 'angular-google-recaptcha';
 
 import { ViewUserS1Component } from './views/view-user-s1/view-user-s1.component';
 import { ViewUserS2Component } from './views/view-user-s2/view-user-s2.component';
@@ -135,7 +135,9 @@ import { UserSelectDateComponent } from './views/user-select-date/user-select-da
    // BsDropdownModule.forRoot(),
     PopupModule.forRoot(),
    BrowserAnimationsModule,
-   
+   RecaptchaModule.forRoot({
+    siteKey: '6LepyqkUAAAAAMpL4qd3nmzckF43wTJyXmhp3l6J',
+}),
   //  MatToolbarModule,
   // MatButtonModule,
   // MatIconModule,

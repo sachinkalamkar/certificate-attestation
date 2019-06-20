@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { NgForm } from '@angular/forms';
 
@@ -17,6 +17,7 @@ import { NgForm } from '@angular/forms';
 
   
 export class RegisterHereComponent implements OnInit {
+  myRecaptcha = new FormControl(false);
   showSucessMessage: boolean;
   serverErrorMessages: string;
   req_id:string;
@@ -28,55 +29,58 @@ export class RegisterHereComponent implements OnInit {
   submitted = false;
   marked=true;
   marked1:any
-
-
+  userdetail:any=[];
+api:any=[]
+api1:any=[]
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
   console.log(response.success);
   console.log(response.token);
   }
-  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder) { }
+  constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder,private route:ActivatedRoute) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
-
-  
+   
   ngOnInit() {
-    this.resetForm= this.formbuilder.group({
+  this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
       middle_name:[''],
       nationality:[''],
-      contact:[''],
+      contact:['',[Validators.required,Validators.minLength(12)]],
       email_id:['',[Validators.required, Validators.email]],
       gender:[''],
       password:['',[Validators.required, Validators.minLength(6)]],
      dob:[''],
      otp:[''],
      email_choice:[''],
-     contact_status:[''],
-     confirm_password:['']
-  
-   
-   } )
-  // ,{validator: this.checkIfMatchingPasswords('password','confirm_password')});
+     contact_status:[''],confirm_password:['']
+    } 
+  ,{validator: this.checkIfMatchingPasswords('password','confirm_password')});
   
    this.resetForm.controls['email_choice'].setValue(this.email_choice);
    this.resetForm.controls['contact_status'].setValue(this.verifyStatus === 'success'?true:false);
-   }
 
-  //  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
-  //   return (group: FormGroup) => {
-  //     let passwordInput = group.controls[passwordKey],
-  //         passwordConfirmationInput = group.controls[passwordConfirmationKey];
-  //     if (passwordInput.value !== passwordConfirmationInput.value) {
-  //       return passwordConfirmationInput.setErrors({notEquivalent: true})
-  //     }
-  //     else {
-  //         return passwordConfirmationInput.setErrors(null);
-  //     }
-  //   }
-  // }
+   this.userservice.apiscountry().subscribe(data=>{
+     
+    this.api=data
+   
+  console.log("data of some country coc", this.api)
+  })
+}
+
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+          passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+          return passwordConfirmationInput.setErrors(null);
+      }
+    }
+  }
     
   
 get f() { return this.resetForm.controls}
@@ -84,15 +88,26 @@ startpage() {
  
   this.submitted=true
    
+  if(this.resetForm.invalid)
+  {
+    return 
+  }
   if (this.email_choice){
     this.userservice.registration(this.resetForm.value).subscribe(res=> {
       console.log("datatatt",JSON.stringify(this.resetForm.value))
    console.log("response-------",res)
-   alert('Sucessfully registerd');
-      this.router.navigate(['email-otp'])
+   var response=JSON.parse(JSON.stringify(res)).message;
+   console.log("response---",JSON.parse(JSON.stringify(response)));
+
+  if(response === "Your contact or email id is already registered with us."){
+    alert(response)
+     }
+      else{
+        this.router.navigate(['email-otp'])
+      }
     })
-    
   }
+
   else
   {
     if(localStorage.getItem(this.verifyStatus).trim().toString()==='success')
@@ -100,8 +115,10 @@ startpage() {
       this.userservice.registration(this.resetForm.value).subscribe(res=> {
         console.log("datatatt",JSON.stringify(this.resetForm.value))
      console.log("response-------",res)
-    
-     alert('Sucessfully registerd');
+     var response=JSON.parse(JSON.stringify(res)).message;
+   console.log("response---",JSON.parse(JSON.stringify(response)));
+
+     alert(response)
         this.router.navigate(['dashboard'])
       })
     }
@@ -120,6 +137,7 @@ sendotp(){
   console.log("contct number",this.resetForm.value.contact);
   var response;
    var res=this.userservice.sendotp(this.resetForm.value.contact).subscribe(data=>{
+    console.log("contct number idss",this.resetForm.value.contact);
      console.log("contct numberfgfdgfd",JSON.stringify(data));
      var jsonParse=JSON.parse(JSON.stringify(data));
     
@@ -183,6 +201,14 @@ processVal(res){
 
  db(){
   this.router.navigate(['dashboard'])
+}
+
+onScriptLoad() {
+  console.log('Google reCAPTCHA loaded and is ready for use!')
+}
+
+onScriptError() {
+  console.log('Something went long when loading the Google reCAPTCHA')
 }
 
 }

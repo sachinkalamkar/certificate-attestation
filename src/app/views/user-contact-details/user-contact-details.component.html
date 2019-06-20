@@ -132,8 +132,11 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="exampleFormControlInput1" style="float:left"><b>Country :</b><span style="color: red">*</span></label>
-                    <input type="text" id="exampleFormControlInput1" formControlName="permanent_country"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
+                   
+                     <select formControlName="permanent_country" class="form-control" (change)="onChangeCountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
+                        <option value="">Select country...</option>
+                        <option *ngFor="let countries of api1">{{countries.name}}</option>
+                      </select>
                     <div *ngIf="submitted && f.permanent_country.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_country.errors.required">Country required</div>
                     </div>
@@ -144,8 +147,11 @@
                   <div class="form-group">
                     <div *ngIf="!marked">
                       <label for="present_country" style="float:left"><b>Country :</b><span style="color: red">*</span></label>
-                      <input type="text" id="present_country" formControlName="present_country"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
+                      
+                        <select formControlName="present_country" class="form-control" (change)="onChangeCountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
+                          <option value="">Select country...</option>
+                          <option *ngFor="let countries of api1" >{{countries.name}}</option>
+                        </select>
                     </div>
                     <div *ngIf="submitted && f.present_country.errors" class="invalid-feedback">
                       <div *ngIf="f.present_country.errors.required">Country required</div>
@@ -158,9 +164,12 @@
                   <div class="form-group">
       
                     <label for="exampleFormControlSelect2" style="float:left"><b>State :</b><span style="color: red">*</span></label>
-                    <input type="text"  id="exampleFormControlInput1" formControlName="permanent_state"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }">
-      
+                  
+              <select formControlName="permanent_state" class="form-control" (change)="onChangeState($event.target.value)" 
+                   [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }">
+                       <option value="">Select state...</option>
+               <option *ngFor="let state of states" [value]="country.id">{{state.name}}</option>
+                      </select>
                     <div *ngIf="submitted && f.permanent_state.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_state.errors.required">Staterequired</div>
                     </div>
@@ -175,8 +184,11 @@
                     <div *ngIf="!marked">
                       <label for="city" style="float:left"><b>State :</b><span style="color: red">*</span></label>
       
-                      <input type="text"  id="present_state" formControlName="present_state"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }">
+                      <select formControlName="present_state" class="form-control" (change)="onChangeState($event.target.value)" 
+                   [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }">
+                       <option value="">Select state...</option>
+               <option *ngFor="let state of states" [value]="country.id">{{state.name}}</option>
+                      </select>
                     </div>
   
                     <div *ngIf="submitted && f.present_state.errors" class="invalid-feedback">
@@ -190,9 +202,11 @@
                   <div class="form-group">
       
                     <label for="exampleFormControlSelect2" style="float:left"><b>City :</b><span style="color: red">*</span></label>
-                    <input type="text"id="exampleFormControlInput1" formControlName="permanent_city"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }">
-      
+                   
+                      <select formControlName="permanent_city" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }">
+                        <option value="">Select city...</option>
+                        <option *ngFor="let city of cities" [value]="state_id">{{city.cities}}</option>
+                      </select>
                     <div *ngIf="submitted && f.permanent_city.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_city.errors.required">Cityrequired</div>
                     </div>
@@ -203,8 +217,10 @@
                   <div class="form-group">
                     <div *ngIf="!marked">
                       <label for="present_city" style="float:left"><b>City:</b><span style="color: red">*</span></label>
-                      <input type="text"  id="present_city" formControlName="present_city"
-                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.present_city.errors }">
+                      <select formControlName="present_city" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.present_city.errors }">
+                        <option value="">Select city...</option>
+                        <option *ngFor="let city of cities" [value]="state_id">{{city.cities}}</option>
+                      </select>
                     </div>
                     <div *ngIf="submitted && f.present_city.errors" class="invalid-feedback">
                       <div *ngIf="f.present_city.errors.required">Cityrequired</div>
@@ -216,7 +232,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label style="float:left"><b>House Number :</b><span style="color: red">*</span></label>
-                    <input type="text" formControlName="permanent_house_n0" class="form-control"
+                    <input type="text" formControlName="permanent_house_no" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.permanent_house_no.errors }">
                     <div *ngIf="submitted && f.permanent_house_no.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_house_no.errors.required">House Number</div>
@@ -269,7 +285,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label style="float:left"><b>Pincode :</b><span style="color: red">*</span></label>
-                    <input type="text" formControlName=" permanent_pincode"class="form-control" 
+                    <input type="text" formControlName="permanent_pincode"class="form-control" 
                       [ngClass]="{ 'is-invalid': submitted && f. permanent_pincode.errors }">
                     <div *ngIf="submitted && f. permanent_pincode.errors" class="invalid-feedback">
                       <div *ngIf="f. permanent_pincode.errors.required">House Number</div>
