@@ -93,9 +93,10 @@ export class UserService {
   return this.http.get('https://document-attestation-backend.herokuapp.com/countryCode')
 }
 apistate(country_id){
-  return this.http.post('https://document-attestation-backend.herokuapp.com/states',country_id)
+  let data = {country_id: country_id};
+  return this.http.post('https://document-attestation-backend.herokuapp.com/states',data)
 }
 apicity(state_id){
-  return this.http.post('https://document-attestation-backend.herokuapp.com/cities',state_id)
+  return this.http.post('https://document-attestation-backend.herokuapp.com/cities',{"state_id":state_id})
 }
 }

@@ -52,6 +52,7 @@ export class UserContactDetailsComponent implements OnInit {
 }
 
 onChangeCountry(country_id: number) {
+  console.log('cntyid',country_id);
   if (country_id) {
     this.userservice.apistate(country_id).subscribe(
       data => {

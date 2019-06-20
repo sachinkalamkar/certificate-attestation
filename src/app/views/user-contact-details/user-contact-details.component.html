@@ -135,7 +135,7 @@
                    
                      <select formControlName="permanent_country" class="form-control" (change)="onChangeCountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.permanent_country.errors }">
                         <option value="">Select country...</option>
-                        <option *ngFor="let countries of api1">{{countries.name}}</option>
+                        <option *ngFor="let countries of api1" [value]="countries.id">{{countries.name}}</option>
                       </select>
                     <div *ngIf="submitted && f.permanent_country.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_country.errors.required">Country required</div>
@@ -150,7 +150,7 @@
                       
                         <select formControlName="present_country" class="form-control" (change)="onChangeCountry($event.target.value)" [ngClass]="{ 'is-invalid': submitted && f.present_country.errors }">
                           <option value="">Select country...</option>
-                          <option *ngFor="let countries of api1" >{{countries.name}}</option>
+                          <option *ngFor="let countries of api1"  [value]="countries.id">{{countries.name}}</option>
                         </select>
                     </div>
                     <div *ngIf="submitted && f.present_country.errors" class="invalid-feedback">
@@ -168,7 +168,7 @@
               <select formControlName="permanent_state" class="form-control" (change)="onChangeState($event.target.value)" 
                    [ngClass]="{ 'is-invalid': submitted && f.permanent_state.errors }">
                        <option value="">Select state...</option>
-               <option *ngFor="let state of states" [value]="country.id">{{state.name}}</option>
+               <option *ngFor="let state of states" [value]="state.id">{{state.name}}</option>
                       </select>
                     <div *ngIf="submitted && f.permanent_state.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_state.errors.required">Staterequired</div>
@@ -187,7 +187,7 @@
                       <select formControlName="present_state" class="form-control" (change)="onChangeState($event.target.value)" 
                    [ngClass]="{ 'is-invalid': submitted && f.present_state.errors }">
                        <option value="">Select state...</option>
-               <option *ngFor="let state of states" [value]="country.id">{{state.name}}</option>
+               <option *ngFor="let state of states" [value]="state.id">{{state.name}}</option>
                       </select>
                     </div>
   
@@ -205,7 +205,7 @@
                    
                       <select formControlName="permanent_city" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.permanent_city.errors }">
                         <option value="">Select city...</option>
-                        <option *ngFor="let city of cities" [value]="state_id">{{city.cities}}</option>
+                        <option *ngFor="let city of cities">{{city.name}}</option>
                       </select>
                     <div *ngIf="submitted && f.permanent_city.errors" class="invalid-feedback">
                       <div *ngIf="f.permanent_city.errors.required">Cityrequired</div>
@@ -219,7 +219,7 @@
                       <label for="present_city" style="float:left"><b>City:</b><span style="color: red">*</span></label>
                       <select formControlName="present_city" class="form-control"[ngClass]="{ 'is-invalid': submitted && f.present_city.errors }">
                         <option value="">Select city...</option>
-                        <option *ngFor="let city of cities" [value]="state_id">{{city.cities}}</option>
+                        <option *ngFor="let city of cities">{{city.name}}</option>
                       </select>
                     </div>
                     <div *ngIf="submitted && f.present_city.errors" class="invalid-feedback">
