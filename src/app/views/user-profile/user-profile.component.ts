@@ -25,8 +25,7 @@ export class UserProfileComponent implements OnInit {
     console.log("dat test",test)
     this.userService.getUserProfile(test).subscribe(
       res => {
-      
-        this.data1 = res;
+       this.data1 = res;
         this.data=this.data1.message[0];
         this.userDetails=JSON.parse(JSON.stringify(this.data))
         console.log("data of details",this.userDetails)
