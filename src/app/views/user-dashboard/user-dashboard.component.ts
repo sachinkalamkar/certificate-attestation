@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { Router, ActivatedRoute } from '@angular/router';
-import {DomSanitizer} from '@angular/platform-browser';
-import { HttpClient,HttpEventType } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../../user.service';
 
@@ -13,7 +13,9 @@ import { UserService } from '../../user.service';
 })
 export class UserDashboardComponent implements OnInit {
   passportForm: FormGroup;
-  submitted=false
+  submitted = false
+  app_message: string
+
   constructor(private formBuilder: FormBuilder, private userservice: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -22,45 +24,56 @@ export class UserDashboardComponent implements OnInit {
     // const data = JSON.parse(test)
     this.passportForm = this.formBuilder.group({
 
-    _id:test
+      _id: test
 
     });
   }
 
-isCollapsed: boolean = false;
-iconCollapse: string = 'icon-arrow-up';
+  isCollapsed: boolean = false;
+  iconCollapse: string = 'icon-arrow-up';
 
-collapsed(event: any): void {
-  // console.log(event);
-}
+  collapsed(event: any): void {
+    // console.log(event);
+  }
 
-expanded(event: any): void {
-  // console.log(event);
-}
+  expanded(event: any): void {
+    // console.log(event);
+  }
 
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
-s1(){
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
+    this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
+  }
+  s1() {
 
-		this.router.navigate(['view-user-s1'])	  
-}
-appli(){
-    this.userservice.newappli(this.passportForm.value).subscribe(res=>{
-      console.log("response-----",this.passportForm.value)
-    console.log("response",res)
-this.router.navigate(['user-appl-form'])
+    this.router.navigate(['view-user-s1'])
+  }
+  appli() {
+    this.userservice.newappli(this.passportForm.value).subscribe(res => {
+      console.log("response-----", this.passportForm.value)
+      console.log("response", res)
+      this.router.navigate(['user-appl-form'])
     })
-    
-}
-// home(){
-//   this.router.navigate(['user-dashboard'])	  
-// }
-doc(){
-  this.router.navigate(['user-mandatory-documents'])	  
-}
-profile(){
-  this.router.navigate(['user-profile'])	  
-}
+
+  }
+  // home(){
+  //   this.router.navigate(['user-dashboard'])	  
+  // }
+  doc() {
+    this.router.navigate(['user-mandatory-documents'])
+  }
+  profile() {
+    this.userservice.getUserProfile(this.passportForm.value).subscribe(res => {
+      console.log("response----- of id", this.passportForm.value)
+      console.log("response of id ",res)
+      var data=this.passportForm.value
+     var data1= data._id
+     console.log("data of id",data1)
+     
+      localStorage.setItem(this.app_message, data1);
+     
+      var response = localStorage.getItem(this.app_message)
+      this.router.navigate(['user-profile'],{ queryParams:{"obj":data1,si: true } })
+    })
+  }
 }

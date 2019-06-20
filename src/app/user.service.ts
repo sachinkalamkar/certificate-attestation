@@ -99,4 +99,7 @@ apistate(country_id){
 apicity(state_id){
   return this.http.post('https://document-attestation-backend.herokuapp.com/cities',{"state_id":state_id})
 }
+getUserProfile(_id){
+  return this.http.post('https://document-attestation-backend.herokuapp.com/userProfile',{"_id":_id})
+}
 }

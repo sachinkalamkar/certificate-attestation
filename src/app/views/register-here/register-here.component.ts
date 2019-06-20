@@ -32,6 +32,7 @@ export class RegisterHereComponent implements OnInit {
   userdetail:any=[];
 api:any=[]
 api1:any=[]
+splitted:{}
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
@@ -66,6 +67,14 @@ api1:any=[]
     this.api=data
    
   console.log("data of some country coc", this.api)
+  })
+  this.userservice.apiscountrycode().subscribe(data=>{
+     
+    this.api1=data
+   
+    this.splitted = this.api1.JSON.stringify.trim().split("-"); 
+  
+  console.log("data of some country coc", this.api1)
   })
 }
 

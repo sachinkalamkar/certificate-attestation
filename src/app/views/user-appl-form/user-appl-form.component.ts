@@ -71,7 +71,7 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
       applicant_type : ['',Validators.required],
         full_name : ['',Validators.required],
         sex : ['',Validators.required],
-     
+        relationship_with_applicant:[''],
         nationality : ['',Validators.required],
       
         date_of_birth :['',Validators.required],

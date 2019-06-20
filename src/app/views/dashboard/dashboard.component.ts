@@ -46,7 +46,7 @@ console.log('--------------->',form.value);
       res => {
         console.log('--------------->', form.value)
         this.userservice.setToken(res['token']);
-        this.router.navigate(['']);
+        this.router.navigate(['email-otp']);
       },
       err => {
         this.serverErrorMessages = err.error.message;
@@ -70,7 +70,7 @@ console.log('--------------->',form.value);
         console.log('--------------->',form.value);
         var response=JSON.parse(JSON.stringify(res)).message;
      console.log("response---",JSON.parse(JSON.stringify(response)));
-       if(response === "Given email id is not registered with us." || response == "Incorrect password"){
+       if(response === "Given email id is not registered with us." || response == "Incorrect password" ||response === "Admin Given email id is not registered with us."){
       alert(response)
        }else{
     
