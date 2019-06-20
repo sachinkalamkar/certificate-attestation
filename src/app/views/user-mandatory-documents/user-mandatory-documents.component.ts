@@ -47,5 +47,7 @@ home(){
 doc(){
   this.router.navigate(['user-mandatory-documents'])	  
 }
-
+profile(){
+  this.router.navigate(['user-profile'])	  
+}
 }

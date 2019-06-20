@@ -17,14 +17,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  login(authCredentials) {
-    return this.http.post('http://document-attestation-backend.herokuapp.com/studentlogin', authCredentials, this.noAuthHeader);
+  login(data) {
+    return this.http.post('https://document-attestation-backend.herokuapp.com/studentlogin',data);
   }
 
   registration(user) {
     console.log(user);
 
-    return this.http.post('http://127.0.0.1:3000/registration',{'user':user});
+    return this.http.post('https://document-attestation-backend.herokuapp.com/registration',user);
   }
   setToken(token: string) {
     localStorage.setItem('token', token);
@@ -56,27 +56,36 @@ export class UserService {
   }
 
   forgotpass(user) {
-    return this.http.post('http://127.0.0.1:3000/forgotPassword', user);
+    return this.http.post('https://document-attestation-backend.herokuapp.com/forgotPassword', user);
   }
   resetpass(password) {
-    return this.http.post('http://127.0.0.1:3000/resetPassword', password);
+    return this.http.post('https://document-attestation-backend.herokuapp.com/resetPassword', password);
+  }
+  emailotp(email_otp) {
+    return this.http.post('https://document-attestation-backend.herokuapp.com/emailOtp', email_otp);
   }
   sendotp(contact)
   
     {
-      return this.http.post('http://127.0.0.1:3000/sendOtp', {'contact':contact});
+      return this.http.post('https://document-attestation-backend.herokuapp.com/sendOtp', {'contact':contact});
+    }
+    newappli(data){
+      return this.http.post('https://document-attestation-backend.herokuapp.com/newApplication',data);
     }
     verifyotp(otp,request){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',{'otp':otp,'request':request});
+      return this.http.post('https://document-attestation-backend.herokuapp.com/verifyOtp',{'otp':otp,'request':request});
     }
     
     uploaddoc(data){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
+      return this.http.post('https://document-attestation-backend.herokuapp.com/verifyOtp',data)
     }
     userdashboard(data){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
+      return this.http.post('https://document-attestation-backend.herokuapp.com/verifyOtp',data)
     }
     personal(data){
-      return this.http.post('http://127.0.0.1:3000/verifyOtp',data)
+      return this.http.post('https://document-attestation-backend.herokuapp.com/verifyOtp',data)
+    }
+    apiscountry(){
+      return this.http.get('https://document-attestation-backend.herokuapp.com/countries')
     }
 }

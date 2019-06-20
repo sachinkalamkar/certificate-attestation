@@ -1,576 +1,533 @@
-<style>
-
-  /* * {box-sizing: border-box;}
-
-  body { 
-
-  margin: 0;
-
-  font-family: Arial, Helvetica, sans-serif;
-
-  } */
-  .header {
-    overflow: hidden;
-    /* background-color: green; */
-    padding: 3% 7%;
-    height: 10%;
-    }
-
-  .header a {
-
-  float: left;
-
-  color: black;
-
-  text-align: center;
-
-  padding: 12px;
-
-  text-decoration: none;
-
-  font-size: 18px; 
-
-  line-height: 25px;
-
-  border-radius: 4px;
-
-  }
-
-  .header a.logo {
-
-  font-size: 25px;
-
-  font-weight: bold;
-
-  }
-
-  .wrapper {
-
-  text-align: center;
-
-  }
-
-  .button {
-
-  position: absolute;
-
-  top: 50%;
-
-  }
-
-
-
- h2{
-
-  width: 80%;
-
-height: 176px;
-
-font-family: ProximaNova-Light;
-
-font-size: 60.2px;
-
-font-weight: bold;
-
-/* font-style: normal;
-
-font-stretch: normal;
-
-line-height: normal;
-
-letter-spacing: normal; */
-
-color: #ffffff;
-
- }
-
-</style>
-
-<div class="header background">
-
-  <div class="row">
-
-     <div class="col-md-3" >
-
-        <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />  
-
-     </div>
-
-     <div class="col-md-9">
-
-        <h2 class=""><b>APPLICATION PROCESS</b></h2>
-
-     </div>
-
+<div class="container" style="background-color: white;">
+  <div class="row img-responsive">
+    <div class="header background">
+      <div class="row" style="padding:2%;">
+        <div class="col-md-2">
+          <img src="assets/img/mlogo1.png" alt="Maharashtra Shashan " />
+        </div>
+        <div class="col-md-10">
+          <h2><b>APPLICATION PROCESS</b></h2>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
 
-<!-- <br><br><br><br> -->
-
-<div style="background-color: #f5f5f5">
-
-  <div class="container" >
-
-    <br><br><br>
-
-      <div class="row">
-
-          
-
-          <div class="col-sm-2 col-md-2">
-
-             <span (click)="ua1()"> <a style="padding-left:0px; color:#4dbab5">Personal Details </a></span>
-
-          </div>
+  <div style="background-color: #f5f5f5">
+    <div class="container">
+      <br><br><br>
 
 
 
-          <div class="col-sm-2 col-md-2">
+      <div class="stepwizard ">
 
-              <span (click)="ua2()"><a style="color:#4dbab5;padding-left:0px;">Passport Details</a>
+        <div class="stepwizard-row setup-panel"></div>
 
-              </span>
+        <div class=" stepwizard-step">
+          <span style="margin-left:0px;  color: white;" class="round-tab">
+            <h5 style="margin-top:10px" aria-hidden="true">1</h5>
+          </span>
+        </div>
 
-          </div>	
+        <div class="stepwizard-step">
+          <span style="margin-left:0px;  color: white;" class="round-tab">
+            <i class="fa fa-unCheck" aria-hidden="true"></i>
+            <h5 style="margin-top:0px" aria-hidden="true">2</h5>
+          </span>
+        </div>
+
+        <div class="stepwizard-step">
+          <span style="margin-left:0px; color: white;" class="round-tab">
+            <i class="fa fa-unCheck" aria-hidden="true"></i>
+            <h5 style="margin-top:0px" aria-hidden="true">3</h5>
+          </span>
+        </div>
+
+        <div class="stepwizard-step">
+          <span style="margin-left:0px; color: white;" class="round-tab">
+            <i class="fa fa-unCheck" aria-hidden="true"></i>
+            <h5 style="margin-top:0px" aria-hidden="true">4</h5>
+          </span>
+        </div>
+        <div class="stepwizard-step">
+          <span style="margin-left:0px; color: white;" class="round-tab">
+            <i class="fa fa-unCheck" aria-hidden="true"></i>
+            <h5 style="margin-top:0px" aria-hidden="true">5</h5>
+          </span>
+        </div>
+
+        <div class="stepwizard-step">
+          <span style="margin-left:0px; color: white;" class="round-tab">
+            <i class="fa fa-unCheck" aria-hidden="true"></i>
+            <h5 style="margin-top:0px" aria-hidden="true">6</h5>
+          </span>
+        </div>
+      </div>
+      <div class="row" style="padding:10px; ">
+
+
+        <div class="col-sm-2 col-md-2 ;">
+
+          <span (click)="ua1()"> <a style=" margin-left: 34px;text-align: center; color:#1386F6">Personal Details
+            </a></span>
+
+        </div>
 
 
 
-          <div class="col-sm-2 col-md-2">
+        <div class="col-sm-2 col-md-2">
+          <span (click)="ua2()"><a style="color:#1386F6; margin-left: 34px;">Passport Details</a>
+          </span>
+        </div>
 
-              <span (click)="ua3()"><a  style="color:#4dbab5;padding-left:0px;" >Contact Details </a>
+        <div class="col-sm-2 col-md-2">
+          <span (click)="ua3()"><a style="color:#1386F6; margin-left: 34px;">Contact Details </a>
+          </span>
+        </div>
 
-              </span>
+        <div class="col-sm-2 col-md-2">
+          <span (click)="ua4()"><a style="color:#1386F6; margin-left: 34px;"> Guarantor Details</a>
+          </span>
+        </div>
 
-          </div>
+        <div class="col-sm-3 col-md-3">
+          <span (click)="ua5()"><a style="color:#1386F6; margin-left: 34px; ">Current Designation</a></span>
+        </div>
 
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span (click)="ua4()" ><a  style="color:#4dbab5;padding-left:0px;" >  Guarantor Details</a>
-
-              </span>
-
-          </div>
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span (click)="ua5()"><a  style="padding-left:0px;color:#4dbab5" >Current Designation</a></span>
-
-          </div>
-
-
-
-          <div class="col-sm-2 col-md-2">
-
-              <span (click)="ua6()"><a  style="padding-left:0px;color:black" >Upload Documents </a>
-
-              </span>
-
-          </div>
-
+        <div class="col-sm-1 col-md-1">
+          <span (click)="ua6()"><a style="color:#1386F6; margin-left: -63px;">Upload Documents </a>
+          </span>
+        </div>
       </div>
 
 
 
-    <div class="stepwizard">
+      <br><br>
+      <br>
+      <form [formGroup]="uploadForm">
 
-  
-
-       <div class="stepwizard-row setup-panel"></div>
-
-
-
-          <div  class="stepwizard-step">
-
-              <span style="margin-left:35px;"(click)="ua1()" class="round-tab">
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
+        <div class="row">
 
 
 
-          <div class="stepwizard-step">
-
-              <span style="margin-left:35px;" (click)="ua2()"class="round-tab">  
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
+          <div class="row-sm-12">
 
 
 
-          <div class="stepwizard-step">
+            <div class="col-sm-12">
 
-              <span style="margin-left:35px;"(click)="ua3()" class="round-tab">
+              <div class="form-group">
 
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
+                <label for="exampleFormControlInput1"><b>Certificate Number :</b><span
+                    style="color: red">*</span></label>
 
 
 
-          <div class="stepwizard-step">
+                <input type="email" id="exampleFormControlInput1" formControlName="certificate_no" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }">
 
-              <span style="margin-left:35px;"(click)="ua4()" class="round-tab">
+                <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
 
-                <i class="fa fa-check" aria-hidden="true"></i>
+                  <div *ngIf="f.certificate_no.errors.required">Expiry Date required</div>
 
-              </span>
+                </div>
 
-          </div>
-
-          <div class="stepwizard-step">
-
-              <span style="margin-left:35px;"(click)="ua5()" class="round-tab">
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
-
-                 
-
-          <div class="stepwizard-step">
-
-              <span style="margin-left:35px;" (click)="ua6()"class="round-tab">
-
-                <i class="fa fa-check" aria-hidden="true"></i>
-
-              </span>
-
-          </div>
-
-    </div>
-
-<br><br>
-
-     <br><hr> <br> <br>
-
-     <h3 class="text-center"></h3>
-<form [formGroup]="uploadForm">
-     <div class="row">
-
-       <div class="row-sm-12">
-
-        <div class="col-sm-12">
-       <div class ="form-group">
-           <label for="exampleFormControlInput1"><b>Certificate Number :</b><span style="color: red">*</span></label>
-
-           <input type="email" id="exampleFormControlInput1"  formControlName="certificate_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.certificate_no.errors }" >
-           <div *ngIf="submitted && f.certificate_no.errors" class="invalid-feedback">
-              <div *ngIf="f.certificate_no.errors.required">Expiry Date required</div>
-          </div>
-        </div>
-
-      </div>
-
-        <div class="col-sm-12">
-            <div class ="form-group">
-           <label for="exampleFormControlSelect1"><b>Name of Examination :</b><span style="color: red">*</span></label>
-
-           <input type="email"id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }" >
-           <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
-              <div *ngIf="f.name_of_exam.errors.required">Expiry Date required</div>
-          </div>
-
-        </div>
-        </div>
-       </div>
+              </div>
 
 
 
-       <div class="row-sm-12">
-
-        <div class="col-sm-12">
-            <div class ="form-group">
-           <label for="exampleFormControlSelect2"><b>Year :</b><span style="color: red">*</span></label>
-
-           <input type="email"  id="exampleFormControlInput1" formControlName="year" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. year .errors }" >
-           <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
-              <div *ngIf="f.year.errors.required">Expiry Date required</div>
-          </div>
-
-        </div>
-        </div>
-
-
-        <div class="col-sm-12">
-            <div class ="form-group">
-            <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b><span style="color: red">*</span></label>
-
-            <input type="email"  id="exampleFormControlInput1" formControlName="name_of_institute" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }" >
-            <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
-               <div *ngIf="f. name_of_institute.errors.required">Expiry Date required</div>
-           </div>
             </div>
-         </div>
-
-        </div>
 
 
 
-        <div class="col-sm-4">
+            <div class="col-sm-12">
+
+              <div class="form-group">
+
+                <label for="exampleFormControlSelect1"><b>Name of Examination :</b><span
+                    style="color: red">*</span></label>
+
+
+
+                <input type="email" id="exampleFormControlInput1" formControlName="name_of_exam" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f. name_of_exam .errors }">
+
+                <div *ngIf="submitted && f.name_of_exam.errors" class="invalid-feedback">
+
+                  <div *ngIf="f.name_of_exam.errors.required">Expiry Date required</div>
+
+                </div>
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+          <div class="row-sm-12">
+
+
+
+            <div class="col-sm-12">
+
+              <div class="form-group">
+
+                <label for="exampleFormControlSelect2"><b>Year :</b><span style="color: red">*</span></label>
+
+
+
+                <input type="email" id="exampleFormControlInput1" formControlName="year" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f. year .errors }">
+
+                <div *ngIf="submitted && f.year.errors" class="invalid-feedback">
+
+                  <div *ngIf="f.year.errors.required">Expiry Date required</div>
+
+                </div>
+
+
+
+              </div>
+
+            </div>
+
+
+
+
+
+            <div class="col-sm-12">
+
+              <div class="form-group">
+
+                <label for="exampleFormControlSelect2"><b>Name of the University/Board/Council/Institute :</b><span
+                    style="color: red">*</span></label>
+
+
+
+                <input type="email" id="exampleFormControlInput1" formControlName="name_of_institute"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  name_of_institute  .errors }">
+
+                <div *ngIf="submitted && f. name_of_institute .errors" class="invalid-feedback">
+
+                  <div *ngIf="f. name_of_institute.errors.required">Expiry Date required</div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <div class="col-sm-4">
+
+
 
             <h3 style="color:cornflowerblue ; margin-top: 0%;
+       
+       
+       
+                   margin-left: 12%; font-size: 110.02%">CERTIFICATE TO BE UPLOADED</h3>
 
-            margin-left: 12%; font-size: 110.02%">CERTIFICATE TO BE UPLOADED</h3>
+
 
             <i ripple>
 
+
+
               <input type="image" src="assets/img/upload-logo.png" style="margin-top: 2%;
+       
+       
+       
+                       margin-left: 34%;    height: 69px;  width: 21%;
+       
+       
+       
+                     " viewBox="0 0 24 24">
 
-                margin-left: 34%;    height: 69px;  width: 21%;
-
-              " viewBox="0 0 24 24">
               <input type="file" id="my_file" style="display: none;" />
+
+
 
             </i>
 
-            <h3 style="color:cornflowerblue ; margin-top: 5%;
 
-            margin-left: 22%; font-size: 110.02%">Upload Document Here</h3>
+
+            <h3 style="color:cornflowerblue ; margin-top: 5%;
+       
+       
+       
+                   margin-left: 22%; font-size: 110.02%">Upload Document Here</h3>
+
+
 
           </div>
 
-     </div>
-    </form>
-     <br/>
+         
 
-     <br/>
+        </div>
+        <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactDetails()"> Add </button>
+      </form>
+      <br />
+      <br />
+      <br />
 
-     <br/>
+      <table class="table">
 
-   
+        <caption>List of documents</caption>
 
-<table class="table">
+        <thead>
 
-    <caption>List of documents</caption>
+          <tr>
 
-    <thead>
+            <th scope="col">#</th>
 
-      <tr>
+            <th scope="col">Certificate Number </th>
 
-        <th scope="col">#</th>
+            <th scope="col">Examination </th>
 
-        <th scope="col">Certificate Number </th>
+            <th scope="col">Name of the University </th>
 
-        <th scope="col">Examination </th>
+            <th scope="col">Year </th>
 
-        <th scope="col">Name of the University </th>
+            <th scope="col">View Document</th>
 
-        <th scope="col">Year </th>
 
-        <th scope="col">View Document</th>
 
-        
+          </tr>
 
-      </tr>
+        </thead>
 
-    </thead>
+        <tbody>
 
-    <tbody>
+          <tr>
 
-      <tr>
+            <th scope="row">1</th>
 
-        <th scope="row">1</th>
+            <td>#123412</td>
 
-        <td>#123412</td>
+            <td>B.A History</td>
 
-        <td>B.A History</td>
+            <td>JNU</td>
 
-        <td>JNU</td>
+            <td> 30.05.2019</td>
 
-        <td> 30.05.2019</td>
+            <td>view document</td>
 
-        <td>view document</td>
 
-        
 
-        
 
-      </tr>
 
-      <tr>
+          </tr>
 
-        <th scope="row">2</th>
+          <tr>
 
-        <td>#123512</td>
+            <th scope="row">2</th>
 
-        <td>B.A History</td>
+            <td>#123512</td>
 
-        <td>JNU</td>
+            <td>B.A History</td>
 
-        <td> 30.05.2019</td>
+            <td>JNU</td>
 
-        <td>view document</td>
+            <td> 30.05.2019</td>
 
-        
+            <td>view document</td>
 
-        
 
 
 
-      </tr>
 
-      
+          </tr>
 
-    </tbody>
 
-  </table>
 
-  <br>
+        </tbody>
 
-  <hr>
+      </table>
+      <br>
+      <hr>
+      <br />
+      <h4><b style="margin-top:3%">UPLOAD ID PROOFS</b></h4>
 
-  <br>
+      <table class="table">
 
-  <h4><b style="margin-top:3%">UPLOAD ID PROOFS</b></h4>
+        <caption>List of documents</caption>
 
-  <table class="table">
+        <thead>
 
-      <caption>List of documents</caption>
+          <tr>
 
-      <thead>
+            <th scope="col">#</th>
 
-        <tr>
+            <th scope="col">ID Proof Number </th>
 
-          <th scope="col">#</th>
+            <th scope="col">ID Proof Name </th>
 
-          <th scope="col">ID Proof Number </th>
+            <th scope="col">Upload Date </th>
 
-          <th scope="col">ID Proof Name </th>
+            <th scope="col">Upload ID Proof </th>
 
-          <th scope="col">Upload Date </th>
+            <th scope="col">View Document</th>
 
-          <th scope="col">Upload ID Proof </th>
 
-          <th scope="col">View Document</th>
 
-          
+          </tr>
 
-        </tr>
+        </thead>
 
-      </thead>
+        <tbody>
 
-      <tbody>
+          <tr>
 
-        <tr>
+            <th scope="row">1</th>
 
-          <th scope="row">1</th>
+            <td>#123412</td>
 
-          <td>#123412</td>
+            <td>Pan Card</td>
 
-          <td>Pan Card</td>
+            <td> 30.05.2019</td>
 
-          <td> 30.05.2019</td>
+            <td class="btn btn-link">Click here to Upload</td>
 
-          <td class="btn btn-link">Click here to Upload</td>
+            <td>view document</td>
 
-          <td >view document</td>
 
-          
 
-          
 
-        </tr>
 
-        <tr>
+          </tr>
 
-          <th scope="row">2</th>
+          <tr>
 
-          <td>#123512</td>
+            <th scope="row">2</th>
 
-          <td>Aadhar Card</td>
+            <td>#123512</td>
 
-          <td> 30.05.2019</td>
+            <td>Aadhar Card</td>
 
-          <td>Aadhar Card.jpg</td>
+            <td> 30.05.2019</td>
 
-          <td >view document</td>
+            <td>Aadhar Card.jpg</td>
 
-          
+            <td>view document</td>
 
-          
 
 
 
-        </tr>
 
-        
+          </tr>
 
-      </tbody>
 
-    </table>
 
-    <br>
+        </tbody>
 
-<hr>
+      </table>
+      <br>
+      <hr>
+      <div class="row">
 
-<div class="row">
 
-  <div class="col-sm-6" style="float:left">
 
-   <br><br>
+        <div class="col-sm-6" style="float:left">
 
-   <div class="form-group">  
 
-     <!-- <div class="col-sm-2">   -->
 
-       <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+          <br><br>
 
-       <label for="rem" style="float:center">Applicant will visit himself for Attestation</label>
 
-  </div>
 
- </div>
+          <div class="form-group">
 
 
 
-  <div class="col-sm-6" >
+            <!-- <div class="col-sm-2">   -->
 
-   <br><br>
 
-   <div class="form-group">  
 
-     <!-- <div class="col-sm-2">   -->
+            <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
 
-       <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
 
-       <label for="rem" style="float:center">Applicant will authorize representative to visit on applicant's behalf for attestation</label>
 
-  </div>
+            <label for="rem" style="float:center">Applicant will visit himself for Attestation</label>
 
- </div>
 
-</div>
 
+          </div>
 
 
 
+        </div>
 
-     <div class="wrapper">
-      <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentdesignation()">Back</button> &nbsp;  &nbsp;
+
+
+
+
+
+
+        <div class="col-sm-6">
+
+
+
+          <br><br>
+
+
+
+          <div class="form-group">
+
+
+
+            <!-- <div class="col-sm-2">   -->
+
+
+
+            <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+
+
+
+            <label for="rem" style="float:center">Applicant will authorize representative to visit on applicant's behalf
+              for attestation</label>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+      <div class="wrapper">
+
+        <button type="button" class="btn btn-primary" style="width:10%;" (click)="currentdesignation()">Back</button>
+        &nbsp; &nbsp;
+
         <button type="button" class="btn btn-primary" style="width:10%;" (click)="contactDetails()">Submit</button>
 
-     </div>
 
-     <br/>
 
+      </div>
+
+
+
+      <br />
+    </div>
   </div>
-
-</div>
-
-
-

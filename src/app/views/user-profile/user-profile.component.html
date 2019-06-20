@@ -1,3 +1,155 @@
-<p>
-  user-profile works!
-</p>
+
+
+<style>
+    .wrapper {
+     text-align: center;
+     }
+     .button {
+     position: absolute;
+     top: 50%;
+     }
+ .header {
+   overflow: hidden;
+   background-color: white;  
+    padding: 20px 10px;
+ }
+ 
+ .header a {
+   float: left;
+   color: black;
+   text-align: left;
+   padding: 12px;
+   text-decoration: none;
+   font-size: 18px; 
+   line-height: 25px;
+   border-radius: 4px;
+ }
+ 
+ .header a.logo {
+   font-size: 25px;
+   font-weight: bold;
+ }
+ 
+ 
+ 
+ .header a.active {
+   background-color: dodgerblue;
+   color: white;
+ }
+ 
+ .header-right {
+   float: right;
+ }
+ .dodgerblue{
+   background-color: dodgerblue;
+ }
+ </style>
+ 
+ <!-- Image and text -->
+ <nav class="navbar navbar-expand-lg navbar-light dodgerblue">
+    <a class="navbar-brand" (click)="home()"><img src="assets/img/mlogo1.png" width="40" height="40"  alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="home()" style="color:white"> <b>Home</b> <span class="sr-only">(current)</span></a>
+        </li>
+     
+      </ul>
+      <form class="form-inline">
+       
+        <img src="assets/img/plus1.png" (click)="appli()"width="30" height="30" class="" alt="">&nbsp;<b style="color:white" (click)="appli()">Add Application</b> &nbsp;&nbsp;&nbsp;&nbsp;
+
+      </form>
+  
+    </div>
+  
+    <ul class="nav navbar-nav ml-auto"> 
+    
+     <li class="nav-item dropdown" dropdown placement="bottom right">
+       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false" style="height:20% ;width:20%">
+         <img src="assets/img/4.png" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+       </a>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+          <div class="dropdown-header text-center"><strong>Suraj Prakash</strong></div>
+         <a class="dropdown-item" (click)="profile()" ><i class="fa fa-user"(click)="profile()" ></i> Profile
+        
+        </a>
+         <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages
+         
+        </a>
+         <a class="dropdown-item"(click)="doc()"><i class="fa fa-tasks" (click)="doc()"></i> Mandatory Documents
+         
+        </a>
+       
+         <div class="divider"></div>
+       
+         <a class="dropdown-item" href="/dashboard"><i class="fa fa-lock"></i> Logout</a>
+       </div>
+     </li>
+   </ul> 
+  </nav>
+ 
+   
+  
+
+        <div class="container" style="background-color: white" >
+            <br> <br>
+
+            
+          <div class="row-sm-12">
+         <h3 style="text-align:center" > <b>Profile</b></h3>
+          <br> <br>
+
+<div class="row">
+  <div class="col-sm-4"> <label ><b>First name :</b><span style="color:red">*</span></label> </div>
+  <div class="col-sm-6">
+      <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label></div>
+    <div class="col-sm-6"><input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-sm-4">  <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label></div>
+      <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+    </div>
+<br>
+  <div class="row">
+      <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label></div>
+      <div class="col-sm-6"><input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col-sm-4">  <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label></div>
+        <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+      </div>
+<br>
+      <div class="row">
+          <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label></div>
+          <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+        </div>
+        
+     <br>   
+        <div class="row">
+            <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Email ID:</b><span style="color:red">*</span></label></div>
+            <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+          </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Phone Number:</b><span style="color:red">*</span></label></div>
+        <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+      </div>
+<br><br><br>
+           
+        </div>
+      
+     
+  
+     
+     

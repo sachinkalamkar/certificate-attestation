@@ -67,6 +67,7 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
       $("input[id='my_file']").click();
   });
     this.contactForm = this.formBuilder.group ({
+     
       applicant_type : ['',Validators.required],
         full_name : ['',Validators.required],
         sex : ['',Validators.required],
@@ -78,7 +79,7 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
         father_name : ['',Validators.required],
       
         mother_name : ['',Validators.required]
-     
+        
     
   });
       

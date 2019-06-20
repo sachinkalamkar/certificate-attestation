@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import { HttpClient,HttpEventType } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -11,10 +12,20 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./user-dashboard.component.scss']
 })
 export class UserDashboardComponent implements OnInit {
+  passportForm: FormGroup;
+  submitted=false
+  constructor(private formBuilder: FormBuilder, private userservice: UserService, private router: Router, private route: ActivatedRoute) { }
 
-  constructor(private router : Router) { }
+  ngOnInit() {
+    var test = this.route.snapshot.queryParamMap.get('_id');
+    console.log("test", test);
+    // const data = JSON.parse(test)
+    this.passportForm = this.formBuilder.group({
 
-  ngOnInit() {}
+    _id:test
+
+    });
+  }
 
 isCollapsed: boolean = false;
 iconCollapse: string = 'icon-arrow-up';
@@ -36,13 +47,20 @@ s1(){
 		this.router.navigate(['view-user-s1'])	  
 }
 appli(){
-		this.router.navigate(['user-appl-form'])	  
+    this.userservice.newappli(this.passportForm.value).subscribe(res=>{
+      console.log("response-----",this.passportForm.value)
+    console.log("response",res)
+this.router.navigate(['user-appl-form'])
+    })
+    
 }
-home(){
-  this.router.navigate(['user-dashboard'])	  
-}
+// home(){
+//   this.router.navigate(['user-dashboard'])	  
+// }
 doc(){
   this.router.navigate(['user-mandatory-documents'])	  
 }
-
+profile(){
+  this.router.navigate(['user-profile'])	  
+}
 }

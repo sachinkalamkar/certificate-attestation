@@ -141,12 +141,8 @@ $(document).ready(function() {
 onSubmit(){
   this.userservice.resetpass(this.resetForm.value).subscribe(data=>{
     console.log("forgot password",this.resetForm.value)
-    this.resetForm = this.formbuilder.group({
-      new_password:[''],
-      confirm_pass:['']
-       
-      });
-  
+    console.log(data)
+  this.router.navigate(['dashbaord'])
   })
 }
 db(){
