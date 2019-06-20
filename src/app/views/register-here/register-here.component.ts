@@ -31,6 +31,7 @@ export class RegisterHereComponent implements OnInit {
   marked1:any
   userdetail:any=[];
 api:any=[]
+api1:any=[]
   private recaptchaSiteKey = '6LeeBakUAAAAALfD2VSJzb7GvsM4EYPA8bKtbS5N';
   private onCaptchaComplete(response: any) {
   console.log('reCAPTCHA response recieved:');
@@ -39,20 +40,14 @@ api:any=[]
   }
   constructor(public router : Router,public userservice:UserService ,public formbuilder: FormBuilder,private route:ActivatedRoute) { }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
-
-  
+   
   ngOnInit() {
-
-    
-
-    
-    this.resetForm= this.formbuilder.group({
+  this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
       middle_name:[''],
       nationality:[''],
-      contact:['',[Validators.required, Validators.minLength(10)]],
+      contact:['',[Validators.required,Validators.minLength(12)]],
       email_id:['',[Validators.required, Validators.email]],
       gender:[''],
       password:['',[Validators.required, Validators.minLength(6)]],
@@ -72,9 +67,9 @@ api:any=[]
    
   console.log("data of some country coc", this.api)
   })
-   }
+}
 
-   checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
     return (group: FormGroup) => {
       let passwordInput = group.controls[passwordKey],
           passwordConfirmationInput = group.controls[passwordConfirmationKey];

@@ -88,4 +88,14 @@ export class UserService {
     apiscountry(){
       return this.http.get('https://document-attestation-backend.herokuapp.com/countries')
     }
+    apiscountrycode()
+{
+  return this.http.get('https://document-attestation-backend.herokuapp.com/countryCode')
+}
+apistate(country_id){
+  return this.http.post('https://document-attestation-backend.herokuapp.com/states',country_id)
+}
+apicity(state_id){
+  return this.http.post('https://document-attestation-backend.herokuapp.com/cities',state_id)
+}
 }
