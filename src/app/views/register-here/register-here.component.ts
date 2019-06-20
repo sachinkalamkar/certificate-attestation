@@ -17,7 +17,7 @@ import { NgForm } from '@angular/forms';
 
   
 export class RegisterHereComponent implements OnInit {
-  myRecaptcha = new FormControl(false);
+
   showSucessMessage: boolean;
   serverErrorMessages: string;
   req_id:string;
@@ -43,6 +43,20 @@ splitted:{}
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    
   ngOnInit() {
+    $(document).ready(function() {
+      $('#comment_form').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            //status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+          console.log(response);
+         }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+      });
+    });
   this.resetForm= this.formbuilder.group({
       first_name:[''],
       last_name:[''],
@@ -212,12 +226,6 @@ processVal(res){
   this.router.navigate(['dashboard'])
 }
 
-onScriptLoad() {
-  console.log('Google reCAPTCHA loaded and is ready for use!')
-}
 
-onScriptError() {
-  console.log('Something went long when loading the Google reCAPTCHA')
-}
 
 }

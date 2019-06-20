@@ -135,9 +135,7 @@ import { UserSelectDateComponent } from './views/user-select-date/user-select-da
    // BsDropdownModule.forRoot(),
     PopupModule.forRoot(),
    BrowserAnimationsModule,
-   RecaptchaModule.forRoot({
-    siteKey: '6Lcsy6kUAAAAAGuB9VL4U3N1kVthv5z4-hMFAd4o',
-}),
+   RecaptchaModule
   //  MatToolbarModule,
   // MatButtonModule,
   // MatIconModule,
