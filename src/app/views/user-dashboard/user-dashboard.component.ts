@@ -51,8 +51,12 @@ export class UserDashboardComponent implements OnInit {
   appli() {
     this.userservice.newappli(this.passportForm.value).subscribe(res => {
       console.log("response-----", this.passportForm.value)
-      console.log("response", res)
-      this.router.navigate(['user-appl-form'])
+      console.log("response of message", res)
+      var response=JSON.parse(JSON.stringify(res)).message;
+      console.log("response of the message id",response)
+      localStorage.setItem(this.app_message, response);
+      var response1 = localStorage.getItem(this.app_message)
+      this.router.navigate(['user-appl-form'],{queryParams:{"obj":response,si:true}})
     })
 
   }
