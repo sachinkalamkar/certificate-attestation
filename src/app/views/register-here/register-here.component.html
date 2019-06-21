@@ -57,11 +57,11 @@
                      <div class="row" id="phoneDiv">
                       <div class="col-sm-6">
                         <span *ngIf="marked1">
-                           <input type="number"  formControlName="contact" class="form-control "
+                           <select type="number"  formControlName="contact" class="form-control "
                               [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"
                               placeholder=" Phone number">
-      
-      
+                              <!-- <option *ngFor="let countries of splitted" value="countries.splitted[1]">{{countries}}</option> -->
+                           </select>
                            <span>
                               <h5 class=" btn btn-link" (click)="sendotp()"> Send OTP</h5>
                            </span>
@@ -173,11 +173,11 @@
       
                    
                      <select formControlName="nationality" class="form-control "
-                        [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder=" applicant Country Name">
+                        [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" placeholder=" applicant Country Name">
                         <option *ngFor="let countries of api">{{countries.name}}</option>
                       
-                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
-                           <div *ngIf="f.gender.errors.required">Field required</div>
+                        <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                           <div *ngIf="f.nationality.errors.required">Field required</div>
                         </div>
                      </select>
       

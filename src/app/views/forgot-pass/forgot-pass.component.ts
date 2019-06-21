@@ -149,7 +149,7 @@ onSubmit(){
     
       alert(response)
     }
-else
+else if(response === "Reset password link has been sent to your registered email id.")
 {
   this.router.navigate(['reset-pass'])
 

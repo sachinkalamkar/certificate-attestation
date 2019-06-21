@@ -14,9 +14,30 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  constructor(private router : Router) { }
+  userDetails:any;
+  data:any;
+  data1:any
+  constructor(private router : Router,private userService:UserService,private route:ActivatedRoute) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+    var test = this.route.snapshot.queryParamMap.get('obj');
+    console.log("dat test",test)
+    this.userService.getUserProfile(test).subscribe(
+      res => {
+       this.data1 = res;
+        this.data=this.data1.message[0];
+        this.userDetails=JSON.parse(JSON.stringify(this.data))
+        console.log("data of details",this.userDetails)
+
+      },
+      err => { 
+        console.log(err);
+        
+      }
+    );
+  }
+  
 
 isCollapsed: boolean = false;
 iconCollapse: string = 'icon-arrow-up';
