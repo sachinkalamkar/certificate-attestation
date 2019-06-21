@@ -99,56 +99,57 @@
         <div class="container" style="background-color: white" >
             <br> <br>
 
-            
+            <form *ngIf="userDetails"> 
           <div class="row-sm-12">
          <h3 style="text-align:center" > <b>Profile</b></h3>
           <br> <br>
-
+        
 <div class="row">
   <div class="col-sm-4"> <label ><b>First name :</b><span style="color:red">*</span></label> </div>
   <div class="col-sm-6">
-      <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+      <input type="email" value={{userDetails.first_name}} class="form-control"  placeholder=" First name"></div>
 </div>
 <br>
 <div class="row">
     <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label></div>
-    <div class="col-sm-6"><input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+    <div class="col-sm-6"><input type="text" value={{userDetails.middle_name}}  class="form-control" placeholder=" First name"></div>
   </div>
   <br>
   <div class="row">
       <div class="col-sm-4">  <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label></div>
-      <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+      <div class="col-sm-6"> <input type="text"  value={{userDetails.last_name}}  class="form-control" placeholder=" Last name "></div>
     </div>
 <br>
   <div class="row">
       <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label></div>
-      <div class="col-sm-6"><input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+      <div class="col-sm-6"><input type="text" value={{userDetails.dob}} class="form-control" placeholder=" Date Of Birth"></div>
     </div>
 <br>
     <div class="row">
         <div class="col-sm-4">  <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label></div>
-        <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+        <div class="col-sm-6"> <input type="text"   value={{userDetails.nationality}}  class="form-control" placeholder=" First name"></div>
       </div>
 <br>
       <div class="row">
           <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label></div>
-          <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+          <div class="col-sm-6"> <input type="text" value={{userDetails.gender}} class="form-control" placeholder=" First name"></div>
         </div>
         
      <br>   
         <div class="row">
             <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Email ID:</b><span style="color:red">*</span></label></div>
-            <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+            <div class="col-sm-6"> <input type="text" value={{userDetails.email_id}}  class="form-control" placeholder=" First name"></div>
           </div>
     <br>
     <div class="row">
         <div class="col-sm-4"> <label for="exampleFormControlSelect2"><b>Phone Number:</b><span style="color:red">*</span></label></div>
-        <div class="col-sm-6"> <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="first_name"  placeholder=" First name"></div>
+        <div class="col-sm-6"> <input type="text" value={{userDetails.contact}}  class="form-control"   placeholder=" First name"></div>
       </div>
 <br><br><br>
            
         </div>
-      
+      </form>  
+        </div>
      
   
      

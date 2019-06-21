@@ -8,9 +8,9 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#" style="color:white" (click)="home()"><b>Home</b> <span class="sr-only">(current)</span></a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li> -->
@@ -55,9 +55,7 @@
          <a class="dropdown-item"(click)="profile()" ><i class="fa fa-user" (click)="profile()"></i> Profile
           <!-- <span class="badge badge-info">42</span> -->
         </a>
-         <a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages
-          <!-- <span class="badge badge-success">42</span> -->
-        </a>
+     
          <a class="dropdown-item" (click)="doc()"><i class="fa fa-tasks"  (click)="doc()"></i> Mandatory Documents
           <!-- <span class="badge badge-danger">42</span> -->
         </a>
@@ -92,19 +90,19 @@
   
       
       <!-- <caption>List of users</caption> -->
-      <div class="container">
+      <div class="container-fluid">
         
           <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Application Number :</th>
-                    <th scope="col">Name:</th>
-                    <th scope="col">Date:</th>
-                    <th scope="col">Status:</th>
-                    <th scope="col">Details of Applicants:</th>
-                    <th scope="col">Schedule</th>
+                    <th scope="col-md-2">#</th> 
+                    <th scope="col-md-2">Application Number :</th>
+                    <th scope="col-md-2">Name:</th>
+                    <th scope="col-md-2">Date:</th>
+                    <th scope="col-md-2">Status:</th>
+                    <th scope="col-md-2">Details of Applicants:</th>
+                    <th scope="col-md-1">Schedule</th>
                    
                   </tr>
                 </thead>
@@ -138,6 +136,7 @@
                     <td class="green">Available</td>
                     <td><img src="assets/img/calenda.png" style="width:4%; color: green" alt="user icon"></td>
                   </tr>
+            
                 </tbody>
               </table>
             </div>

@@ -94,10 +94,14 @@ export class UserService {
   return this.http.get(`${this.apiURL}/countryCode`)
 }
 apistate(country_id){
-  return this.http.post(`${this.apiURL}/states`,country_id)
+  let data = {country_id: country_id};
+  return this.http.post(`${this.apiURL}/states`,data)
 }
 apicity(state_id){
-  return this.http.post(`${this.apiURL}/cities`,state_id)
+  return this.http.post(`${this.apiURL}/cities`,{"state_id":state_id})
+}
+getUserProfile(_id){
+  return this.http.post(`${this.apiURL}/userProfile`,{"_id":_id})
 }
 viewDetails(appli_no){
   return this.http.post(`${this.apiURL}/requestDetail`,{"application_no":appli_no});
