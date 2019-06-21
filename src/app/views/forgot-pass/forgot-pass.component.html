@@ -1,6 +1,9 @@
-<div class="container background" style="background-color: darkgreen">
+
+
+
+  <div class="container background" style="background-color: darkgreen">
    <div class="header">
-         <!-- <a><img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan " /></a>   -->
+       
          <div class="row" style="padding:2%;">
             <div class="col-md-2">
                <img  src="assets/img/mlogo1.png" alt="Maharashtra Shashan "(click)="db()" />  
@@ -11,48 +14,48 @@
          </div>
       </div>
 </div>
-   <div class="container" style="background-color: white;">
-   <div class="row radius">
-     <div class="cont">
-        <h3>Forgot Password</h3>
-        <form [formGroup]="forgotForm">
-              <div id="u" class="form-group">
-                    <input id="username" spellcheck=false class="form-control" formControlName="email_id" type="text"
-                       style="margin-left:0" size="8" alt="login" required="">
-                    <span class="form-highlight"></span>
-                    <span class="form-bar"></span>
-                    <label for="username" class="float-label">Enter email id</label>
-                    <p class="erroru">
-                       Email is required
-                       <i>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                             <path d="M0 0h24v24h-24z" fill="none" />
-                             <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-                          </svg>
-                       </i>
-                    </p>
-                    <div class="form-group">
-                     <button type="submit"  class="btn btn-primary" (click)="db()">Cancel</button> &nbsp;  <button type="submit" class="btn btn-primary"  (click)="onSubmit()">Submit</button>
 
-                       <!-- <button id="submit" type="submit" class="btn btn-block btn-submit" (click)="resetpass()"  ripple>
-                          <span>
-                             <h5>SUBMIT</h5>
-                          </span>
-                       </button> -->
-                    </div>
-                    <br/>
+<div class="container" style="background-color: white;">
+<div class="row radius">
+  <div class="cont">
+     <h3>Forgot Password</h3>
+     <form [formGroup]="forgotForm">
+           <div id="u" class="form-group">
+                 <input id="username" spellcheck=false class="form-control" formControlName="email_id" type="text"
+                    style="margin-left:0" size="8" alt="login" required="">
+                 <span class="form-highlight"></span>
+                 <span class="form-bar"></span>
+                 <label for="username" class="label">Enter email id</label>
+                 <!-- <p class="erroru">
+                    Email is required
+                    <i>
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M0 0h24v24h-24z" fill="none" />
+                          <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                       </svg>
+                    </i>
+                 </p> -->
+
+                 <div class="form-group">
+                  <button type="submit"  class="btn btn-primary" (click)="db()">Cancel</button> &nbsp;  <button type="submit" class="btn btn-primary"  (click)="onSubmit()">Submit</button>
+
+                    
                  </div>
-              <!-- <div class="row">
-                    <div class="col-md-7">
-                       <p>Remember Password? </p>
-                    </div>
-                    <div class="col-md-5">
-                       <button type="button"  class="btn btn-block btn-link" (click)="db()">Login Here</button>
-                    </div>
-                   
-                 </div> -->
-        </form>
-     </div>
-   
-   </div>
+                 <br/>
+              </div>
+
+                 
+           <!-- <div class="row">
+                 <div class="col-md-7">
+                    <p>Remember Password? </p>
+                 </div>
+                 <div class="col-md-5">
+                    <button type="button"  class="btn btn-block btn-link" (click)="db()">Login Here</button>
+                 </div>
+                
+              </div> -->
+     </form>
   </div>
+
+</div>
+</div>

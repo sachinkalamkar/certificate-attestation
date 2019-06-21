@@ -20,7 +20,9 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     var test = this.route.snapshot.queryParamMap.get('_id');
+    // var application_no = this.route.snapshot.queryParamMap.get('application_no');
     console.log("test", test);
+  
     // const data = JSON.parse(test)
     this.passportForm = this.formBuilder.group({
 
@@ -44,10 +46,7 @@ export class UserDashboardComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
     this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
   }
-  s1() {
-
-    this.router.navigate(['view-user-s1'])
-  }
+ 
   appli() {
     this.userservice.newappli(this.passportForm.value).subscribe(res => {
       console.log("response-----", this.passportForm.value)
@@ -58,8 +57,18 @@ export class UserDashboardComponent implements OnInit {
       var response1 = localStorage.getItem(this.app_message)
       this.router.navigate(['user-appl-form'],{queryParams:{"obj":response,si:true}})
     })
-
   }
+
+viewDetails(){
+  this.userservice.newappli(this.passportForm.value).subscribe(res=>{
+    console.log("response-----",this.passportForm.value)
+    console.log("response",res)
+    var response=JSON.parse(JSON.stringify(res)).message;
+    console.log("response---",JSON.parse(JSON.stringify(response)));
+    this.router.navigate(['view-user-s1'],{queryParams:{"obj":response,si:true}})	
+  })  
+}
+
   // home(){
   //   this.router.navigate(['user-dashboard'])	  
   // }
