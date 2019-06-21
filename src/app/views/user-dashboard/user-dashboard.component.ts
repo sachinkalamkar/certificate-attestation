@@ -18,9 +18,9 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     var test = this.route.snapshot.queryParamMap.get('_id');
-    var application_no = this.route.snapshot.queryParamMap.get('application_no');
+    // var application_no = this.route.snapshot.queryParamMap.get('application_no');
     console.log("test", test);
-   console.log("application_no",application_no)
+  
     // const data = JSON.parse(test)
     this.passportForm = this.formBuilder.group({
 
@@ -45,14 +45,19 @@ toggleCollapse(): void {
   this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
 }
 viewDetails(){
-
-		this.router.navigate(['view-user-s1'])	  
+  this.userservice.newappli(this.passportForm.value).subscribe(res=>{
+    console.log("response-----",this.passportForm.value)
+    console.log("response",res)
+    var response=JSON.parse(JSON.stringify(res)).message;
+    console.log("response---",JSON.parse(JSON.stringify(response)));
+    this.router.navigate(['view-user-s1'],{queryParams:{"obj":response,si:true}})	
+  })  
 }
 appli(){
     this.userservice.newappli(this.passportForm.value).subscribe(res=>{
       console.log("response-----",this.passportForm.value)
     console.log("response",res)
-this.router.navigate(['user-appl-form'])
+   this.router.navigate(['user-appl-form',])
     })
     
 }

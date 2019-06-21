@@ -13,10 +13,17 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./view-user-s1.component.scss']
 })
 export class ViewUserS1Component implements OnInit {
+appl_data:{}
+  constructor(private router : Router,public userService:UserService,public route:ActivatedRoute) { }
 
-  constructor(private router : Router) { }
-
-  ngOnInit() {}
+  ngOnInit() {
+     var application_no = this.route.snapshot.queryParamMap.get('obj');
+     console.log("appli_no",application_no)
+     this.userService.viewDetails(application_no).subscribe(data=>{
+       this.appl_data=data
+     console.log(JSON.stringify(data));
+})
+  }
 
 isCollapsed: boolean = false;
 iconCollapse: string = 'icon-arrow-up';

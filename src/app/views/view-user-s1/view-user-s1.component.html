@@ -83,12 +83,7 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li> -->
       </ul>
-      <form class="form-inline">
-        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-        <span (click)="appli()"><img src="assets/img/plus1.png" (click)="appli()"width="30" height="30" class="" alt="">&nbsp;<b style="color:white" (click)="appli()">Add Application</b> </span>&nbsp;&nbsp;&nbsp;&nbsp;
-
-      </form>
+     
   
     </div>
   
@@ -217,52 +212,53 @@
           </div>
        
       <br> <br> <br>
+      <form *ngIf="appl_data">
       <h3>Personal Details :</h3>
          
            <div class="row"  >
               <div class="col-sm-7">
                  <label for="exampleFormControlInput1"><b>User Type :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <input type="text" class="form-control" value={{appl_data.applicant_type}}  >
               </div>
              
               <div class="col-sm-7">
                  <label for="exampleFormControlSelect1"><b>Name :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <input type="text" class="form-control"value={{appl_data.full_name}}  >
               </div>
               
           
            
               <div class="col-sm-7">
-                 <label for="exampleFormControlSelect2"><b>Sex :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Sex :</b></label>
+                 <input type="text" value={{appl_data.sex}} class="form-control"  >
               </div>
       
           
       
              
                   <div class="col-sm-7">
-                      <label for="exampleFormControlTextarea1"><b>Nationality :</b></label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                      <label ><b>Nationality :</b></label>
+                      <input type="text" value={{appl_data.nationality}} class="form-control"  >  
                    </div>
            
               <div class="col-sm-7">
-                 <label for="exampleFormControlSelect2"><b>Date of Birth :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Date of Birth :</b></label>
+                 <input type="text" value={{appl_data.date_of_birth}} class="form-control"  >
               </div>
               <div class="col-sm-7">
-                 <label for="exampleFormControlTextarea1"><b>Fathers Name:</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                 <label ><b>Fathers Name:</b></label>
+                 <input type="text" value={{appl_data.father_name}} class="form-control"  >  
               </div>
            
            
               <div class="col-sm-7">
-                 <label for="exampleFormControlSelect2"><b>Mothers Name :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Mothers Name :</b></label>
+                 <input type="text" value={{appl_data.mother_name}} class="form-control"  >
               </div>
       
               <div class="col-sm-4">
                   <i ripple>
-                    <img src="assets/img/upload-logo.png" style="margin-top: -162%;
+                    <input type="image" value={{appl_data.nationality}} style="margin-top: -162%;
                       margin-left: 56%;
                       height: 89px;
                       width: 25%;" viewBox="0 0 24 24">
@@ -278,24 +274,28 @@
               <div class="row">
               <div class="col-sm-7">
                  <label for="exampleFormControlInput1"><b>Passport Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <input type="text" value={{appl_data.passport_number}} class="form-control"  >
               </div>
              
               <div class="col-sm-7">
                  <label for="exampleFormControlSelect1"><b>Place of Issue :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <input type="text" value={{appl_data.passport_issue_place}} class="form-control"  >
               </div>
            
               <div class="col-sm-7">
-                 <label for="exampleFormControlSelect2"><b>Expiry Date :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Expiry Date :</b></label>
+                 <input type="text" value={{appl_data.passport_expire_date}} class="form-control"  >
               </div>
       
-        
+              <div class="col-sm-7">
+                <label ><b>Upload Date :</b></label>
+                <input type="text" value={{appl_data.passport_upload_date}} class="form-control"  >
+             </div>
+     
       
               <div class="col-sm-4">
                   <i ripple>
-                    <img src="assets/img/upload-logo.png" style="margin-top: -32%;
+                    <input type="image" value={{appl_data.passport_photo}} style="margin-top: -32%;
                       margin-left: 18%;    height: 69px;
         width: 21%;
                     " viewBox="0 0 24 24">
@@ -324,25 +324,15 @@
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>#123412</td>
-              <td>Mumbai</td>
-              <td>28.05.2025</td>
-              <td> 30.05.2019</td>
+              <td> {{appl_data.passport_number}} </td>
+              <td> {{appl_data.passport_issue_place}}</td>
+              <td> {{appl_data.passport_expire_date}}</td>
+              <td>  {{appl_data.passport_upload_date}}</td>
               <td>view document</td>
               
               
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>#123412</td>
-              <td>Mumbai</td>
-              <td>28.05.2025</td>
-              <td> 30.05.2019</td>
-              <td>view document</td>
-              
-              
-    
-            </tr>
+           
             
           </tbody>
         </table> 
@@ -363,107 +353,95 @@
             </div>
            </div>
              <div class="col-sm-6">
-                <label for="exampleFormControlInput1" style="float:left"><b>Country :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label  style="float:left"><b>Country :</b></label>
+                <input type="text" value={{appl_data.permanent_country}}  class="form-control">
              </div>
             
              <div class="col-sm-6">
-                <label for="exampleFormControlSelect1"  style="float:left"><b>Country :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label  style="float:left"><b>Country :</b></label>
+                <input type="text" value={{appl_data.present_country}} class="form-control" >
              </div>
              
          
           
              <div class="col-sm-6">
-                <label for="exampleFormControlSelect2"  style="float:left"><b>State :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label  style="float:left"><b>State :</b></label>
+                <input type="text" value={{appl_data.permanent_state}}  class="form-control"  >
              </div>
      
     
             
-                 <div class="col-sm-6">
-                     <!-- <label for="exampleFormControlTextarea1"><b>Nationality :</b></label> -->
-                     
-                         <label for="city"  style="float:left"><b>State :</b></label>
-                         <!-- <select name="city" id="city">
-                             <option value="sydney">Sydney</option>
-                             <option value="melbourne">Melbourne</option>
-                             <option value="cromwell">Cromwell</option>
-                         </select> -->
-                     
-                     <input type="email" class="form-control" id="exampleFormControlInput1" >  
-                  </div>
+                <div class="col-sm-6">
+                  <label for="city" style="float:left"><b>State :</b></label>
+                  <input type="text" value={{appl_data.present_state}} class="form-control">
+                </div>
           
              <div class="col-sm-6">
-                <label for="exampleFormControlSelect2" style="float:left"><b>City :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label  style="float:left"><b>City :</b></label>
+                <input type="text" value={{appl_data.permanent_city}} class="form-control"  >
              </div>
+
              <div class="col-sm-6">
-                <label for="exampleFormControlTextarea1" style="float:left"><b>City:</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                <label  style="float:left"><b>City:</b></label>
+                <input type="text" value={{appl_data.present_city}} class="form-control"  >  
              </div>
           
           
              <div class="col-sm-6">
-                <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label style="float:left"><b>House Number :</b></label>
+                <input type="text" value={{appl_data.permanent_house_no}} class="form-control"  >
              </div>
      
    
              <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>House Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>House Number :</b></label>
+                 <input type="text" value={{appl_data.present_house_no}}  class="form-control"  >
               </div>
+
               <div class="col-sm-6">
-                 <label for="exampleFormControlTextarea1" style="float:left"><b>Street Number:</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                 <label style="float:left"><b>Street Number:</b></label>
+                 <input type="text" value={{appl_data.permanent_street}} class="form-control"  >  
               </div>
            
            
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>Street Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>Street Number :</b></label>
+                 <input type="text" value={{appl_data.present_street}} class="form-control"  >
               </div>
        
    
    
              <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>Pincode :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>Pincode :</b></label>
+                 <input type="text" value={{appl_data.permanent_pincode}} class="form-control"  >
               </div>
               <div class="col-sm-6">
-                 <label for="exampleFormControlTextarea1" style="float:left"><b>Pincode:</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                 <label  style="float:left"><b>Pincode:</b></label>
+                 <input type="text" value={{appl_data.present_pincode}}  class="form-control"  >  
               </div>
            
            
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>Mobile Number :</b></label>
+                 <input type="text" value={{appl_data.present_pincode}} class="form-control"  >
               </div>
           
               
              <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>Mobile Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>Mobile Number :</b></label>
+                 <input type="text" value={{appl_data.present_pincode}} class="form-control"  >
               </div>
               <div class="col-sm-6">
-                 <label for="exampleFormControlTextarea1" style="float:left"><b>Email ID:</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >  
+                 <label  style="float:left"><b>Email ID:</b></label>
+                 <input type="text" value={{appl_data.permanent_email_id}} class="form-control"  >  
               </div>
            
            
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2" style="float:left"><b>Email ID :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label  style="float:left"><b>Email ID :</b></label>
+                 <input type="text" value={{appl_data.present_email_id}} class="form-control"  >
               </div>
-   
-   
-           
-      
-      
-             
-          </div>
+             </div>
           <br/>
          
              <!-- <button type="button" class="btn btn-primary" style="width:20%;" (click)="s4()">Submit</button> -->
@@ -477,46 +455,46 @@
        <br><br>
           <div class="row">
              <div class="col-sm-6">
-                <label for="exampleFormControlInput1"><b>Name :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label><b>Name :</b></label>
+                <input type="text" value={{appl_data.guarantor_name}} class="form-control"  >
              </div>
             
              <div class="col-sm-6">
                 <label for="exampleFormControlSelect1"><b>Country :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <input type="text" value={{appl_data.guarantor_country}} class="form-control"  >
              </div>
           
              <div class="col-sm-6">
-                <label for="exampleFormControlSelect2"><b>State :</b></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" >
+                <label ><b>State :</b></label>
+                <input type="text" value={{appl_data.guarantor_state}} class="form-control"  >
              </div>
    
    
              <div class="col-sm-6">
-                 <label for="exampleFormControlSelect1"><b>City :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label><b>City :</b></label>
+                 <input type="text" value={{appl_data.guarantor_city}} class="form-control"  >
               </div>
            
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2"><b>House Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>House Number :</b></label>
+                 <input type="text" value={{appl_data.guarantor_house_no}} class="form-control"  >
               </div>
    
    
              <div class="col-sm-6">
                  <label for="exampleFormControlSelect1"><b>Street Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <input type="text" value={{appl_data.guarantor_street_no}} class="form-control"  >
               </div>
            
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2"><b>Mobile Number :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Mobile Number :</b></label>
+                 <input type="text" value={{appl_data.guarantor_contact}} class="form-control"  >
               </div>
      
        
               <div class="col-sm-6">
-                 <label for="exampleFormControlSelect2"><b>Pincode :</b></label>
-                 <input type="email" class="form-control" id="exampleFormControlInput1" >
+                 <label ><b>Pincode :</b></label>
+                 <input type="text" value={{appl_data.guarantor_pincode}} class="form-control"  >
               </div>
      
             
@@ -531,8 +509,8 @@
               <div class="col-sm-6" style="float:left">
                <br><br>
                <div class="form-group">  
-                 <!-- <div class="col-sm-2">   -->
-                   <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+                
+                   <!-- <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp; -->
                    <label for="rem" style="float:left"><b>Employee/Self-Employed</b></label>
               </div>
              </div>
@@ -540,46 +518,46 @@
               <div class="col-sm-6" >
                <br><br>
                <div class="form-group">  
-                 <!-- <div class="col-sm-2">   -->
-                   <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+                
+                   <!-- <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp; -->
                    <label for="rem" style="float:left"><b>Student</b></label>
               </div>
              </div>
                <div class="col-sm-6">
-                  <label for="exampleFormControlInput1" style="float:left"><b>Name of the Organization :</b></label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" >
+                  <label style="float:left"><b>Name of the Organization :</b></label>
+                  <input type="text" value={{appl_data.name_of_organization}} class="form-control"  >
                </div>
               
                <div class="col-sm-6">
-                  <label for="exampleFormControlSelect1"  style="float:left"><b>Course:</b></label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" >
+                  <label   style="float:left"><b>Course:</b></label>
+                  <input type="text" value={{appl_data.course}} class="form-control"  >
                </div>
                
            
             
                <div class="col-sm-6">
-                  <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b></label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" >
+                  <label   style="float:left"><b>Complete Address :</b></label>
+                  <input type="text" value={{appl_data.organization_address}} class="form-control"  >
                </div>
      
                <div class="col-sm-6">
-                   <label for="exampleFormControlSelect2"  style="float:left"><b>Name of College :</b></label>
-                   <input type="email" class="form-control" id="exampleFormControlInput1" >
+                   <label   style="float:left"><b>Name of College :</b></label>
+                   <input type="text" value={{appl_data.name_of_college}} class="form-control"  >
                 </div>
      
                 <div class="col-sm-6">
-                   <label for="exampleFormControlSelect2"  style="float:left"><b>Pan Card :</b></label>
-                   <input type="email" class="form-control" id="exampleFormControlInput1" >
+                   <label   style="float:left"><b>Pan Card :</b></label>
+                   <input type="text" value={{appl_data.pan_card_number}} class="form-control"  >
                 </div>
      
                 <div class="col-sm-6">
-                   <label for="exampleFormControlSelect2"  style="float:left"><b>Complete Address :</b></label>
-                   <input type="email" class="form-control" id="exampleFormControlInput1" >
+                   <label   style="float:left"><b>Complete Address :</b></label>
+                   <input type="text" value={{appl_data.college_address}} class="form-control"  >
                 </div>
        
                 <div class="col-sm-6">
-                   <label for="exampleFormControlSelect2"  style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b></label>
-                   <input type="email" class="form-control" id="exampleFormControlInput1" >
+                   <label   style="float:left"><b>Purpose of which Authentication is Sought Including Country of Designation  :</b></label>
+                   <input type="text" value={{appl_data.purpose_for_authentication}} class="form-control"  >
                 </div>
          </div>
        
@@ -605,25 +583,15 @@
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>#123412</td>
-                      <td>B.A History</td>
-                      <td>JNU</td>
-                      <td> 30.05.2019</td>
-                      <td>view document</td>
+                      <td>{{appl_data.certificate_no}}</td>
+                      <td>{{appl_data.name_of_exam}}</td>
+                      <td>{{appl_data.name_of_institute}}</td>
+                      <td> {{appl_data.year}}</td>
+                      <td>><a href="">View Document</a></td>
                       
                       
                     </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>#123512</td>
-                      <td>B.A History</td>
-                      <td>JNU</td>
-                      <td> 30.05.2019</td>
-                      <td>view document</td>
-                      
-                      
-            
-                    </tr>
+                 
                     
                   </tbody>
                 </table>
@@ -652,8 +620,8 @@
                         <td>#123412</td>
                         <td>Pan Card</td>
                         <td> 30.05.2019</td>
-                        <td>Click here to Upload</td>
-                        <td>view document</td>
+                        
+                        <td>><a href="">View Document</a></td>
                         
                         
                       </tr>
@@ -662,7 +630,7 @@
                         <td>#123512</td>
                         <td>Aadhar Card</td>
                         <td> 30.05.2019</td>
-                        <td>Aadhar Card.jpg</td>
+                        
                         <td>view document</td>
                         
                         
@@ -679,7 +647,7 @@
                  <br><br>
                  <div class="form-group">  
                    <!-- <div class="col-sm-2">   -->
-                     <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp;
+                     <!-- <input type="checkbox" id="rem" style="float:left"> &nbsp; &nbsp;&nbsp; &nbsp; -->
                      <label for="rem" style="float:left"> Applicant will visit himself for Attestation</label>
                 </div>
                </div>
@@ -694,7 +662,7 @@
                </div>
             </div>
             
-
+        
 
            <div class="wrapper" >
              <span>
@@ -704,7 +672,7 @@
                
              </span>
              
-             <button type="button" class="btn btn-primary" style="width:20%; height:10" (click)="home()"> home </button>
+             <button type="button" class="btn btn-primary" style="width:20%; height:10" (click)="home()"> home</button>
            </div>
 
            <br/>
