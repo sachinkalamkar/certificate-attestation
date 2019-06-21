@@ -110,7 +110,7 @@
                <br>
                <h3 class="text-center"><b>Welcome to government of Maharashtra please create your account</b></h3>
                <form [formGroup]="contactForm" enctype="multipart/form-data" >
-        <div class="row">
+        <!-- <div class="row">
                 <div class="col-sm-4" style="margin: 0 auto">
                     
                         <input type="image" src="assets/img/upload-logo.png" class="Oval"  > 
@@ -119,7 +119,7 @@
                       margin-left: 52%;font-size: 130.02%"(click)="onUpload()">Upload your document here</button>
                      
                     </div>
-        </div>
+        </div> -->
               
                <div class="row">
                 <div class="col-sm-7">
@@ -224,6 +224,22 @@
                         <div *ngIf="f.mother_name.errors.required">Field required</div>
                     </div>    
                   </div>
+                  </div>
+
+
+
+                  <div class="col-sm-4" style="margin-top:-30%">
+                    <i ripple>
+                            <input type="image" src="assets/img/upload-logo.png"  
+                       style="
+                       margin-top: -22%;
+                        margin-left: 56%;
+                        height: 89px;
+                        width: 25%;" viewBox="0 0 24 24">
+                         <input type="file" id="my_file" style="display: none;" />
+                    </i>
+                    <h3 style="color:cornflowerblue ; margin-top: 0%;
+                    margin-left: 35%;font-size: 130.02% ; text-align: center" (click)="onUpload()"> Upload your photo here</h3>
                   </div>
                 
                </div>
