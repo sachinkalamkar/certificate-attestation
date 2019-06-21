@@ -28,15 +28,17 @@ h2 {
 	letter-spacing: normal;
 	text-align: center;
 	color: black;
+
 }
 
 input {
 	width: 620px;
 	height: 80px;
-	opacity: 0.33;
+	// opacity: 0.33;
 	border-radius: 43px;
-	border: solid 1px #979797;
-	background-color: #ffffff;
+	border: solid 1px black;
+	background-color:#ffffff;
+	
 	margin-left: 45%;
 }
 
@@ -106,10 +108,11 @@ body header {
 
 .login {
 	position: relative;
+	
 	padding: 10px;
 	margin: 40px auto 80px auto;
 	width: 390px;
-	height: 393px;
+	height: 433px;
 	border-radius: 3%;
 	background: white;
 	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.26);
@@ -222,21 +225,22 @@ form {
 }
 
 .form-control:focus~.form-highlight {
-	-webkit-animation: inputHighlighter 0.3s ease;
+	-webkit-animation: inputHighlighter 0.9s ease;
 	-moz-animation: inputHighlighter 0.3s ease;
 	animation: inputHighlighter 0.3s ease;
 }
 
+
 .float-label {
 	position: absolute;
-	left: 0;
+	// left: 0;
 	top: 10px;
 	font-size: 16px;
-	color: #999;
+	color:black;
 	font-weight: 300;
-	transition: 0.2s ease all;
-	-moz-transition: 0.2s ease all;
-	-webkit-transition: 0.2s ease all;
+	// transition: 0.2s ease all;
+	// -moz-transition: 0.2s ease all;
+	// -webkit-transition: 0.2s ease all;
 }
 
 .form-control:focus~.float-label,
@@ -244,6 +248,11 @@ form {
 	top: -15px;
 	font-size: 12px;
 }
+
+.erroru,.errorp{
+	color: black
+}
+
 
 .form-group .erroru,
 .form-group .errorp {
@@ -290,42 +299,6 @@ form {
 .form-group[errr] .erroru,
 .form-group[errr] .errorp {
 	opacity: 1;
-}
-
-input[type=checkbox] {
-	display: none;
-	visibility: hidden;
-}
-
-input[type="checkbox"]+label {
-	cursor: pointer;
-	font-size: 15px;
-	font-weight: 500;
-	transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-input[type="checkbox"]+label:before {
-	display: inline-block;
-	content: "";
-	margin: 0 15px 3px 0px;
-	width: 18px;
-	height: 18px;
-	background-color: #fff;
-	border: 2px solid #5a5a5a;
-	border-radius: 2px;
-	vertical-align: middle;
-}
-
-input[type=checkbox]:checked+label:before {
-	background-image: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjIwcHgiIGhlaWdodD0iMTVweCIgdmlld0JveD0iMCAwIDIwIDE1Ij4NCjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNy4xNDMsMTQuOTM4IDAsNy43OTYgMi4wMjEsNS43NzYgNy4xNDMsMTAuODk4IDE3Ljk3OSwwLjA2MiAyMCwyLjA4MiAiLz4NCjwvc3ZnPg0K');
-	background-color: rgb(3, 169, 245);
-	border-color: rgb(3, 169, 245);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	-webkit-background-size: 11px auto;
-	-moz-background-size: 11px auto;
-	-o-background-size: 11px auto;
-	background-size: 11px auto;
 }
 
 button[type="submit"] {
@@ -487,7 +460,7 @@ footer a:focus {
 }
 
 [ripple] .touch {
-	background: rgba(255, 255, 255, 0.3);
+	background:rgba(255, 255, 255, 0.3);
 	pointer-events: none;
 	border-radius: 100%;
 }
