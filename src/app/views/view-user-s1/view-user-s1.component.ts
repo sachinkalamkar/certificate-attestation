@@ -46,10 +46,7 @@ currentDesignation(){
 
 		this.router.navigate(['user-current-designation'])	  
 }
-s2(){
 
-  this.router.navigate(['view-user-s2'])	  
-}
 appli(){
   this.router.navigate(['user-dashboard'])
 }

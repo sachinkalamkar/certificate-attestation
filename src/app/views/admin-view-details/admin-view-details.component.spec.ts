@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUserS3Component } from './view-user-s3.component';
+import { AdminViewDetailsComponent } from './admin-view-details.component';
 
-describe('ViewUserS3Component', () => {
-  let component: ViewUserS3Component;
-  let fixture: ComponentFixture<ViewUserS3Component>;
+describe('AdminViewDetailsComponent', () => {
+  let component: AdminViewDetailsComponent;
+  let fixture: ComponentFixture<AdminViewDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUserS3Component ]
+      declarations: [ AdminViewDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUserS3Component);
+    fixture = TestBed.createComponent(AdminViewDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

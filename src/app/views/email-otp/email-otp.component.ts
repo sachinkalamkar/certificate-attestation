@@ -137,7 +137,9 @@ otppass(){
   this.userservice.emailotp(this.forgotForm.value).subscribe(data=>{
     console.log("forgot password",this.forgotForm.value)
     console.log("otp respone----",data)
-    
+    var response=JSON.parse(JSON.stringify(data)).message;
+console.log("response of email otp is ",response)
+
    if(JSON.parse(JSON.stringify(data)).message ==='sucesss'){
     this.router.navigate(['dashboard'])
    }else{

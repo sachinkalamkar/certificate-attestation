@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUserS2Component } from './view-user-s2.component';
+import { AdminDODSDashboardComponent } from './admin-do-ds-dashboard.component';
 
-describe('ViewUserS2Component', () => {
-  let component: ViewUserS2Component;
-  let fixture: ComponentFixture<ViewUserS2Component>;
+describe('AdminDODSDashboardComponent', () => {
+  let component: AdminDODSDashboardComponent;
+  let fixture: ComponentFixture<AdminDODSDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUserS2Component ]
+      declarations: [ AdminDODSDashboardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUserS2Component);
+    fixture = TestBed.createComponent(AdminDODSDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

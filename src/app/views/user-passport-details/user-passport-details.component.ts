@@ -51,16 +51,19 @@ export class UserPassportDetailsComponent implements OnInit {
     }
 
     console.log("policy======>", this.passportForm.value);
-    data = this.passportForm.value
-    verifyObject = { "res": data }
-
-    localStorage.setItem(this.app_form_data, verifyObject.res);
-
-    var response = localStorage.getItem(this.app_form_data)
-
-    this.router.navigate(['user-contact-details'], { queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } });
-
-
+    this.userservice.passportdetails(this.passportForm.value).subscribe(data=>{
+   
+      verifyObject = { "res": data }
+  
+      localStorage.setItem(this.app_form_data, verifyObject.res);
+  
+      var response = localStorage.getItem(this.app_form_data)
+  
+      this.router.navigate(['user-contact-details'],{ queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } });
+  
+  
+    })
+    
 
   }
 

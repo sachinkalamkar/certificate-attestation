@@ -42,10 +42,23 @@ export class UserDashboardComponent implements OnInit {
     // console.log(event);
   }
 
-toggleCollapse(): void {
-  this.isCollapsed = !this.isCollapsed;
-  this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
-}
+  toggleCollapse(): void {
+    this.isCollapsed = !this.isCollapsed;
+    this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
+  }
+ 
+  appli() {
+    this.userservice.newappli(this.passportForm.value).subscribe(res => {
+      console.log("response-----", this.passportForm.value)
+      console.log("response of message", res)
+      var response=JSON.parse(JSON.stringify(res)).message;
+      console.log("response of the message id",response)
+      localStorage.setItem(this.app_message, response);
+      var response1 = localStorage.getItem(this.app_message)
+      this.router.navigate(['user-appl-form'],{queryParams:{"obj":response,si:true}})
+    })
+  }
+
 viewDetails(){
   this.userservice.newappli(this.passportForm.value).subscribe(res=>{
     console.log("response-----",this.passportForm.value)
@@ -55,14 +68,7 @@ viewDetails(){
     this.router.navigate(['view-user-s1'],{queryParams:{"obj":response,si:true}})	
   })  
 }
-appli(){
-    this.userservice.newappli(this.passportForm.value).subscribe(res=>{
-      console.log("response-----",this.passportForm.value)
-    console.log("response",res)
-   this.router.navigate(['user-appl-form',])
-    })
 
-  }
   // home(){
   //   this.router.navigate(['user-dashboard'])	  
   // }

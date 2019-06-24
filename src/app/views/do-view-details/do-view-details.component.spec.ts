@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUserS6Component } from './view-user-s6.component';
+import { DOViewDetailsComponent } from './do-view-details.component';
 
-describe('ViewUserS6Component', () => {
-  let component: ViewUserS6Component;
-  let fixture: ComponentFixture<ViewUserS6Component>;
+describe('DOViewDetailsComponent', () => {
+  let component: DOViewDetailsComponent;
+  let fixture: ComponentFixture<DOViewDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUserS6Component ]
+      declarations: [ DOViewDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUserS6Component);
+    fixture = TestBed.createComponent(DOViewDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

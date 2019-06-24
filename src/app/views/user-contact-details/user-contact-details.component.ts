@@ -30,6 +30,8 @@ export class UserContactDetailsComponent implements OnInit {
 
     console.log("test", JSON.parse(test));
     const data = JSON.parse(test)
+
+
     this. contactForm = this.formBuilder.group({
      present_country : ['', Validators.required],
     present_state : ['', Validators.required],
@@ -47,7 +49,7 @@ export class UserContactDetailsComponent implements OnInit {
       permanent_pincode : ['', Validators.required],
       permanent_mobile : ['', Validators.required],
       alternate_email_id:['', Validators.required],
-      test:data
+      application_no:data
   });
 }
 
@@ -86,14 +88,17 @@ onChangeState(state_id: number) {
     }
 
   console.log("policy======>",this.contactForm.value);
-  data=this.contactForm.value
-  verifyObject = { "res": data }
-
-    localStorage.setItem(this.app_form_data, verifyObject.res);
-
-    var response = localStorage.getItem(this.app_form_data)
-  this.router.navigate(['user-guarantor-details'], { queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } })
-   
+  this.userservice.contactdetails(this.contactForm.value).subscribe(data=>{
+  
+    verifyObject = { "res": data }
+  
+      localStorage.setItem(this.app_form_data, verifyObject.res);
+  
+      var response = localStorage.getItem(this.app_form_data)
+    this.router.navigate(['user-guarantor-details'], { queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } })
+     
+  })
+  
 }
 
   
