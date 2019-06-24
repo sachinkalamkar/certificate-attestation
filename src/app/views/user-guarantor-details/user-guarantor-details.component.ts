@@ -113,23 +113,26 @@ get f() { return this. gurantorForm.controls; }
   console.log("getCallApi====>");
 
     console.log("policy======>",this.gurantorForm.value);
+    this.userservice.gurantor(this.gurantorForm.value).subscribe(data=>{
+    
 
-    data=this.gurantorForm.value
-
-    verifyObject = { "res": data }
-
+      verifyObject = { "res": data }
   
-
-      localStorage.setItem(this.app_form_data, verifyObject.res);
-
+    
   
+        localStorage.setItem(this.app_form_data, verifyObject.res);
+  
+    
+  
+        var response = localStorage.getItem(this.app_form_data)
+  
+        
+  
+      this.router.navigate(['user-current-designation'],{ queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } })	  
+  
+    })
 
-      var response = localStorage.getItem(this.app_form_data)
-
-      
-
-		this.router.navigate(['user-current-designation'],{ queryParams: { "obj": JSON.stringify(verifyObject.res), si: true } })	  
-
+   
   }
 
   

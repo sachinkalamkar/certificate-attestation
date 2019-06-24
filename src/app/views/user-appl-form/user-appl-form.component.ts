@@ -20,32 +20,17 @@ submitted = false;
 selectedFile: File = null;
 public imagePath;
 imgURL: any;
+api:any=[]
 public message: string;
  public serverData:any;
  verifyStatus: string;
  applicant_type: string = '';
-preview(files) {
-  if (files.length === 0)
-    return;
 
-  var mimeType = files[0].type;
-  if (mimeType.match(/image\/.(png|jpeg)$/) == null) {
-    this.message = "Only images are supported.";
-    return;
-  }
-
-  var reader = new FileReader();
-  this.imagePath = files;
-  reader.readAsDataURL(files[0]);
-  reader.onload = (_event) => {
-    this.imgURL = reader.result;
-  }
-}
   constructor(private formBuilder: FormBuilder, private userservice:UserService,private router:Router,private route:ActivatedRoute, private http: HttpClient) { }
-  onFileSelected(event) {
-    this.selectedFile = <File>event.target.files[0];
-    console.log(this.selectedFile)
-  }
+  // onFileSelected(event) {
+  //   this.selectedFile = <File>event.target.files[0];
+  //   console.log(this.selectedFile)
+  // }
   
 //   onUpload() {
 
@@ -85,15 +70,22 @@ preview(files) {
         father_name : ['',Validators.required],
       
         mother_name : ['',Validators.required],
+        personal_photo:[''],
         
-        test:test
+        application_no:test
     
   });
-      
+  this.userservice.apiscountry().subscribe(data=>{
+     
+    this.api=data
+   
+  console.log("data of some country coc", this.api)
+  })   
   
 }
 get f() { return this.contactForm.controls; }
 passportDetails(){
+  // s
 var data;
   var verifyObject
    this.submitted=true
@@ -102,17 +94,22 @@ var data;
     return
   }
   
-  console.log("policy======>",this.contactForm.value);
-  
-  data= this.contactForm.value
-  console.log("cnjnxmk",data)
-  verifyObject = { "res": data }
-  
-  localStorage.setItem(this.app_form_data,verifyObject.res);
+  console.log("personal details======>",this.contactForm.value);
+ this.userservice.personaldetails(this.contactForm.value).subscribe(data=>{
+    
+console.log("sbcjsdmcd",data)
+    // localStorage.setItem(this.app_form_data,verifyObject.res);
 
- var response=localStorage.getItem(this.app_form_data)
+    // var response=localStorage.getItem(this.app_form_data)
+   
+    this.router.navigate(['user-passport-details'])
+    
+  })
+  // data= this.contactForm.value
+  // console.log("cnjnxmk",data)
+  // verifyObject = { "res": data }
+  
 
-		this.router.navigate(['user-passport-details'],{ queryParams :{"obj":JSON.stringify(verifyObject.res),si:true}});
 }
 
 home(){
