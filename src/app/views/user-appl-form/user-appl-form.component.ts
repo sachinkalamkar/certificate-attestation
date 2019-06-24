@@ -47,25 +47,31 @@ preview(files) {
     console.log(this.selectedFile)
   }
   
-  onUpload() {
+//   onUpload() {
 
-const fd = new FormData();
+// const fd = new FormData();
   
-  fd.append('image', this.selectedFile, this.selectedFile.name);
+//   fd.append('image', this.selectedFile, this.selectedFile.name);
     
 
-this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
-  data=>{
+// this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
+//   data=>{
 
-  }
-);
+//   }
+// );
       
 
-}
+// }
   ngOnInit() {
-    $("input[type='image']").click(function() {
+    var test = this.route.snapshot.queryParamMap.get('obj');
+
+   console.log("message test",test)
+   
+  $("input[type='image']").click(function() {
       $("input[id='my_file']").click();
   });
+
+
     this.contactForm = this.formBuilder.group ({
      
       applicant_type : ['',Validators.required],
@@ -78,8 +84,9 @@ this.http.post('http://127.0.0.1:3000/forgotPassword',fd).subscribe(
        
         father_name : ['',Validators.required],
       
-        mother_name : ['',Validators.required]
+        mother_name : ['',Validators.required],
         
+        test:test
     
   });
       
