@@ -1,4 +1,4 @@
-<header class="app-header navbar" style="background-color: #4a90e2 !important;">
+<!-- <header class="app-header navbar" style="background-color: #4a90e2 !important;">
   <a class="navbar-brand">
     <img src="assets/img/mlogo1.png" alt="IAM" height="50px">
   </a>
@@ -24,7 +24,6 @@
       <div class="card">
         <div class="card-header" style="background-color:white;width:1440px;height:1px">
 
-
         </div>
         <div class="card-body" style="background-color:#ecf0f1!important;">
           <br>
@@ -33,60 +32,40 @@
             Welcome to government of maharastra please create your account
           </h3>
           <div class="row">
-
             <div class="row col-sm-12">
-
               <div class=" form-group col-sm-6">
-
                 <label for="name" class=" control-label">User Type</label>
 
                 <input type="text" style="width:345px;height:40px" name="name" class=" form-control"
-                  placeholder="Enter first name" required
-                  >
-
+                  placeholder="Enter first name" required>
                 <div>
 
                   <label class="validation-message">This field is required.</label>
-
                 </div>
-
               </div>
-
-
-
-
 
               <div class=" form-group col-sm-6">
 
                 <label for="number" class="control-label">Nationality</label>
 
-                <input type="text" style="width:345px;height:40px"  name="name" class=" form-control"
-                  placeholder="Nationality" required
-                 >
+                <input type="text" style="width:345px;height:40px" name="name" class=" form-control"
+                  placeholder="Nationality" required>
 
-                <div >
+                <div>
 
                   <label class="validation-message">This field is required.</label>
-
                 </div>
-
               </div>
-
             </div>
 
             <div class="row col-sm-12">
-
-
-
               <div class=" form-group col-sm-6">
-
                 <label for="number" class=" control-label">First Name <span style="color:red"> *</span> </label>
 
-                <input type="text" style="width:345px;height:40px"  name="number" class=" form-control"
-                  placeholder="Middle name" required
-                 >
+                <input type="text" style="width:345px;height:40px" name="number" class=" form-control"
+                  placeholder="Middle name" required>
 
-                <div >
+                <div>
 
                   <label class="validation-message">This field is required.</label>
 
@@ -101,20 +80,16 @@
                 <label for="address" class="control-label">Phone Number</label>
 
                 <input type="text" style="width:345px;height:40px" name="address" class="col-sm-9 form-control"
-                  placeholder="Phone Number" required
-                  >
+                  placeholder="Phone Number" required>
 
-                <div >
+                <div>
 
                   <label class="validation-message">This field is required.</label>
 
                 </div>
 
               </div>
-
             </div>
-
-
 
 
 
@@ -123,10 +98,9 @@
               <label for="address" class="control-label">Middle Name</label>
 
               <input type="text" style="width:345px;height:40px" name="address" class="col-sm-9 form-control"
-                placeholder="Last Name" required
-               >
+                placeholder="Last Name" required>
 
-              <div >
+              <div>
 
                 <label class="validation-message">This field is required.</label>
 
@@ -140,9 +114,8 @@
 
               <label for="email" class="control-label">Email ID <span style="color:red">*</span></label>
 
-              <input type="text" style="width:345px;height:40px"
-                name="email" class=" form-control" placeholder="Email"
-                required  >
+              <input type="text" style="width:345px;height:40px" name="email" class=" form-control" placeholder="Email"
+                required>
 
               <!-- <div >
 
@@ -150,7 +123,7 @@
 
                 <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
 
-              </div> -->
+              </div> //////////////
 
             </div>
 
@@ -158,12 +131,10 @@
 
               <label for="address" class="control-label">Last Name</label>
 
-              <input type="text" style="width:345px;height:40px" 
-                name="address" class="col-sm-9 form-control"
-                placeholder="Last Name" required
-                >
+              <input type="text" style="width:345px;height:40px" name="address" class="col-sm-9 form-control"
+                placeholder="Last Name" required>
 
-              <div >
+              <div>
 
                 <label class="validation-message">This field is required.</label>
 
@@ -179,4 +150,218 @@
       </div>
     </div>
   </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light dodgerblue">
+    <a class="navbar-brand" (click)="home()"><img src="assets/img/mlogo1.png" width="40" height="40"  alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" style="color:white" (click)="home()"><b>Home</b> <span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li> -->
+      </ul>
+    
+      <form class="form-inline" [formGroup]="passportForm">
+        <div class ="form-group">
+          <input type="hidden" formControlName="_id" class ="form-control">
+        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+        <img src="assets/img/plus1.png" width="30" height="30" class="" alt="">&nbsp;<b style="color:white" (click)="appli()">Add New Account </b> &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      </form>
+  
+    </div>
+  
+    <ul class="nav navbar-nav ml-auto"> 
+      <!-- <li class="nav-item d-md-down-none">
+       <a class="nav-link" style="color: white" href="#"><i class="icon-bell"></i><span class="badge badge-pill badge-danger">5</span></a>
+     </li> -->
+     
+     <li class="nav-item dropdown" dropdown placement="bottom">
+       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false" style="height:20% ;width:20%">
+         <img src="assets/img/4.png" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+       </a>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+          <div class="dropdown-header text-center"><strong>Suraj Prakash</strong></div>
+         <a class="dropdown-item"(click)="profile()" ><i class="fa fa-user" (click)="profile()"></i> Profile
+          <!-- <span class="badge badge-info">42</span> -->
+        </a>
+     
+         <a class="dropdown-item" (click)="doc()"><i class="fa fa-tasks"  (click)="doc()"></i> Mandatory Documents
+          
+        </a>
+          <a class="dropdown-item" (click)="appli()"><i class="fa fa-plus"></i> Add New Account</a>
+        <!-- <div class="dropdown-header text-center"><strong>Settings</strong></div>
+         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+         <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
+         <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-dark">42</span></a>
+         <a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a> -->
+         <div class="divider"></div>
+         <!-- <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock account</a>  -->
+         <a class="dropdown-item" href="/dashboard"><i class="fa fa-lock"></i> Logout</a>
+       </div>
+     </li>
+   </ul> 
+  </nav>
+ 
+  <div class="header">
+      <!-- <caption>List of users</caption> -->
+      <!-- <a href="#default" class="logo"><caption>List of users</caption></a> -->
+      <!-- <div class="header-right">
+          <caption>List of users</caption>
+      </div> -->
+  </div>
+  <div class="row" style="background-color: white;padding:2%;">
+      <div class="container">
+      <b class="fonts">Select Authority</b>
+      </div>
+    </div>
+    
+  <div class="row" style="background-color:white">
+  
+      
+      <!-- <caption>List of users</caption> -->
+      <div class="container">        
+          <div class="row">
+                 <div class="col-sm-6">
+                  <div class="form-group">
+                   <label for="exampleFormControlInput1"><b>User Type :</b><span style="color:red">*</span></label>
+
+                   <select [(ngModel)]="authority_type" class="form-control " [ngModelOptions]="{standalone: true}"
+                   [ngClass]="{ 'is-invalid': submitted && f.authority_type.errors }" placeholder="Type Of User">
+                   <option>Desk officer</option>
+                   <option>Deputy Secratory</option>
+                   </select>
+                   <!-- <input type=" text" class="form-control" id="exampleFormControlInput1" formControlName="authority_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.  authority_type.errors }" > -->
+                   <div *ngIf="submitted && f.authority_type.errors" class="invalid-feedback">
+                      <div *ngIf="f.authority_type.errors.required">Field required</div>
+                  </div>
+                </div>
+                 </div>
+
+                 <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
+
+                          <!-- <input type="email" formControlName="nationality" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
+                             <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                                <div *ngIf="f.nationality.errors.required">Field required</div>
+                             </div> -->
+           
+                          <select formControlName="nationality" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }" placeholder=" authority Country Name">
+                             <option>Indian</option>
+                             <option>Foreigner</option>
+                           
+                             <div *ngIf="submitted && f.nationality.errors" class="invalid-feedback">
+                                <div *ngIf="f.nationality.errors.required">Field required</div>
+                             </div>
+                          </select>
+           
+                   </div>
+                 </div>
+          </div>
+<br>
+          <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                   <label for="exampleFormControlSelect1"><b>First Name :</b><span style="color:red">*</span></label>
+                   <input type="text" class="form-control" placeholder="First Name" id="exampleFormControlInput1" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. first_name.errors }" >
+                   <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.first_name.errors.required">Field required</div>
+                  </div>
+                </div>
+                </div>
+            
+       
+                <div class="col-sm-6">
+                    <div class="form-group">
+                   <label for="exampleFormControlTextarea1"><b>Middle Name:</b><span style="color:red">*</span></label>
+                   <input type="text" class="form-control" placeholder="Middle Name"  id="exampleFormControlInput1" formControlName="middle_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }" >
+                   <div *ngIf="submitted && f.middle_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.middle_name.errors.required">Field required</div>
+                  </div>    
+                </div>
+                </div>
+        </div>
+<br>
+        <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                   <label for="exampleFormControlSelect2"><b>Last Name :</b><span style="color:red">*</span></label>
+                   <input type="text" class="form-control" placeholder="Last Name" id="exampleFormControlInput1"  formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" >
+                   <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                      <div *ngIf="f.last_name.errors.required">Field required</div>
+                  </div>    
+                </div>
+                </div>
+
+            
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                       <label for="exampleFormControlSelect2"><b>Phone Number :</b><span style="color:red">*</span></label>
+                       <input type="number" class="form-control" placeholder="Phone Number" id="exampleFormControlInput1"  formControlName="phone_number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone_number.errors }" >
+                       <div *ngIf="submitted && f.phone_number.errors" class="invalid-feedback">
+                          <div *ngIf="f.phone_number.errors.required">Field required</div>
+                      </div>    
+                    </div>
+                    </div>
+                
+          
+        </div> 
+<br>
+
+<div class="row">
+     <div class="col-md-6">
+    <div class="form-group">
+        <label for="exampleFormControlSelect2"><b>Email Id :</b><span style="color:red">*</span></label>
+    <input type="email"  formControlName="email_id" class="form-control"
+       placeholder=" Email ID"> &nbsp;&nbsp;&nbsp;
+
+<!-- <label *ngIf="email_id.errors.required" class="validation-message">This field is required.</label> -->
+
+<!-- <label *ngIf="email_id.errors.pattern" class="validation-message">Invalid email address.</label> -->
 </div>
+</div>
+</div>
+    <br>
+    <br>
+    
+    <div class="wrapper">
+        <button type="button" class="btn btn-primary" style="width:10%;">Home</button> &nbsp; &nbsp;
+       <button type="button" class="btn btn-primary" style="width:10%;">Submit</button>
+    </div>
+    <br/>
+    </div>
+  </div>
+    

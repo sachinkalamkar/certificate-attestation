@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUserS4Component } from './view-user-s4.component';
+import { DSViewDetailsComponent } from './ds-view-details.component';
 
-describe('ViewUserS4Component', () => {
-  let component: ViewUserS4Component;
-  let fixture: ComponentFixture<ViewUserS4Component>;
+describe('DSViewDetailsComponent', () => {
+  let component: DSViewDetailsComponent;
+  let fixture: ComponentFixture<DSViewDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUserS4Component ]
+      declarations: [ DSViewDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUserS4Component);
+    fixture = TestBed.createComponent(DSViewDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

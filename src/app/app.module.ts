@@ -10,11 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'angular-google-recaptcha';
 
 import { ViewUserS1Component } from './views/view-user-s1/view-user-s1.component';
-import { ViewUserS2Component } from './views/view-user-s2/view-user-s2.component';
-import { ViewUserS3Component } from './views/view-user-s3/view-user-s3.component';
-import { ViewUserS4Component } from './views/view-user-s4/view-user-s4.component';
-import { ViewUserS5Component } from './views/view-user-s5/view-user-s5.component';
-import { ViewUserS6Component } from './views/view-user-s6/view-user-s6.component';
+
 
 //import { NotifierModule } from 'angular-notifier';
 
@@ -104,6 +100,13 @@ import { EmailOtpComponent } from './views/email-otp/email-otp.component';
 import { UserProfileComponent } from './views/user-profile/user-profile.component';
 import { UserMandatoryDocumentsComponent } from './views/user-mandatory-documents/user-mandatory-documents.component';
 import { UserSelectDateComponent } from './views/user-select-date/user-select-date.component';
+import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard.component';
+import { DeskOfficerDashboardComponent } from './views/desk-officer-dashboard/desk-officer-dashboard.component';
+import { DeputySecDashboardComponent } from './views/deputy-sec-dashboard/deputy-sec-dashboard.component';
+import { AdminViewDetailsComponent } from './views/admin-view-details/admin-view-details.component';
+import { DOViewDetailsComponent } from './views/do-view-details/do-view-details.component';
+import { DSViewDetailsComponent } from './views/ds-view-details/ds-view-details.component';
+import { AdminDODSDashboardComponent } from './views/admin-do-ds-dashboard/admin-do-ds-dashboard.component';
 
 // import{MatFormFieldModule,MatDatepickerModule, MatNativeDateModule, MatListModule,MatListItem,MatNavList}from'@angular/material';
 
@@ -175,7 +178,7 @@ import { UserSelectDateComponent } from './views/user-select-date/user-select-da
     UserApplFormComponent,
    
     AdminAppComponent,AdminAddAccountComponent,DatepickerComponent, UserDashboardComponent, UserPassportDetailsComponent, UserContactDetailsComponent, UserGuarantorDetailsComponent, UserCurrentDesignationComponent, UserUploadDocumentsComponent
-    ,ViewUserS1Component, ViewUserS2Component, ViewUserS3Component, ViewUserS4Component, ViewUserS5Component, ViewUserS6Component, EmailOtpComponent, UserProfileComponent, UserMandatoryDocumentsComponent, UserSelectDateComponent
+    ,ViewUserS1Component, EmailOtpComponent, UserProfileComponent, UserMandatoryDocumentsComponent, UserSelectDateComponent, AdminDashboardComponent, DeskOfficerDashboardComponent, DeputySecDashboardComponent, AdminViewDetailsComponent, DOViewDetailsComponent, DSViewDetailsComponent, AdminDODSDashboardComponent
     
    
     

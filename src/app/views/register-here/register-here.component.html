@@ -44,18 +44,23 @@
                            class="form-control" placeholder="applicant Phone Number"> -->
 
                      <div class="row" id="emailDiv">
-                    <div class="col-md-6">
+                   
+                        <div class="col-md-6">
                        
                         <input type="email" *ngIf="marked" formControlName="email_id" class="form-control"
                            placeholder=" Email ID"> &nbsp;&nbsp;&nbsp;
                         </div>
+                  
                         <div class="col-md-6">
                         <input type="number" *ngIf="marked" formControlName="contact" class="form-control"
                            placeholder=" Phone Number">
                         </div>
+                      
                      </div>
+
                      <div class="row" id="phoneDiv">
-                      <div class="col-sm-6">
+                      
+                        <div class="col-sm-6">
                         <span *ngIf="marked1">
                            <select type="number"  formControlName="contact" class="form-control "
                               [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"
@@ -68,6 +73,7 @@
                         </span>
                         
                         </div>
+                        
                         <div class="col-sm-6">
                         <span *ngIf="marked1">
                            <input type="number" formControlName="otp" class="form-control row-sm-6" placeholder=" enter 4 digit OTP"
@@ -76,15 +82,16 @@
       
                         </span>
                         </div>
+
                         <div class="col-sm-6">
                               <span *ngIf="marked1">
                                  <input type="email" formControlName="email_id" class="form-control row-sm-6" placeholder="Enter Email">
-                       
                               </span>
-                              </div>
+                        </div>
+                        
                      </div>
                     
-                     
+               
                   </div>
                </div>
         
@@ -98,7 +105,7 @@
 
                <div class="col-sm-6">
                   <div class="form-group">
-                     <label for="exampleFormControlInput1"><b>First name :</b><span style="color:red">*</span></label> 
+                     <label for="exampleFormControlInput1"><b>First name </b><span style="color:red">*</span></label> 
       
                      <input type="email" class="form-control"  formControlName="first_name"
                         class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"
@@ -112,7 +119,7 @@
                <div class="col-sm-6">
                      <div class="form-group">
          
-                        <label for="exampleFormControlSelect2"><b>Middle name :</b><span style="color:red">*</span></label>
+                        <label for="exampleFormControlSelect2"><b>Middle name </b><span style="color:red">*</span></label>
          
                         <input type="email" class="form-control"  formControlName="middle_name"
                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_name.errors }"
@@ -125,7 +132,7 @@
                
             </div>
       
-           <br><br>
+           <br>
       
             <div class="row">
       
@@ -133,7 +140,7 @@
                <div class="col-sm-6">
                   <div class="form-group">
       
-                     <label for="exampleFormControlSelect2"><b>Last name :</b><span style="color:red">*</span></label>
+                     <label for="exampleFormControlSelect2"><b>Last name </b><span style="color:red">*</span></label>
       
                      <input type="text" formControlName="last_name" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" placeholder="  Last Name">
@@ -148,7 +155,7 @@
                <div class="col-sm-6">
                      <div class="form-group">
          
-                        <label for="exampleFormControlSelect2"><b>Date Of Birth:</b><span style="color:red">*</span></label>
+                        <label for="exampleFormControlSelect2"><b>Date Of Birth</b><span style="color:red">*</span></label>
          
                         <input type="datetime" formControlName="dob" class="form-control"
                            [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" placeholder="dd/mm/yyyy">
@@ -158,8 +165,8 @@
                      </div>
                   </div>
            </div>
-          <br><br>
-               
+        
+             <br>  
       
       
            
@@ -169,7 +176,7 @@
                <div class="col-sm-6">
                   <div class="form-group">
       
-                     <label for="exampleFormControlSelect2"><b>Nationality :</b><span style="color:red">*</span></label>
+                     <label for="exampleFormControlSelect2"><b>Nationality </b><span style="color:red">*</span></label>
       
                    
                      <select formControlName="nationality" class="form-control "
@@ -189,7 +196,7 @@
                <div class="col-sm-6">
                   <div class="form-group">
       
-                     <label for="exampleFormControlSelect2"><b>Gender:</b><span style="color:red">*</span></label>
+                     <label for="exampleFormControlSelect2"><b>Gender</b><span style="color:red">*</span></label>
       
                      <!-- <input type="email"  formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" >
                              <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
@@ -212,7 +219,7 @@
       
             </div>
       
-            <br><br>
+          <br>
       
       
       
@@ -222,7 +229,7 @@
                <div class="col-sm-6">
                   <div class="form-group">
       
-                     <label for="exampleFormControlSelect2"><b>Password:</b><span style="color:red">*</span></label>
+                     <label for="exampleFormControlSelect2"><b>Password</b><span style="color:red">*</span></label>
       
                      <input type="password" formControlName="password" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder=" enter password">
@@ -234,7 +241,7 @@
                <div class="col-sm-6">
                   <div class="form-group">
       
-                     <label for="exampleFormControlSelect2"><b>Confirm Password:</b><span style="color:red">*</span></label>
+                     <label for="exampleFormControlSelect2"><b>Confirm Password</b><span style="color:red">*</span></label>
       
                      <input type="password" formControlName="confirm_password" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" placeholder=" confirm password">
@@ -244,8 +251,8 @@
                   </div>
                </div>
             </div>
-      
-            <br><br>
+      <br>
+           
             <div class="row">
             <div class="col-sm-6">
                   <!-- <div class="form-group"> -->
@@ -256,7 +263,7 @@
                </div>
             </div>
       
-            <br>
+         <br>  
            
       
       
