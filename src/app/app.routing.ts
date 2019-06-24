@@ -46,9 +46,7 @@ export const routes: Routes = [
 
 
   { path: 'dashboard',component: DashboardComponent,
-    data: {
-      title: 'Dashboard Page'
-    },
+    data: { title: 'Dashboard Page'},
   },
   
   {path:'forgot-pass',  component :ForgotPassComponent, },
