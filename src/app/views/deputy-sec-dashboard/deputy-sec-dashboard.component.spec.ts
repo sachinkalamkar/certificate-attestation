@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewUserS5Component } from './view-user-s5.component';
+import { DeputySecDashboardComponent } from './deputy-sec-dashboard.component';
 
-describe('ViewUserS5Component', () => {
-  let component: ViewUserS5Component;
-  let fixture: ComponentFixture<ViewUserS5Component>;
+describe('DeputySecDashboardComponent', () => {
+  let component: DeputySecDashboardComponent;
+  let fixture: ComponentFixture<DeputySecDashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewUserS5Component ]
+      declarations: [ DeputySecDashboardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewUserS5Component);
+    fixture = TestBed.createComponent(DeputySecDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
