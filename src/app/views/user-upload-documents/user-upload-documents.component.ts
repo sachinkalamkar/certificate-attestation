@@ -70,7 +70,7 @@ home(){
 
   this.router.navigate(['user-dashboard'])	  
 }
-contactDetails(){
+userdb(){
 
 		this.router.navigate(['user-dashboard'])	  
 }

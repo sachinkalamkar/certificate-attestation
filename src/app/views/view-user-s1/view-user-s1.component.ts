@@ -20,8 +20,10 @@ appl_data:{}
      var application_no = this.route.snapshot.queryParamMap.get('obj');
      console.log("appli_no",application_no)
      this.userService.viewDetails(application_no).subscribe(data=>{
-       this.appl_data=data
-     console.log(JSON.stringify(data));
+       var data1=data
+       this.appl_data =JSON.parse(JSON.stringify(data1)).message
+       console.log("sladkc",this.appl_data)
+    //  console.log(JSON.stringify(data));
 })
   }
 

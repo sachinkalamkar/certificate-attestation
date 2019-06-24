@@ -142,6 +142,20 @@ export const routes: Routes = [
     component : UserUploadDocumentsComponent,
 
   },
+  {
+
+    path:'user-upload-documents/:application_no',
+  
+    component : UserUploadDocumentsComponent,
+
+  },
+  {
+
+    path:'user-upload-documents',
+  
+    component : UserUploadDocumentsComponent,
+
+  },
 
   {
 

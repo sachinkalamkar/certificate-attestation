@@ -103,8 +103,8 @@ apicity(state_id){
 getUserProfile(_id){
   return this.http.post(`${this.apiURL}/userProfile`,{"_id":_id})
 }
-viewDetails(appli_no){
-  return this.http.post(`${this.apiURL}/requestDetail`,{"application_no":appli_no});
+viewDetails(application_no){
+  return this.http.post(`${this.apiURL}/requestDetail`,{"application_no":application_no});
 }
 
 }

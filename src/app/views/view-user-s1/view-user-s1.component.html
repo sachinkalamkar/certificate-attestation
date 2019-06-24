@@ -205,30 +205,33 @@
                     <span><a  style="color:black; margin-left: -63px;" >Upload Documents </a>
                     </span>
                 </div>
+                
             </div>
       
           </div>
        
       <br> <br> <br>
       <form *ngIf="appl_data">
+         
+       
       <h3>Personal Details :</h3>
          
            <div class="row"  >
               <div class="col-sm-7">
                  <label for="exampleFormControlInput1"><b>User Type :</b></label>
-                 <input type="text" class="form-control" value={{appl_data.applicant_type}}  >
+                 <input type="text" class="form-control" value={{appl_data.applicant_type}}>
               </div>
              
               <div class="col-sm-7">
                  <label for="exampleFormControlSelect1"><b>Name :</b></label>
-                 <input type="text" class="form-control"value={{appl_data.full_name}}  >
+                 <input type="text" class="form-control"value={{appl_data.full_name}}>
               </div>
               
           
            
               <div class="col-sm-7">
                  <label ><b>Sex :</b></label>
-                 <input type="text" value={{appl_data.sex}} class="form-control"  >
+                 <input type="text" value={{appl_data.sex}} class="form-control">
               </div>
       
           
@@ -267,6 +270,10 @@
            </div>
            <br/>
            <br> <br> <br> <hr><br> <br> <br>
+
+           <a [routerLink]="['/user-passport-details',appl_data.application_no]">
+            <img src="assets/img/edit1.jpeg" width="30" height="30">Edit
+        </a>
 
            <h3>Passport Details :</h3>
               <div class="row">
@@ -426,7 +433,7 @@
            
               <div class="col-sm-6">
                  <label  style="float:left"><b>Mobile Number :</b></label>
-                 <input type="text" value={{appl_data.present_pincode}} class="form-control"  >
+                 <input type="text" value={{appl_data.permanent_pincode}} class="form-control"  >
               </div>
           
               
@@ -565,6 +572,10 @@
          </div>
        
                 <br> <br> <br> <hr><br> <br> <br>
+
+                <a [routerLink]="['/user-upload-documents',appl_data.application_no]">
+                  <img src="assets/img/edit1.jpeg" width="30" height="30">Edit
+              </a>
 
                 <h3 style="float:left" > Current Designation:</h3><br> <br>
 
